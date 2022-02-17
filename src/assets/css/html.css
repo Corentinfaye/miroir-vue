@@ -257,7 +257,7 @@ hi.i, h2.sub, h2.i, h3.sub ,h4.sub,h5.sub,h6.sub { font-style: italic; font-weig
 .subtitle { font-style: italic; font-weight: normal; text-align: center; font-size: 200%; margin-bottom: 2em; }
 section section .subtitle { font-size: 150%; }
 .surname { font-variant: small-caps; }
-.title { font-style: italic; }
+.title { font-style: italic;}
 .title abbr { font-variant: small-caps; }
 .title em, .title i, .title .title { font-style: normal; }
 i .title, .i .title { font-style: normal; }

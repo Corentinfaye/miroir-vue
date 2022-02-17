@@ -19,8 +19,8 @@ async function getPositionAnneeFromApi(id, options={}) {
     return document
 }
 
-async function getMetadataENCPOSFromApi(options={}){
-    const response = await fetch(`${_baseApiURL}/collections?id=ENCPOS`, {mode: 'cors', ...options})
+async function getMetadataMiroirFromApi(options={}){
+    const response = await fetch(`${_baseApiURL}/collections?id=${process.env.VUE_APP_APP_ROOT_COLLECTION}`, {mode: 'cors', ...options})
     const document = await response.json()
     return document
 }
@@ -29,5 +29,5 @@ export {
     getDocumentFromApi,
     getMetadataFromApi,
     getPositionAnneeFromApi,
-    getMetadataENCPOSFromApi
+    getMetadataMiroirFromApi
 }

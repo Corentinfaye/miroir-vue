@@ -32,14 +32,7 @@
               <ul>
                 <li class="block" style="text-justify: none">
                   <span style="font-variant: all-small-caps">{{ metadata.author }}</span
-                  >, « <span v-html="metadata.title"></span> », in
-                  <span style="font-style: italic"
-                    >Positions des thèses soutenues par les élèves de la promotion de
-                    {{ metadata.date }} pour obtenir le diplôme d'archiviste
-                    paléographe</span
-                  >, École nationale des chartes, Paris, {{ metadata.date
-                  }}<span v-if="metadata.page">, p. {{ metadata.page }}</span
-                  >.
+                  >, « <span v-html="metadata.title"></span> », {{metadata.publisher}}.
                 </li>
 
                 <li>
@@ -53,7 +46,7 @@
           <div class="column thesis-links">
             <h2 class="title">Liens externes</h2>
             <div class="is-flex is-flex-direction-column">
-              <div>
+              <div v-if="metadata.wikipedia || metadata.catalogue_bnf || metadata.data_bnf || metadata.idref || metadata.dbpedia || metadata.wikidata === false">
                 <p class="title">Auteur</p>
                 <div class="columns is-multiline is-mobile block">
                   <div v-if="metadata.wikipedia" class="column is-one-quarter">
@@ -100,7 +93,7 @@
                   </div>
                 </div>
               </div>
-              <div>
+              <div v-if="metadata.thenca || metadata.sudoc || metadata.data_bnf || metadata.benc || metadata.hal === false">
                 <p class="title">Thèse</p>
                 <div class="columns is-multiline is-mobile block">
                   <div v-if="metadata.thenca" class="column is-one-quarter">

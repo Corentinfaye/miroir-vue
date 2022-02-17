@@ -8,8 +8,6 @@
 import { defineAsyncComponent } from "vue/dist/vue.esm-bundler.js";
 import { getDocumentFromApi } from "@/api/document";
 
-const VUE_APP_IIIF_URL = `${process.env.VUE_APP_IIIF_URL}`;
-
 export default {
   name: "Document",
 
@@ -22,18 +20,6 @@ export default {
       // build a temporary dom just to ease the navigation inside the document
       let tmpDom = document.createElement("div");
       tmpDom.innerHTML = data;
-
-      // customize the template with some vue components and code
-      let frameNum = 1;
-      tmpDom.querySelectorAll("a.pb.facs").forEach((a) => {
-        const container = document.createElement("div");
-        // TODO: gérer ce lowercase un peu gênant
-        const canvadId = `${VUE_APP_IIIF_URL}/${props.id.toLowerCase()}/canvas/f${frameNum}`;
-        container.innerHTML = `<page-break canvas-id="${canvadId}" canvas-num="${frameNum}" image="${a.href}"/>`;
-        frameNum += 1;
-        // replace the link with a PageBreak component
-        a.parentNode.replaceChild(container.firstChild, a);
-      });
 
       const toc = tmpDom.querySelector("#aside");
 
@@ -68,5 +54,8 @@ header {
   -moz-border-radius: 1ex;
   border-radius: 1ex;
 }
+
+
 </style>
 <style src="../assets/css/postprod.css"></style>
+<style src="../assets/css/miroir.css"></style>

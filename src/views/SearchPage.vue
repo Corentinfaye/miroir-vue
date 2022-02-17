@@ -128,19 +128,6 @@
               />
             </div>
           </div>
-          <div class="tile is-child carousel-parent">
-            <article class="tile is-child">
-              <div class="content">
-                <carousel
-                  :items="['histogram']"
-                  @click="minimizeSearchForm"
-                  v-show="!search.totalCount || search.totalCount.value > 0"
-                >
-                  <template v-slot:histogram><histogram /></template>
-                </carousel>
-              </div>
-            </article>
-          </div>
         </div>
         <div class="tile is-parent is-vertical">
           <!-- Table toogle + pagination -->
@@ -464,8 +451,6 @@ import "vue-slider-component/theme/antd.css";
 import Pagination from "@/components/Pagination";
 import Toggle from "@vueform/toggle";
 
-import Histogram from "@/components/charts/Histogram";
-import Carousel from "@/components/Carousel";
 
 const VUE_APP_IIIF_IMAGES_URL = `${process.env.VUE_APP_IIIF_IMAGES_URL}`;
 
@@ -474,8 +459,6 @@ export default {
   components: {
     VueSlider,
     Pagination,
-    Histogram,
-    Carousel,
     Toggle,
   },
   setup() {

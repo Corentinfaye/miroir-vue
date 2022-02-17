@@ -8,7 +8,7 @@
         <a href="https://www.chartes.psl.eu/" target="_blank" class="logo-header"></a>
         <span class="level-item" active-class="active">
           <router-link :to="{ name: 'SearchPage' }" active-class="active"
-            >Les positions</router-link
+            >Le miroir des classiques</router-link
           >
         </span>
         <span class="level-item">

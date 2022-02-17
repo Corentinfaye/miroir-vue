@@ -1,11 +1,10 @@
 <template>
   <div class="is-flex is-flex-direction-column" :class="viewModeCssClass">
-    <div v-if="metadata">
-      <liste-these-annee
-        v-if="metadata.date"
+    <div>
+      <nav-collection
         class="liste-theses-area app-width-padding"
-        :id="metadata.date"
         :textid="$route.params.docId"
+        :id="$route.params.docId"
       />
       <document-metadata :metadata="metadata" class="metadata-area app-width-margin" />
     </div>
@@ -87,7 +86,7 @@ import {
 } from "vue/dist/vue.esm-bundler.js";
 import { onBeforeRouteUpdate, useRoute } from "vue-router";
 
-import ListeTheseAnnee from "@/components/ListeTheseAnnee.vue";
+import NavCollection from "@/components/NavCollection.vue";
 import useMirador from "@/composables/use-mirador";
 
 const sources = [
@@ -124,7 +123,7 @@ export default {
   components: {
     Document,
     DocumentMetadata,
-    ListeTheseAnnee,
+    NavCollection
   },
   async setup() {
     const manifestIsAvailable = ref(false);
@@ -169,7 +168,8 @@ export default {
 
     const getMetadata = async (docId) => {
       const listmetadata = await getMetadataFromApi(docId);
-
+      console.log("Test");
+      console.log(listmetadata);
       var dcnamespace = Object.keys(listmetadata["@context"]).find((k) =>
         listmetadata["@context"][k].includes("dc/elements")
       );
@@ -210,6 +210,8 @@ export default {
       metadata.coverage = dublincore["dct:coverage"];
       metadata.rights = dublincore["dct:rights"][0]["@id"];
       metadata.title = listmetadata["dts:extensions"][htmlnamespace + ":h1"];
+      metadata.publisher = dublincore["dct:publisher"][0]["@value"];
+
 
       console.log("metadata.iiifManifestUrl", metadata.iiifManifestUrl);
       console.log("metadata", metadata);
@@ -650,13 +652,6 @@ export default {
   text-transform: none;
 }
 
-#article section.div h4.head {
-  text-align: center;
-  color: #999;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 1em 0 1ex 2ex;
-}
 
 .toc-area-header a {
   color: inherit;
@@ -741,5 +736,6 @@ export default {
   .text-and-images-mode .text-view,
   .text-and-images-mode .mirador-view {
   }
+
 }
 </style>

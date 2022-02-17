@@ -1,52 +1,32 @@
 <template>
-  <div class="list-content" :class="listCssClass">
+ <div class="list-content" :class="listCssClass">
     <div class="list-header is-flex">
       <p class="menu-label">
-        <span @click="toggleContent">Thèses de l'année</span> :
-        <input type="text" class="year" v-model="inputAnnee" />
+        <span @click="toggleContent">Outils de navigation</span> :
       </p>
       <div class="slider-prev-next-buttons is-flex is-align-items-center">
-        <nav>
-          <button v-on:click="downOneAnne">-</button>
-        </nav>
-        <vue-slider
-          v-model="annee"
-          :vData="listProm"
-          :lazy="true"
-          :tooltip="'active'"
-        ></vue-slider>
-        <nav>
-          <button v-on:click="addOneAnne">+</button>
-        </nav>
       </div>
-      <nav v-if="isNotInitialAnnee">
-        <button v-on:click="reinitalise">
-          Retour à l'année en cours <span>{{ id }}</span>
-        </button>
-      </nav>
       <a href="#" class="toggle-btn" @click="toggleContent"></a>
     </div>
     <div class="list-body">
       <div class="menu-list-scrollable thin-scroll">
+        <i v-if="prevCollection.length > 0" class="fas fa-reply" @click="getBackCollection()"></i>
         <ul class="menu-list" v-if="state.metadata">
           <li v-for="these in state.metadata" :key="these">
-            <ul v-if="these[1]">
-              <b v-if="these[0] === textid">
-                <div class="thesis-author">{{ these[1] }}</div>
-                <div class="thesis-title" v-html="these[2]"></div>
-              </b>
-              <router-link :to="these[0]" v-else>
-                <div v-on:click="gotoTop">
-                  <div class="thesis-author">{{ these[1] }}</div>
-                  <div v-html="these[2]"></div>
-                </div>
-              </router-link>
+            <ul v-if="these[2] === 'Collection'">
+              <div>
+                <div class="thesis-title" @click="inputCollection(these[0])"><span v-html="these[1]"></span></div>
+              </div>
             </ul>
             <ul v-else>
-              <b v-if="these[0] === textid">{{ these[2] }}</b>
-              <router-link :to="these[0]" v-on:click="gotoTop" v-else
-                ><span v-html="these[2]"></span
-              ></router-link>
+              <b v-if="these[0] === textid">
+                <div class="thesis-title"><span v-html="these[1]"></span></div>
+              </b>
+              <router-link :to="these[0]" v-else>
+                <div>
+                  <div class="thesis-title" @click="inputCollection(these[0])"><span v-html="these[1]"></span></div>
+                </div>
+              </router-link>
             </ul>
           </li>
         </ul>
@@ -57,67 +37,103 @@
 
 <script>
 import { ref, reactive, toRefs, watch, computed } from "vue";
-import { getPositionAnneeFromApi, getMetadataENCPOSFromApi } from "@/api/document";
-import VueSlider from "vue-slider-component";
-import "vue-slider-component/theme/antd.css";
+import { getMetadataFromApi, getMetadataMiroirFromApi } from "@/api/document";
+
 
 export default {
-  name: "ListeTheseAnnee",
+  name: "NavCollection",
 
   props: ["id", "textid"],
-  components: {
-    VueSlider,
-  },
+
   async setup(props) {
     let state = reactive({
       isOpened: false,
     });
     const { id } = toRefs(props);
 
-    var annee = ref(id.value.toString());
-    const listProm = ref([]);
+    function getInitialState() {
+     const initialCollection = `${process.env.VUE_APP_APP_ROOT_COLLECTION}`;
+     const initalisePrevCollection = [];
+     return {
+       collection: initialCollection,
+       prevCollection: initalisePrevCollection
+     }
+    }
 
-    const getPositionsForCurrentYear = async () => {
+    const doc = ref(id.value.toString());
+
+
+    const initialState = getInitialState();
+    let actualCollection = ref(initialState.collection);
+    let prevCollection = ref(initialState.prevCollection);
+
+    const getMiroirCollection = async () => {
       let metadata = {};
-      const data = await getPositionAnneeFromApi(annee.value);
+      
+      const data = await getMetadataMiroirFromApi();
+      console.log(data)
+      let i = 1;
+      if (data && data["member"]) {
+        for (var these of data["member"]) {
+          metadata[i] = [these["@id"], these["title"], these["@type"]];
+          i = i + 1
+        }
+      }
+    }
+
+    const getCollections = async () => {
+      let metadata = {};
+      let temp_data = {}
+      let metadata_list_index = [];
+      const data = await getMetadataFromApi(actualCollection.value);
+
       var htmlnamespace = Object.keys(data["@context"]).find((k) =>
         data["@context"][k].includes("html")
       );
-      var dcnamespace = Object.keys(data["@context"]).find((k) =>
-        data["@context"][k].includes("dc/elements")
-      );
 
+      let i = 1;
       if (data && data["member"]) {
         for (var these of data["member"]) {
-          if (these["@id"].includes("PREV") || these["@id"].includes("NEXT")) {
-            continue;
-          }
-          var title = these["dts:extensions"][htmlnamespace + ":h1"];
-          var author = these["dts:extensions"][dcnamespace + ":creator"];
-          try {
-            const page = these["dts:dublincore"]["dct:extend"].toString().split("-")[0];
-            metadata[page] = [these["@id"], author, title];
-          } catch {
-            metadata[these["@id"].split("_")[2]] = [these["@id"], author, title];
-          }
+            try {
+              var title = these["dts:extensions"][htmlnamespace + ":h1"];
+              temp_data[i] = [these["@id"], title, these["@type"]];
+              metadata_list_index.push(title) 
+            } catch {
+              temp_data[i] = [these["@id"], these["title"], these["@type"]];
+              metadata_list_index.push(these["title"]) 
+            }
+            i = i + 1
         }
+      } else{
+        actualCollection.value = `${process.env.VUE_APP_APP_ROOT_COLLECTION}`;
+        prevCollection.value = [];
       }
-
+      metadata_list_index.sort();
+      for(var meta in temp_data){
+        metadata[metadata_list_index.indexOf(temp_data[meta][1])] = temp_data[meta];
+      }
       state.metadata = metadata;
     };
 
-    const getAllPositionsYears = async () => {
-      const data = await getMetadataENCPOSFromApi();
-      let annees = [];
-      for (var member of data.member) {
-        let annee = member["@id"].replace("ENCPOS_", "");
-        annees.push(annee);
-      }
-      annees.sort();
-      listProm.value = annees;
+    const inputCollection = function (newCollection){
+      console.log(actualCollection);
+      prevCollection.value.push(actualCollection.value);
+      console.log(prevCollection.value)
+      actualCollection.value = newCollection;
+      getCollections();
+      return actualCollection, prevCollection;
     };
 
-    watch(annee, getPositionsForCurrentYear);
+    const getBackCollection = function (){
+      console.log(prevCollection.value)
+      actualCollection.value = prevCollection.value[0];
+      console.log(prevCollection)
+      prevCollection.value.shift();
+      getCollections();
+      return actualCollection, prevCollection;
+    };
+
+    watch(actualCollection ,getCollections);
 
     const listCssClass = computed(() => {
       return state.isOpened ? "is-opened" : "";
@@ -128,59 +144,8 @@ export default {
       state.isOpened = !state.isOpened;
     };
 
-    const isNotInitialAnnee = computed(() => {
-      return annee.value.toString() !== id.value.toString();
-    });
-
-    const downOneAnne = function () {
-      if (listProm.value.indexOf(annee.value.toString()) != "0") {
-        annee.value = listProm.value[
-          listProm.value.indexOf(annee.value.toString()) - 1
-        ].toString();
-      }
-      return annee;
-    };
-
-    const reinitalise = function () {
-      annee.value = id.value.toString();
-      return annee;
-    };
-
-    const addOneAnne = function () {
-      if (
-        listProm.value.indexOf(annee.value.toString()) !=
-        listProm.value.length.toString() - 1
-      ) {
-        annee.value = listProm.value[
-          listProm.value.indexOf(annee.value.toString()) + 1
-        ].toString();
-      }
-      return annee;
-    };
-
-    const inputAnnee = computed({
-      get: () => annee.value,
-      set: (val) => {
-        const valStr = val.toString().toLowerCase(); // special string value : 1942b
-        if (valStr.length >= 4) {
-          if (listProm.value.indexOf(valStr) !== -1) {
-            annee.value = valStr;
-          } else {
-            const valNum = parseInt(val);
-            const minDate = listProm.value[0];
-            const maxDate = listProm.value[listProm.value.length - 1];
-            annee.value = Math.min(maxDate, Math.max(minDate, valNum)).toString();
-            console.log(minDate, annee.value);
-          }
-        }
-      },
-    });
-
-    watch(inputAnnee, () => {
-      state.isOpened = true;
-    });
-
-    await Promise.all([getPositionsForCurrentYear(), getAllPositionsYears()]);
+    
+    await Promise.all([getCollections(), getMiroirCollection()]);
 
     const gotoTop = function () {
       scroll(0, 0);
@@ -190,14 +155,12 @@ export default {
       state,
       listCssClass,
       toggleContent,
-      isNotInitialAnnee,
-      addOneAnne,
-      annee,
-      reinitalise,
-      downOneAnne,
-      inputAnnee,
+      doc,
       gotoTop,
-      listProm,
+      actualCollection,
+      prevCollection,
+      inputCollection,
+      getBackCollection
     };
   },
 };
@@ -386,7 +349,6 @@ nav button > span {
   padding-left: 0;
 }
 .menu-list > li {
-  display: inline-block;
   margin-bottom: 20px;
   break-inside: avoid;
 }
