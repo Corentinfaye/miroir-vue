@@ -52,7 +52,7 @@ export default {
     const { id } = toRefs(props);
 
     function getInitialState() {
-     const initialCollection = `${process.env.VUE_APP_APP_ROOT_COLLECTION}`;
+     const initialCollection = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
      const initalisePrevCollection = [];
      return {
        collection: initialCollection,
@@ -105,7 +105,7 @@ export default {
             i = i + 1
         }
       } else{
-        actualCollection.value = `${process.env.VUE_APP_APP_ROOT_COLLECTION}`;
+        actualCollection.value = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
         prevCollection.value = [];
       }
       metadata_list_index.sort();
