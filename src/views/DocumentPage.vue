@@ -52,7 +52,6 @@
       <ul class="is-flex">
         <li><a v-if="metadata.downloadPDF" v-bind:href="metadata.downloadPDF" target='_blank' class="pdf-btn" aria-label="Télécharger le PDF"></a></li>
         <li><a v-bind:href="metadata.downloadXML" class="xml-btn" aria-label="Télécharger le XML"></a></li>
-        <li><a v-if="metadata.thenca" v-bind:href="metadata.thenca" target='_blank' class="access_link">Accès à la thèse</a></li>
       </ul>
     </nav>
     <div class="document-area is-flex app-width-margin" :class="tocMenuCssClass">
@@ -221,8 +220,7 @@ export default {
         for (let s of sources) {
           metadata[s.name] = null;
         }
-
-        // benc & sudoc & thenca
+        // TODO : expliquer ce que je fais
         if (dublincore["dct:isVersionOf"]) {
           for (const member of dublincore["dct:isVersionOf"]) {
             if (member["@id"]) {

@@ -7,7 +7,7 @@ async function getMetadataFromApi(id, options={}) {
     return metadata
 }
 
-async function getDocumentFromApi(id, options={}) {
+async function getDocumentFromDTSApi(id, options={}) {
     const response = await fetch(`${_baseApiURL}/document?id=${id}&format=html`, {mode: 'cors', ...options})
     const document = await response.text()
     return document
@@ -19,15 +19,8 @@ async function getPositionAnneeFromApi(id, options={}) {
     return document
 }
 
-async function getMetadataMiroirFromApi(options={}){
-    const response = await fetch(`${_baseApiURL}/collections?id=${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`, {mode: 'cors', ...options})
-    const document = await response.json()
-    return document
-}
-
 export {
-    getDocumentFromApi,
+    getDocumentFromDTSApi,
     getMetadataFromApi,
-    getPositionAnneeFromApi,
-    getMetadataMiroirFromApi
+    getPositionAnneeFromApi
 }

@@ -20,7 +20,7 @@
           </div>
           <div class="column is-7 thesis-infos is-flex is-flex-direction-column">
             <section v-if="metadata.coverage">
-              <h2 class="title">Position</h2>
+              <h2 class="title">Informations complémentaires</h2>
               <ul>
                 <li v-if="metadata.coverage" class="block" style="text-justify: none">
                   <span>Période du sujet</span> : {{ metadata.coverage }}

@@ -16,9 +16,6 @@
             >Le projet</router-link
           >
         </span>
-        <span class="level-item">
-          <a href="https://bibnum.chartes.psl.eu/s/thenca/page/accueil" target="_blank" active-class="active">ThENC@</a>
-        </span>
       </div>
       <div class="level-right">
         <span class="level-item">

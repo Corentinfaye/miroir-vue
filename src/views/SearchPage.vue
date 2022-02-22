@@ -5,11 +5,10 @@
         <article class="tile is-child">
           <div class="is-flex is-flex-direction-row title-tile">
             <p class="title">
-              Les positions de thèses<br />de l'École nationale des chartes
+              Miroir des Classiques
             </p>
             <p class="header-baseline">
-              <span>Position</span> : à l’origine, les positions prises et à défendre par
-              l’élève, face au jury. Depuis, un résumé de la thèse soutenue.
+              <span>Miroir</span> :
             </p>
           </div>
         </article>

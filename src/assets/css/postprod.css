@@ -245,3 +245,8 @@ h4.incipit{
 h3.head.soustraduction{
     font-size: 2em;
 }
+
+h5.titleMsPart{
+    font-size: 1.5em;
+    font-weight: bold;
+}

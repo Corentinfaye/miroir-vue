@@ -6,7 +6,7 @@
 
 <script>
 import { defineAsyncComponent } from "vue/dist/vue.esm-bundler.js";
-import { getDocumentFromApi } from "@/api/document";
+import { getDocumentFromDTSApi } from "@/api/document";
 
 export default {
   name: "Document",
@@ -16,7 +16,7 @@ export default {
   async setup(props) {
     const customDocument = defineAsyncComponent(async () => {
       // fetch the initial template
-      const data = await getDocumentFromApi(props.id);
+      const data = await getDocumentFromDTSApi(props.id);
       // build a temporary dom just to ease the navigation inside the document
       let tmpDom = document.createElement("div");
       tmpDom.innerHTML = data;

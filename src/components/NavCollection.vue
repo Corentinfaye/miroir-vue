@@ -12,19 +12,19 @@
       <div class="menu-list-scrollable thin-scroll">
         <i v-if="prevCollection.length > 0" class="fas fa-reply" @click="getBackCollection()"></i>
         <ul class="menu-list" v-if="state.metadata">
-          <li v-for="these in state.metadata" :key="these">
-            <ul v-if="these[2] === 'Collection'">
+          <li v-for="doc in state.metadata" :key="doc">
+            <ul v-if="doc[2] === 'Collection'">
               <div>
-                <div class="thesis-title" @click="inputCollection(these[0])"><span v-html="these[1]"></span></div>
+                <div class="doc-title" @click="inputCollection(doc[0])"><span v-html="doc[1]"></span></div>
               </div>
             </ul>
             <ul v-else>
-              <b v-if="these[0] === textid">
-                <div class="thesis-title"><span v-html="these[1]"></span></div>
+              <b v-if="doc[0] === textid">
+                <div class="doc-title"><span v-html="doc[1]"></span></div>
               </b>
-              <router-link :to="these[0]" v-else>
+              <router-link :to="doc[0]" v-else>
                 <div>
-                  <div class="thesis-title" @click="inputCollection(these[0])"><span v-html="these[1]"></span></div>
+                  <div class="doc-title" @click="inputCollection(doc[0])"><span v-html="doc[1]"></span></div>
                 </div>
               </router-link>
             </ul>
@@ -37,7 +37,7 @@
 
 <script>
 import { ref, reactive, toRefs, watch, computed } from "vue";
-import { getMetadataFromApi, getMetadataMiroirFromApi } from "@/api/document";
+import { getMetadataFromApi } from "@/api/document";
 
 
 export default {
@@ -67,24 +67,11 @@ export default {
     let actualCollection = ref(initialState.collection);
     let prevCollection = ref(initialState.prevCollection);
 
-    const getMiroirCollection = async () => {
-      let metadata = {};
-      
-      const data = await getMetadataMiroirFromApi();
-      console.log(data)
-      let i = 1;
-      if (data && data["member"]) {
-        for (var these of data["member"]) {
-          metadata[i] = [these["@id"], these["title"], these["@type"]];
-          i = i + 1
-        }
-      }
-    }
 
     const getCollections = async () => {
       let metadata = {};
-      let temp_data = {}
-      let metadata_list_index = [];
+      let tempData = {}
+      let metadataListIndex = [];
       const data = await getMetadataFromApi(actualCollection.value);
 
       var htmlnamespace = Object.keys(data["@context"]).find((k) =>
@@ -93,14 +80,14 @@ export default {
 
       let i = 1;
       if (data && data["member"]) {
-        for (var these of data["member"]) {
+        for (var doc of data["member"]) {
             try {
-              var title = these["dts:extensions"][htmlnamespace + ":h1"];
-              temp_data[i] = [these["@id"], title, these["@type"]];
-              metadata_list_index.push(title) 
+              var title = doc["dts:extensions"][htmlnamespace + ":h1"];
+              tempData[i] = [doc["@id"], title, doc["@type"]];
+              metadataListIndex.push(title) 
             } catch {
-              temp_data[i] = [these["@id"], these["title"], these["@type"]];
-              metadata_list_index.push(these["title"]) 
+              tempData[i] = [doc["@id"], doc["title"], doc["@type"]];
+              metadataListIndex.push(doc["title"]) 
             }
             i = i + 1
         }
@@ -108,9 +95,9 @@ export default {
         actualCollection.value = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
         prevCollection.value = [];
       }
-      metadata_list_index.sort();
-      for(var meta in temp_data){
-        metadata[metadata_list_index.indexOf(temp_data[meta][1])] = temp_data[meta];
+      metadataListIndex.sort();
+      for(var meta in tempData){
+        metadata[metadataListIndex.indexOf(tempData[meta][1])] = tempData[meta];
       }
       state.metadata = metadata;
     };
@@ -145,7 +132,7 @@ export default {
     };
 
     
-    await Promise.all([getCollections(), getMiroirCollection()]);
+    await Promise.all([getCollections()]);
 
     const gotoTop = function () {
       scroll(0, 0);
@@ -332,16 +319,16 @@ nav button > span {
 }
 
 .menu-list {
-  counter-reset: thesis-counter;
+  counter-reset: doc-counter;
   columns: 3;
 }
 
-.thesis-author {
+.doc-author {
   font-weight: 600;
 }
-.thesis-author::before {
-  content: counter(thesis-counter);
-  counter-increment: thesis-counter;
+.doc-author::before {
+  content: counter(doc-counter);
+  counter-increment: doc-counter;
   color: #b9192f;
   margin-right: 5px;
 }
@@ -349,6 +336,7 @@ nav button > span {
   padding-left: 0;
 }
 .menu-list > li {
+  display: inline-block;
   margin-bottom: 20px;
   break-inside: avoid;
 }
@@ -422,7 +410,7 @@ ul {
     margin-top: 0px;
     width: auto;
   }
-  .liste-theses-area {
+  .liste-doc-area {
     padding-top: 30px;
     padding-bottom: 30px;
   }
