@@ -2,7 +2,7 @@
   <div class="is-flex is-flex-direction-column" :class="viewModeCssClass">
     <div>
       <nav-collection
-        class="liste-theses-area app-width-padding"
+        class="liste-doc-area app-width-padding"
         :textid="$route.params.docId"
         :id="$route.params.docId"
       />
@@ -308,7 +308,7 @@ export default {
 </script>
 
 <style>
-.liste-theses-area {
+.liste-doc-area {
   background-color: #fbf8f4;
   padding-top: 50px;
   padding-bottom: 50px;

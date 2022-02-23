@@ -46,14 +46,7 @@ export default {
 </script>
 
 <style src="../assets/css/html.css" id="document-html-css">
-header {
-  clear: both;
-  padding: 1ex;
-  border: dashed #ccc 1px;
-  -webkit-border-radius: 1ex;
-  -moz-border-radius: 1ex;
-  border-radius: 1ex;
-}
+
 
 
 </style>

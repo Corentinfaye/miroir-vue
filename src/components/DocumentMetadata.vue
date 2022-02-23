@@ -18,7 +18,7 @@
             </div>
             <div v-else class="author-default-thumbnail" />
           </div>
-          <div class="column is-7 thesis-infos is-flex is-flex-direction-column">
+          <div class="column is-7 doc-infos is-flex is-flex-direction-column">
             <section v-if="metadata.coverage">
               <h2 class="title">Informations complémentaires</h2>
               <ul>
@@ -43,7 +43,7 @@
               </ul>
             </section>
           </div>
-          <div class="column thesis-links">
+          <div class="column doc-links">
             <h2 class="title">Liens externes</h2>
             <div class="is-flex is-flex-direction-column">
               <div v-if="metadata.wikipedia || metadata.catalogue_bnf || metadata.data_bnf || metadata.idref || metadata.dbpedia || metadata.wikidata === false">
@@ -347,11 +347,11 @@ figure {
   height: 158px;
   background: url(../assets/images/fantome.png) center / contain no-repeat;
 }
-.thesis-infos,
-.thesis-links > div {
+.doc-infos,
+.doc-links > div {
   gap: 40px;
 }
-.thesis-links .column {
+.doc-links .column {
   padding: 15px 0 0 0;
 }
 
@@ -374,7 +374,7 @@ figure {
   aside.menu > .columns > .column:nth-child(3) {
     max-width: 75% !important;
   }
-  .thesis-links {
+  .doc-links {
     margin-top: 40px;
   }
 }
