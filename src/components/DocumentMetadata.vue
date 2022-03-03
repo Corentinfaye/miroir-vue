@@ -2,7 +2,17 @@
   <div class="document-metadata" :class="metaDataCssClass">
     <div class="document-metadata-header">
       <a href="#" v-on:click="toggleContent">
-        <span class="metadata-header-author">{{ metadata.author }}</span>
+        <template v-if="Array.isArray(metadata.author) ">
+          <span class="metadata-header-author">
+            <template v-for="author in metadata.author" :key="author">
+              <span v-if="author != metadata.author.slice(-1)">{{ author }}, </span>
+              <span v-else>{{ author }}</span>
+            </template>
+          </span>
+        </template>
+        <template v-else>
+          <span class="metadata-header-author">{{ metadata.author }}</span>
+        </template>
         <span v-html="metadata.title" class="metadata-header-title"></span>
       </a>
       <a href="#" class="toggle-btn" v-on:click="toggleContent"></a>
@@ -31,13 +41,14 @@
               <h2 class="title">Citer</h2>
               <ul>
                 <li class="block" style="text-justify: none">
-                  <span style="font-variant: all-small-caps">{{ metadata.author }}</span
-                  >, « <span v-html="metadata.title"></span> », {{metadata.publisher}}.
+                  <template v-if="metadata.author"><span style="font-variant: all-small-caps">{{metadata.author}}</span
+                  >, </template> <template v-if="metadata.title">« <span v-html="metadata.title"></span> », </template> 
+                  <template v-if="metadata.publisher">{{metadata.publisher}}, </template><template v-if="metadata.date">{{metadata.date}}</template>.
                 </li>
 
                 <li>
                   <span
-                    >Licence : <a v-bind:href="metadata.rights">cc. BY-NC-ND 3.0</a></span
+                    >Licence : <a v-bind:href="metadata.rights" target="_blank">{{metadata.rights}}</a></span
                   >
                 </li>
               </ul>

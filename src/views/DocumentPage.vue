@@ -178,6 +178,9 @@ export default {
       console.log(htmlnamespace)
       console.log(listmetadata)
       metadata.author = listmetadata["dts:extensions"][dcnamespace + ":creator"];
+      if (Array.isArray(metadata.author)){
+        metadata.author.sort();
+      }
       if (Array.isArray(listmetadata["dts:download"])){
         for (let meta of listmetadata["dts:download"]){
           if (meta.includes(".PDF")){
@@ -192,6 +195,7 @@ export default {
         metadata.downloadPDF = null
       }
       metadata.download = listmetadata["dts:download"];
+      metadata.contributor = listmetadata[dcnamespace + ":contributor"]
 
 
       const dublincore = listmetadata["dts:dublincore"];
