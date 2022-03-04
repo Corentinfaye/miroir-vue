@@ -175,6 +175,7 @@ span
 .head.manuscrit{
     color:black;
     font-weight: bold;
+    font-size: 2em;
 
 }
 
@@ -197,7 +198,7 @@ li.witness a{
     padding: 1em 0 1ex 2ex;
     font-size: larger;
     text-align: inherit;
-    color: red;
+    color: black
 }
 
 table,
@@ -234,12 +235,19 @@ h4.head.manuscrit{
     font-size: 1.5em;
 }
 
+h4.head{
+    color: inherit;
+    font-weight: bold;
+    line-height: inherit;
+    font-size: 1.5em;
+}
+
 h4.incipit{
     color: inherit;
     font-weight: bold;
     line-height: inherit;
     font-size: larger;
-    text-decoration: underline;
+    padding-bottom: 1em;
 }
 
 h3.head.soustraduction{

@@ -4,16 +4,17 @@
       <div class="tile page-header app-width-padding">
         <article class="tile is-child">
           <div class="is-flex is-flex-direction-row title-tile">
-            <p class="title">
-              Miroir des Classiques
-            </p>
-            <p class="header-baseline">
-              <span>Miroir</span> :
-            </p>
+            <p class="title">Miroir des Classiques</p>
           </div>
         </article>
       </div>
       <div class="tile is-vertical app-width-margin">
+        <nav-collection
+          class="liste-doc-area app-width-padding"
+          :textid="$route.params"
+          :id="$route.params"
+        />
+
         <div
           class="tile is-parent search-form-and-carousel"
           :class="searchMinimizedCssClass"
@@ -45,396 +46,6 @@
                 </button>
               </div>
             </div>
-            <!-- Input sliders -->
-            <div class="is-flex sliders">
-              <div class="field slider-control is-inline-block">
-                <div class="control">
-                  <label>Promotions</label>
-                  <span>Entre</span>
-                  <input
-                    type="number"
-                    class="year"
-                    v-model.number="inputPromotionYearRangeStart"
-                  />
-                  <span>et</span>
-                  <input
-                    type="number"
-                    class="year"
-                    v-model.number="inputPromotionYearRangeEnd"
-                  />
-                  <vue-slider
-                    v-model="inputPromotionYearRange"
-                    :min="minPromotionYear"
-                    :max="currentYear"
-                    :tooltip="'none'"
-                    :disabled="search.loading.value"
-                  ></vue-slider>
-                </div>
-              </div>
-              <div class="field slider-control is-inline-block">
-                <div class="control">
-                  <label>Période du sujet</label>
-                  <span>Entre</span>
-                  <input
-                    type="number"
-                    class="year"
-                    v-model="inputTopicRangeStart"
-                    v-on:blur="onBlurCheckTopicRangeStart($event)"
-                  />
-                  <span>et</span>
-                  <input
-                    type="number"
-                    class="year"
-                    v-model="inputTopicRangeEnd"
-                    v-on:blur="onBlurCheckTopicRangeEnd($event)"
-                  />
-                  <vue-slider
-                    v-model="inputTopicRange"
-                    :min="minTopicYear"
-                    :max="currentYear"
-                    :tooltip="'none'"
-                    :disabled="search.loading.value"
-                  ></vue-slider>
-                </div>
-              </div>
-            </div>
-            <!-- Fulltext + results count -->
-            <div class="field is-flex px-2 search-form-footer">
-              <div class="control is-flex">
-                <label>Domaine de recherche</label>
-                <Toggle
-                  id="ToggleSwitch"
-                  on-label="Plein texte"
-                  off-label="Notice"
-                  v-model="isFulltextSearch"
-                  :width="120"
-                />
-              </div>
-              <div v-if="search.result.value" class="results-count is-flex">
-                <span>{{ search.totalCount.value }}</span>
-                <span>position(s)</span>
-              </div>
-            </div>
-            <!-- Minimized version -->
-            <div class="minimized-controls">
-              <button
-                class="button is-light is-medium search"
-                @click="expandSearchForm"
-              />
-              <button
-                class="button is-light is-medium expand-form-button"
-                @click="expandSearchForm"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="tile is-parent is-vertical">
-          <!-- Table toogle + pagination -->
-          <div class="is-flex toggle-list-and-pagination" v-if="search.totalCount.value">
-            <div v-if="isFulltextSearch === true" class="is-inline-block">
-              <div class="field is-inline-block px-1">
-                <div class="control">
-                  <Toggle
-                    id="ToggleTableau"
-                    on-label="Tableau"
-                    off-label="Déplié"
-                    v-model="isResultTableMode"
-                    :width="120"
-                  />
-                </div>
-              </div>
-              <div
-                v-if="!isResultTableMode && isFulltextSearch"
-                class="field is-inline-block px-1"
-              >
-                <div class="control mb-6 block is-inline-block sort-options">
-                  <span> Tris </span>
-                  <div class="is-inline-block">
-                    <select name="tri" id="tri-select" v-model="inputSort">
-                      <option value="">Pertinence</option>
-                      <option
-                        :value="
-                          inputSort.includes('-')
-                            ? '-metadata.author_name.keyword'
-                            : 'metadata.author_name.keyword'
-                        "
-                      >
-                        Auteur
-                      </option>
-                      <option
-                        :value="
-                          inputSort.includes('-')
-                            ? '-metadata.promotion_year'
-                            : 'metadata.promotion_year'
-                        "
-                      >
-                        Promotion
-                      </option>
-                      <option
-                        :value="
-                          inputSort.includes('-')
-                            ? '-metadata.topic_notBefore'
-                            : 'metadata.topic_notBefore'
-                        "
-                      >
-                        Période du sujet (borne inf.)
-                      </option>
-                      <option
-                        :value="
-                          inputSort.includes('-')
-                            ? '-metadata.topic_notAfter'
-                            : 'metadata.topic_notAfter'
-                        "
-                      >
-                        Période du sujet (borne sup.)
-                      </option>
-                    </select>
-                    <span
-                      v-if="inputSort.includes('-')"
-                      class="icon button"
-                      @click="inputSort = inputSort.replace('-', '')"
-                    >
-                      <i class="fas fa-arrow-up" />
-                    </span>
-                    <span
-                      v-else
-                      v-show="inputSort.length > 0"
-                      class="icon button"
-                      @click="inputSort = `-${inputSort}`"
-                    >
-                      <i class="fas fa-arrow-down" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div v-if="search.pageCount" class="has-text-centered">
-              <pagination />
-            </div>
-          </div>
-          <div class="block text-results" v-if="isFulltextSearch && !isResultTableMode">
-            <div
-              class="table is-hoverable is-narrow is-fulldwidth"
-              v-if="search.result.value && search.result.value.length"
-            >
-              <template v-for="position in search.result.value" :key="position.id">
-                <router-link
-                  :to="{
-                    name: 'DocumentPage',
-                    params: { docId: position.id },
-                  }"
-                  tag="tr"
-                  style="text-decoration: none; color: inherit"
-                >
-                  <div class="columns mb-6">
-                    <div class="column is-2">
-                      <img
-                        class="pb-thumnbail"
-                        onerror="this.onerror=null; this.src='https://iiif.chartes.psl.eu/images/enc/logo-enc.png/full/120,/0/default.png'"
-                        :src="`${VUE_APP_IIIF_IMAGES_URL}/${position.id}/${position.id}_01.TIF/full/120,/0/default.jpg`"
-                      />
-                    </div>
-                    <div class="block column is-10">
-                      <div
-                        class="has-text-left is-size-5 position-title"
-                        v-html="position.fields.metadata.title_rich"
-                      ></div>
-                      <div class="has-text-left has-text-weight-bold position-author">
-                        {{ position.fields.metadata.author_name }}
-                        {{ position.fields.metadata.author_firstname }}
-                      </div>
-                      <div class="has-text-right is-inline-block position-infos">
-                        <span class="year"
-                          >Promotion : {{ position.fields.metadata.promotion_year }}</span
-                        >|<span class="period"
-                          >Période du sujet :
-                          {{ position.fields.metadata.topic_notBefore }} -
-                          {{ position.fields.metadata.topic_notAfter }}</span
-                        >
-                      </div>
-                      <div v-if="position.highlight" class="position-highlight">
-                        <span v-for="phrase in position.highlight.content" :key="phrase">
-                          <span v-html="phrase"></span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </router-link>
-              </template>
-            </div>
-          </div>
-          <div v-else class="table-container table-results">
-            <table
-              class="table is-hoverable is-narrow is-fulldwidth"
-              v-if="search.result.value && search.result.value.length"
-            >
-              <thead>
-                <tr>
-                  <th
-                    @click="inputSort = '-metadata.author_name.keyword'"
-                    v-if="inputSort === 'metadata.author_name.keyword'"
-                  >
-                    <div class="sortable sort-alpha-down"><span>Nom</span></div>
-                  </th>
-                  <th
-                    @click="inputSort = ''"
-                    v-else-if="inputSort === '-metadata.author_name.keyword'"
-                  >
-                    <div class="sortable sort-alpha-up"><span>Nom</span></div>
-                  </th>
-                  <th @click="inputSort = 'metadata.author_name.keyword'" v-else>
-                    <div class="sortable"><span>Nom</span></div>
-                  </th>
-                  <th>
-                    <div><span>Prénom</span></div>
-                  </th>
-                  <th
-                    class="largerTab"
-                    @click="inputSort = '-metadata.promotion_year'"
-                    v-if="inputSort === 'metadata.promotion_year'"
-                  >
-                    <div class="sortable sort-numeric-down">
-                      <abbr title="Promotion" class="is-inline-block">Prom.</abbr>
-                    </div>
-                  </th>
-                  <th
-                    class="largerTab"
-                    @click="inputSort = ''"
-                    v-else-if="inputSort === '-metadata.promotion_year'"
-                  >
-                    <div class="sortable sort-numeric-up">
-                      <abbr title="Promotion" class="is-inline-block">Prom.</abbr>
-                    </div>
-                  </th>
-                  <th
-                    class="largerTab"
-                    @click="inputSort = 'metadata.promotion_year'"
-                    v-else
-                  >
-                    <div class="sortable">
-                      <abbr title="Promotion" class="is-inline-block">Prom.</abbr>
-                    </div>
-                  </th>
-                  <th>
-                    <div><span>Titre</span></div>
-                  </th>
-                  <th
-                    class="largerTab"
-                    @click="inputSort = '-metadata.topic_notBefore'"
-                    v-if="inputSort === 'metadata.topic_notBefore'"
-                  >
-                    <div class="sortable sort-numeric-down">
-                      <abbr title="Période du sujet">De </abbr>
-                    </div>
-                  </th>
-                  <th
-                    class="largerTab"
-                    @click="inputSort = ''"
-                    v-else-if="inputSort === '-metadata.topic_notBefore'"
-                  >
-                    <div class="sortable sort-numeric-up">
-                      <abbr title="Période du sujet">De </abbr>
-                    </div>
-                  </th>
-                  <th
-                    class="largerTab"
-                    @click="inputSort = 'metadata.topic_notBefore'"
-                    v-else
-                  >
-                    <div class="sortable"><abbr title="Période du sujet">De </abbr></div>
-                  </th>
-                  <th
-                    class="inline"
-                    @click="inputSort = '-metadata.topic_notAfter'"
-                    v-if="inputSort === 'metadata.topic_notAfter'"
-                  >
-                    <div class="sortable sort-numeric-down">
-                      <abbr title="Période du sujet">A </abbr>
-                    </div>
-                  </th>
-                  <th
-                    class="inline"
-                    @click="inputSort = ''"
-                    v-else-if="inputSort === '-metadata.topic_notAfter'"
-                  >
-                    <div class="sortable sort-numeric-up">
-                      <abbr title="Période du sujet">A </abbr>
-                    </div>
-                  </th>
-                  <th
-                    class="inline"
-                    @click="inputSort = 'metadata.topic_notAfter'"
-                    v-else
-                  >
-                    <div class="sortable"><abbr title="Période du sujet">A </abbr></div>
-                  </th>
-                  <th></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <template v-for="position in search.result.value" :key="position.id">
-                  <tr class="row-infos" :class="positionCssClass(position)">
-                    <td>
-                      <router-link
-                        :to="{ name: 'DocumentPage', params: { docId: position.id } }"
-                      >
-                        {{ position.fields.metadata.author_name }}
-                      </router-link>
-                    </td>
-                    <td>{{ position.fields.metadata.author_firstname }}</td>
-                    <td>{{ position.fields.metadata.promotion_year }}</td>
-                    <td>
-                      <router-link
-                        :to="{ name: 'DocumentPage', params: { docId: position.id } }"
-                      >
-                        <span v-html="position.fields.metadata.title_rich"></span>
-                      </router-link>
-                    </td>
-                    <td>{{ position.fields.metadata.topic_notBefore }}</td>
-                    <td>{{ position.fields.metadata.topic_notAfter }}</td>
-                    <td class="inline oeil">
-                      <router-link
-                        :to="{ name: 'DocumentPage', params: { docId: position.id } }"
-                      />
-                    </td>
-                    <td
-                      v-if="
-                        isFulltextSearch &&
-                        isResultTableMode &&
-                        position.highlight !== null
-                      "
-                      class="inline"
-                      :class="
-                        !onrollActive.includes(position.id)
-                          ? 'chevron-up'
-                          : 'chevron-down'
-                      "
-                    >
-                      <a href="#" @click="rollActive($event, position.id)"></a>
-                    </td>
-                    <td v-else-if="position.highlight === null"></td>
-                  </tr>
-                  <tr
-                    v-if="
-                      onrollActive.includes(position.id) &&
-                      isFulltextSearch &&
-                      isResultTableMode &&
-                      position.highlight !== null
-                    "
-                    class="row-details"
-                  >
-                    <td colspan="8">
-                      <ul>
-                        <li v-for="phrase in position.highlight.content" :key="phrase">
-                          <span v-html="phrase"></span>
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                </template>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
@@ -445,20 +56,15 @@
 <script>
 // @ is an alias to /src
 import { computed, inject, ref, watch } from "vue";
-import VueSlider from "vue-slider-component";
 import "vue-slider-component/theme/antd.css";
-import Pagination from "@/components/Pagination";
-import Toggle from "@vueform/toggle";
-
+import NavCollection from "@/components/NavCollection.vue";
 
 const VUE_APP_IIIF_IMAGES_URL = `${process.env.VUE_APP_IIIF_IMAGES_URL}`;
 
 export default {
   name: "Home",
   components: {
-    VueSlider,
-    Pagination,
-    Toggle,
+    NavCollection,
   },
   setup() {
     const search = inject("search");
@@ -470,7 +76,8 @@ export default {
     async function executeSearches() {
       layout.rawSearchedTerm.value = inputTerm.value;
 
-      const t = inputTerm.value && inputTerm.value.length > 0 ? inputTerm.value : "***";
+      const t =
+        inputTerm.value && inputTerm.value.length > 0 ? inputTerm.value : "***";
       if (isFulltextSearch.value) {
         search.setTerm(`content:${t}`);
       } else {
@@ -514,7 +121,8 @@ export default {
       // try to restore else get the initial values
       return {
         term: layout.rawSearchedTerm.value || initialTerm,
-        isFulltextSearch: search.isFulltextSearch.value || initialIsFulltextSearch,
+        isFulltextSearch:
+          search.isFulltextSearch.value || initialIsFulltextSearch,
         isResultTableMode: search.isResultTableMode || initialIsResultTableMode,
         topicRange:
           notBefore && notAfter
@@ -550,7 +158,10 @@ export default {
     const inputPromotionYearRangeStart = computed({
       get: () => inputPromotionYearRange.value[0],
       set: (val) => {
-        const validatedVal = promotionYearValueValidation(val, minPromotionYear);
+        const validatedVal = promotionYearValueValidation(
+          val,
+          minPromotionYear
+        );
         if (validatedVal) {
           inputPromotionYearRange.value = [
             validatedVal,
@@ -631,8 +242,14 @@ export default {
       `gte:${inputPromotionYearRange.value[0]},lte:${inputPromotionYearRange.value[1]}`
     );
 
-    search.setRange("metadata.topic_notBefore", "gte:" + inputTopicRange.value[0]);
-    search.setRange("metadata.topic_notAfter", "lte:" + inputTopicRange.value[1]);
+    search.setRange(
+      "metadata.topic_notBefore",
+      "gte:" + inputTopicRange.value[0]
+    );
+    search.setRange(
+      "metadata.topic_notAfter",
+      "lte:" + inputTopicRange.value[1]
+    );
     search.setSorts(inputSort.value);
     search.setIsFulltextSearch(isFulltextSearch);
 
@@ -653,8 +270,14 @@ export default {
     });
 
     watch(inputTopicRange, () => {
-      search.setRange("metadata.topic_notBefore", "gte:" + inputTopicRange.value[0]);
-      search.setRange("metadata.topic_notAfter", "lte:" + inputTopicRange.value[1]);
+      search.setRange(
+        "metadata.topic_notBefore",
+        "gte:" + inputTopicRange.value[0]
+      );
+      search.setRange(
+        "metadata.topic_notAfter",
+        "lte:" + inputTopicRange.value[1]
+      );
       search.setPageNum(1);
       executeSearches();
     });
@@ -743,6 +366,11 @@ export default {
 
 <style src="@vueform/toggle/themes/default.css"></style>
 <style scoped>
+.liste-doc-area {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 28px;
+}
 .tile.page-header {
   margin-bottom: 46px;
 }
@@ -965,10 +593,16 @@ tr td.chevron-up a::before {
 .search-minimized .search-form > div.minimized-controls .search.button {
   flex: 44px 0 0;
 }
-.search-minimized .search-form > div.minimized-controls .expand-form-button.button {
+.search-minimized
+  .search-form
+  > div.minimized-controls
+  .expand-form-button.button {
   flex: calc(100% - 49px) 0 0;
 }
-.search-minimized .search-form > div.minimized-controls button.search.button.is-light {
+.search-minimized
+  .search-form
+  > div.minimized-controls
+  button.search.button.is-light {
   margin-left: 0;
 }
 .search-form .input {
@@ -979,8 +613,8 @@ tr td.chevron-up a::before {
   padding-top: 6px;
 }
 .search-form button.expand-form-button.button {
-  background: #868686 url(../assets/images/chevron_blanc_recherche.svg) left 15px top 20px /
-    15px auto no-repeat;
+  background: #868686 url(../assets/images/chevron_blanc_recherche.svg) left
+    15px top 20px / 15px auto no-repeat;
   border-radius: 4px !important;
 }
 .search-form button.search.button.is-light {

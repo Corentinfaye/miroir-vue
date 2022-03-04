@@ -22,7 +22,7 @@
               <b v-if="doc[0] === textid">
                 <div class="doc-title"><span v-html="doc[1]"></span></div>
               </b>
-              <router-link :to="doc[0]" v-else>
+              <router-link :to="{ name: 'DocumentPage', params: { docId: doc[0] } }" v-else>
                 <div>
                   <div class="doc-title" @click="inputCollection(doc[0])"><span v-html="doc[1]"></span></div>
                 </div>
