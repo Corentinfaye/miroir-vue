@@ -142,6 +142,8 @@ export default {
     const onrollActive = ref([]);
     const isFulltextSearch = ref(initialState.isFulltextSearch);
     const isResultTableMode = ref(initialState.isResultTableMode);
+    layout.actualCollection.value = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
+    layout.prevCollection.value = [];
     // Promotion Range : input v-model and validation
 
     const inputPromotionYearRange = ref(initialState.promotionYearRange);
@@ -367,6 +369,7 @@ export default {
 <style src="@vueform/toggle/themes/default.css"></style>
 <style scoped>
 .liste-doc-area {
+  background-color: inherit;
   padding-top: 50px;
   padding-bottom: 50px;
   margin-bottom: 28px;

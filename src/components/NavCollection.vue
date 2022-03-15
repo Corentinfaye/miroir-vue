@@ -24,7 +24,7 @@
               </b>
               <router-link :to="{ name: 'DocumentPage', params: { docId: doc[0] } }" v-else>
                 <div>
-                  <div class="doc-title" @click="inputCollection(doc[0])"><span v-html="doc[1]"></span></div>
+                  <div class="doc-title"><span v-html="doc[1]"></span></div>
                 </div>
               </router-link>
             </ul>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { ref, reactive, toRefs, watch, computed } from "vue";
+import { ref, reactive, toRefs, watch, computed, inject } from "vue";
 import { getMetadataFromApi } from "@/api/document";
 
 
@@ -46,6 +46,8 @@ export default {
   props: ["id", "textid"],
 
   async setup(props) {
+    const layout = inject("variable-layout");
+
     let state = reactive({
       isOpened: false,
     });
@@ -55,8 +57,8 @@ export default {
      const initialCollection = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
      const initalisePrevCollection = [];
      return {
-       collection: initialCollection,
-       prevCollection: initalisePrevCollection
+       collection: layout.actualCollection.value || initialCollection,
+       prevCollection: layout.prevCollection.value || initalisePrevCollection
      }
     }
 
@@ -70,7 +72,7 @@ export default {
 
     const getCollections = async () => {
       let metadata = {};
-      let tempData = {}
+      let tempData = {};
       let metadataListIndex = [];
       const data = await getMetadataFromApi(actualCollection.value);
 
@@ -91,10 +93,7 @@ export default {
             }
             i = i + 1
         }
-      } else{
-        actualCollection.value = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
-        prevCollection.value = [];
-      }
+      } 
       metadataListIndex.sort();
       for(var meta in tempData){
         metadata[metadataListIndex.indexOf(tempData[meta][1])] = tempData[meta];
@@ -103,19 +102,19 @@ export default {
     };
 
     const inputCollection = function (newCollection){
-      console.log(actualCollection);
       prevCollection.value.push(actualCollection.value);
-      console.log(prevCollection.value)
+      layout.prevCollection.value = prevCollection.value;
       actualCollection.value = newCollection;
+      layout.actualCollection.value = newCollection;
       getCollections();
       return actualCollection, prevCollection;
     };
 
     const getBackCollection = function (){
-      console.log(prevCollection.value)
       actualCollection.value = prevCollection.value[0];
-      console.log(prevCollection)
+      layout.actualCollection.value = actualCollection.value
       prevCollection.value.shift();
+      layout.prevCollection.value = prevCollection.value;
       getCollections();
       return actualCollection, prevCollection;
     };

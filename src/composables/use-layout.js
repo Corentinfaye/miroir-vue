@@ -9,6 +9,8 @@ export default function useLayout() {
       let viewMode = ref("text-mode");
 
       let rawSearchedTerm = ref('');
+      let actualCollection = ref(null);
+      let prevCollection = ref([]);
       
 
       const tocCssClass = computed(() => {
@@ -53,6 +55,8 @@ export default function useLayout() {
         imageIsAvailable,
         tocCssClass,
         tocMenuCssClass,
+        actualCollection,
+        prevCollection,
         toggleTOCContent,
         toggleTOCMenu,
         TOCMenuBtnCssClass,
