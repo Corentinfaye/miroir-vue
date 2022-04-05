@@ -48,6 +48,219 @@
             </div>
           </div>
         </div>
+
+            <div class="field is-flex px-2 search-form-footer">
+              <div class="control is-flex">
+                <label>Domaine de recherche</label>
+                <Toggle
+                  id="ToggleSwitch"
+                  on-label="Plein texte"
+                  off-label="Notice"
+                  v-model="isFulltextSearch"
+                />
+              </div>
+              <div v-if="search.result.value" class="results-count is-flex">
+                <span>{{ search.totalCount.value }}</span>
+                <span>résultat(s)</span>
+              </div>
+            </div>
+                    <div class="is-flex toggle-list-and-pagination" v-if="search.totalCount.value">
+            <div v-if="isFulltextSearch === true" class="is-inline-block">
+              <div class="field is-inline-block px-1">
+                <div class="control">
+                  <Toggle
+                    id="ToggleTableau"
+                    on-label="Tableau"
+                    off-label="Déplié"
+                    v-model="isResultTableMode"
+                    :width="120"
+                  />
+                </div>
+              </div>
+              <div
+                v-if="!isResultTableMode && isFulltextSearch"
+                class="field is-inline-block px-1"
+              >
+                <div class="control mb-6 block is-inline-block sort-options">
+                  <span> Tris </span>
+                  <div class="is-inline-block">
+                    <select name="tri" id="tri-select" v-model="inputSort">
+                      <option value="">Pertinence</option>
+                      <option
+                        :value="
+                          inputSort.includes('-')
+                            ? '-metadata.author'
+                            : 'metadata.author'
+                        "
+                      >
+                        Auteur
+                      </option>
+                      <option
+                        :value="
+                          inputSort.includes('-')
+                            ? '-metadata.date'
+                            : 'metadata.date'
+                        "
+                      >
+                        Date
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div v-if="search.pageCount" class="has-text-centered">
+              <pagination />
+            </div>
+          </div>
+          <div class="block text-results" v-if="isFulltextSearch && !isResultTableMode">
+            <div class="block text-results">
+              <div
+                class="table is-hoverable is-narrow is-fulldwidth"
+                v-if="search.result.value && search.result.value.length"
+              >
+                <template v-for="document in search.result.value" :key="document.id">
+                  <router-link
+                    :to="{
+                      name: 'DocumentPage',
+                      params: { docId: document.id },
+                    }"
+                    tag="tr"
+                    style="text-decoration: none; color: inherit"
+                  >
+                    <div class="columns mb-6">
+                      <div class="column is-2">
+                        <img
+                          class="pb-thumnbail"
+                          onerror="this.onerror=null; this.src='https://iiif.chartes.psl.eu/images/enc/logo-enc.png/full/120,/0/default.png'"
+                          :src="`${VUE_APP_IIIF_IMAGES_URL}/${document.id}/${document.id}_01.TIF/full/120,/0/default.jpg`"
+                        />
+                      </div>
+                      <div class="block column is-10">
+                        <div
+                          class="has-text-left is-size-5 document-title"
+                          v-html="document.fields.metadata.title_rich"
+                        ></div>
+                        <div class="has-text-left has-text-weight-bold document-author">
+                          {{ document.fields.metadata.author }}
+                        </div>
+                        <div v-if="document.highlight" class="document-highlight">
+                          <span v-for="phrase in document.highlight.content" :key="phrase">
+                            <span v-html="phrase"></span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </router-link>
+                </template>
+              </div>
+            </div>
+          </div>
+          <div v-else class="table-container table-results">
+            <table
+              class="table is-hoverable is-narrow is-fulldwidth"
+              v-if="search.result.value && search.result.value.length"
+            >
+              <thead>
+                <tr>
+                  <th
+                    @click="inputSort = '-metadata.author'"
+                    v-if="inputSort === 'metadata.author'"
+                  >
+                    <div class="sortable sort-alpha-down"><span>Auteur</span></div>
+                  </th>
+                  <th
+                    @click="inputSort = ''"
+                    v-else-if="inputSort === '-metadata.author'"
+                  >
+                    <div class="sortable sort-alpha-up"><span>Auteur</span></div>
+                  </th>
+                  <th @click="inputSort = 'metadata.author'" v-else>
+                    <div class="sortable"><span>Auteur</span></div>
+                  </th>
+                  <th>
+                    <div><span>Titre</span></div>
+                  </th>
+                  <th
+                    @click="inputSort = '-metadata.date'"
+                    v-if="inputSort === 'metadata.date'"
+                  >
+                    <div class="sortable sort-alpha-down"><span>Date</span></div>
+                  </th>
+                  <th
+                    @click="inputSort = ''"
+                    v-else-if="inputSort === '-metadata.date'"
+                  >
+                    <div class="sortable sort-alpha-up"><span>Date</span></div>
+                  </th>
+                  <th @click="inputSort = 'metadata.date'" v-else>
+                    <div class="sortable"><span>Date</span></div>
+                  </th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <template v-for="document in search.result.value" :key="document.id">
+                  <tr class="row-infos" :class="documentCssClass(document)">
+                    <td>
+                      <router-link
+                        :to="{ name: 'DocumentPage', params: { docId: document.id } }"
+                      >
+                        {{ document.fields.metadata.author }}
+                      </router-link>
+                    </td>
+                    <td>
+                      <router-link
+                        :to="{ name: 'DocumentPage', params: { docId: document.id } }"
+                      >
+                        <span v-html="document.fields.metadata.title_rich"></span>
+                      </router-link>
+                    </td>
+                    <td>{{ document.fields.metadata.date }}</td>
+                    <td class="inline oeil">
+                      <router-link
+                        :to="{ name: 'DocumentPage', params: { docId: document.id } }"
+                      />
+                    </td>
+                    <td
+                      v-if="
+                        isFulltextSearch &&
+                        isResultTableMode &&
+                        document.highlight !== null
+                      "
+                      class="inline"
+                      :class="
+                        !onrollActive.includes(document.id)
+                          ? 'chevron-up'
+                          : 'chevron-down'
+                      "
+                    >
+                      <a href="#" @click="rollActive($event, document.id)"></a>
+                    </td>
+                    <td v-else-if="document.highlight === null"></td>
+                  </tr>
+                  <tr
+                    v-if="
+                      onrollActive.includes(document.id) &&
+                      isFulltextSearch &&
+                      isResultTableMode &&
+                      document.highlight !== null
+                    "
+                    class="row-details"
+                  >
+                    <td colspan="8">
+                      <ul>
+                        <li v-for="phrase in document.highlight.content" :key="phrase">
+                          <span v-html="phrase"></span>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
       </div>
     </div>
   </section>
@@ -58,6 +271,7 @@
 import { computed, inject, ref, watch } from "vue";
 import "vue-slider-component/theme/antd.css";
 import NavCollection from "@/components/NavCollection.vue";
+import Toggle from "@vueform/toggle";
 
 const VUE_APP_IIIF_IMAGES_URL = `${process.env.VUE_APP_IIIF_IMAGES_URL}`;
 
@@ -65,6 +279,7 @@ export default {
   name: "Home",
   components: {
     NavCollection,
+    Toggle
   },
   setup() {
     const search = inject("search");
@@ -80,10 +295,6 @@ export default {
         inputTerm.value && inputTerm.value.length > 0 ? inputTerm.value : "***";
       if (isFulltextSearch.value) {
         search.setTerm(`content:${t}`);
-      } else {
-        search.setTerm(
-          `metadata.promotion_year:${t}+OR+metadata.topic_notBefore:${t}+OR+metadata.topic_notBefore:${t}+OR+metadata.title_rich:${t}+OR+metadata.author_name:${t}+OR+metadata.author_firstname:${t}`
-        );
       }
       await Promise.all([search.execute(), aggSearch.execute()]);
     }
@@ -100,23 +311,17 @@ export default {
       return isSearchMinimized.value ? "search-minimized" : "";
     });
 
-    const minPromotionYear = 1849;
-    const minTopicYear = -500;
     const currentYear = new Date().getFullYear();
 
     function getInitialState() {
       // initial values
       const initialTerm = "";
-      const initialTopicRange = [-500, currentYear];
-      const initialPromotionYearRange = [minPromotionYear, currentYear];
       //const initialSort = "-metadata.promotion_year";
       const initialIsFulltextSearch = true;
       const initialIsResultTableMode = true;
 
       // restore content
-      const notBefore = search.ranges["metadata.topic_notBefore"];
-      const notAfter = search.ranges["metadata.topic_notAfter"];
-      const promotionYear = search.ranges["metadata.promotion_year"];
+
 
       // try to restore else get the initial values
       return {
@@ -124,112 +329,20 @@ export default {
         isFulltextSearch:
           search.isFulltextSearch.value || initialIsFulltextSearch,
         isResultTableMode: search.isResultTableMode || initialIsResultTableMode,
-        topicRange:
-          notBefore && notAfter
-            ? [notBefore.replace("gte:", ""), notAfter.replace("lte:", "")]
-            : initialTopicRange,
         sort: search.sorts.value,
-        promotionYearRange: promotionYear
-          ? promotionYear.replace("lte:", "").replace("gte:", "").split(",")
-          : initialPromotionYearRange,
       };
     }
 
     const initialState = getInitialState();
 
     const inputTerm = ref(initialState.term);
-    const inputSort = ref(initialState.sort);
     const onrollActive = ref([]);
     const isFulltextSearch = ref(initialState.isFulltextSearch);
     const isResultTableMode = ref(initialState.isResultTableMode);
+    const inputSort = ref(initialState.sort);
     layout.actualCollection.value = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
     layout.prevCollection.value = [];
     // Promotion Range : input v-model and validation
-
-    const inputPromotionYearRange = ref(initialState.promotionYearRange);
-
-    const promotionYearValueValidation = function (val, defaultValue) {
-      const valStr = String(val);
-      if (valStr.length === 0 || isNaN(val)) {
-        return defaultValue;
-      } else if (valStr.length >= 4) {
-        return Math.max(minPromotionYear, Math.min(currentYear, val));
-      }
-    };
-
-    const inputPromotionYearRangeStart = computed({
-      get: () => inputPromotionYearRange.value[0],
-      set: (val) => {
-        const validatedVal = promotionYearValueValidation(
-          val,
-          minPromotionYear
-        );
-        if (validatedVal) {
-          inputPromotionYearRange.value = [
-            validatedVal,
-            inputPromotionYearRange.value[1],
-          ];
-        }
-      },
-    });
-
-    const inputPromotionYearRangeEnd = computed({
-      get: () => inputPromotionYearRange.value[1],
-      set: (val) => {
-        const validatedVal = promotionYearValueValidation(val, currentYear);
-        if (validatedVal) {
-          inputPromotionYearRange.value = [
-            inputPromotionYearRange.value[0],
-            validatedVal,
-          ];
-        }
-      },
-    });
-
-    // Topic Range : input v-model and validation
-
-    const inputTopicRange = ref(initialState.topicRange);
-
-    const topicYearValueValidation = function (val, defaultValue) {
-      const valStr = String(val);
-      if (valStr.length > 0 && isNaN(val)) {
-        return defaultValue;
-      } else {
-        return Math.max(minTopicYear, Math.min(currentYear, val));
-      }
-    };
-
-    const inputTopicRangeStart = computed({
-      get: () => inputTopicRange.value[0],
-      set: (val) => {
-        const validatedVal = topicYearValueValidation(val, minTopicYear);
-        if (validatedVal) {
-          inputTopicRange.value = [validatedVal, inputTopicRange.value[1]];
-        }
-      },
-    });
-
-    const inputTopicRangeEnd = computed({
-      get: () => inputTopicRange.value[1],
-      set: (val) => {
-        const validatedVal = topicYearValueValidation(val, currentYear);
-        if (validatedVal) {
-          inputTopicRange.value = [inputTopicRange.value[0], validatedVal];
-        }
-      },
-    });
-
-    const onBlurCheckTopicRangeStart = function ($event) {
-      if ($event.target.value === "" || isNaN($event.target.value)) {
-        inputTopicRange.value = [minTopicYear, inputTopicRange.value[1]];
-      }
-    };
-
-    const onBlurCheckTopicRangeEnd = function ($event) {
-      if ($event.target.value === "" || isNaN($event.target.value)) {
-        inputTopicRange.value = [inputTopicRange.value[0], currentYear];
-      }
-    };
 
     const deleteTerm = function () {
       inputTerm.value = "";
@@ -239,19 +352,6 @@ export default {
 
     search.setNoHighlight(isEmptyOrWildcards.test(inputTerm.value));
     search.setTerm(inputTerm.value);
-    search.setRange(
-      "metadata.promotion_year",
-      `gte:${inputPromotionYearRange.value[0]},lte:${inputPromotionYearRange.value[1]}`
-    );
-
-    search.setRange(
-      "metadata.topic_notBefore",
-      "gte:" + inputTopicRange.value[0]
-    );
-    search.setRange(
-      "metadata.topic_notAfter",
-      "lte:" + inputTopicRange.value[1]
-    );
     search.setSorts(inputSort.value);
     search.setIsFulltextSearch(isFulltextSearch);
 
@@ -262,28 +362,6 @@ export default {
 
     watch(isFulltextSearch, executeSearches);
 
-    watch(inputPromotionYearRange, () => {
-      search.setRange(
-        "metadata.promotion_year",
-        `gte:${inputPromotionYearRange.value[0]},lte:${inputPromotionYearRange.value[1]}`
-      );
-      search.setPageNum(1);
-      executeSearches();
-    });
-
-    watch(inputTopicRange, () => {
-      search.setRange(
-        "metadata.topic_notBefore",
-        "gte:" + inputTopicRange.value[0]
-      );
-      search.setRange(
-        "metadata.topic_notAfter",
-        "lte:" + inputTopicRange.value[1]
-      );
-      search.setPageNum(1);
-      executeSearches();
-    });
-
     watch(inputSort, () => {
       search.setSorts(inputSort.value);
       search.setPageNum(1);
@@ -292,8 +370,6 @@ export default {
 
     // set up the agg search and bind it to the search inputs changes
     aggSearch.setTerm(search.term.value);
-    aggSearch.setSorts(search.sorts.value);
-    aggSearch.setGroupbyField("metadata.promotion_year");
     aggSearch.setWithIds(true);
     Object.keys(search.ranges).map((k) => {
       aggSearch.setRange(k, search.ranges[k]);
@@ -325,16 +401,6 @@ export default {
       isFulltextSearch,
       isResultTableMode,
       inputTerm,
-      minTopicYear,
-      minPromotionYear,
-      inputPromotionYearRange,
-      inputPromotionYearRangeStart,
-      inputPromotionYearRangeEnd,
-      inputTopicRange,
-      inputTopicRangeStart,
-      inputTopicRangeEnd,
-      onBlurCheckTopicRangeStart,
-      onBlurCheckTopicRangeEnd,
       deleteTerm,
       inputSort,
       currentYear,
@@ -354,11 +420,11 @@ export default {
         }
       }
     },
-    positionCssClass: function (position) {
-      return this.onrollActive.includes(position.id) &&
+    documentCssClass: function (document) {
+      return this.onrollActive.includes(document.id) &&
         this.isFulltextSearch &&
         this.isResultTableMode &&
-        position.highlight !== null
+        document.highlight !== null
         ? "is-selected"
         : "";
     },
@@ -896,11 +962,11 @@ tr.row-infos:hover {
 tr.row-details {
   background-color: #f6f6f6;
 }
-.position-highlight span,
+.document-highlight span,
 tr.row-details li {
   display: inline;
 }
-.position-highlight span:not(:last-child)::after,
+.document-highlight span:not(:last-child)::after,
 tr.row-details li:not(:last-child)::after {
   content: " ••• ";
 }
@@ -933,7 +999,7 @@ tr.row-details :deep(li) {
 .text-results .table > a .columns.mb-6 {
   margin-bottom: 10px !important;
 }
-.text-results .table > a .position-title {
+.text-results .table > a .document-title {
   width: 65%;
   font-size: 22px;
   font-weight: 600;
@@ -941,25 +1007,25 @@ tr.row-details :deep(li) {
   color: #000000;
   margin-bottom: 10px;
 }
-.text-results .table > a .position-author {
+.text-results .table > a .document-author {
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
   text-transform: uppercase;
   color: #666666;
 }
-.text-results .table > a .position-infos {
+.text-results .table > a .document-infos {
   font-size: 16px;
   font-weight: 600;
   color: #828282;
 }
-.text-results .table > a .position-infos span.year {
+.text-results .table > a .document-infos span.year {
   margin-right: 8px;
 }
-.text-results .table > a .position-infos span.period {
+.text-results .table > a .document-infos span.period {
   margin-left: 8px;
 }
-.text-results .table > a .position-highlight {
+.text-results .table > a .document-highlight {
   font-family: "Libre Baskerville", serif;
   font-size: 16px;
   font-weight: 400;
@@ -1008,7 +1074,7 @@ tr.row-details :deep(em),
     display: none;
   }
   .text-results .table > a > .columns > .column:last-child,
-  .text-results .table > a .position-title {
+  .text-results .table > a .document-title {
     width: 100%;
   }
 }
@@ -1094,7 +1160,7 @@ tr.row-details :deep(em),
   .table-container tr.row-details ul {
     padding: 15px;
   }
-  .text-results .table > a .position-highlight,
+  .text-results .table > a .document-highlight,
   tr.row-details li {
     font-size: 14px;
     line-height: 24px;

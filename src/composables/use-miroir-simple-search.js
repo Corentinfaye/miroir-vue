@@ -3,7 +3,7 @@ import { readonly, ref} from "vue"
 import useSimpleSearch from "@/composables/use-simple-search"
 
 
-export default function useEncposSimpleSearch() {
+export default function useMiroirSimpleSearch() {
     const search = useSimpleSearch()
 
     const isFulltextSearch = ref(true)
@@ -14,7 +14,7 @@ export default function useEncposSimpleSearch() {
 
     const isResultTableMode = ref(true)
 
-    search.setSorts("-metadata.promotion_year")
+    search.setSorts("")
 
     return {
         term: search.term,

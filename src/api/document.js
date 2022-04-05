@@ -19,8 +19,9 @@ async function getPositionAnneeFromApi(id, options={}) {
     return document
 }
 
+
 export {
     getDocumentFromDTSApi,
     getMetadataFromApi,
-    getPositionAnneeFromApi
+    getPositionAnneeFromApi,
 }
