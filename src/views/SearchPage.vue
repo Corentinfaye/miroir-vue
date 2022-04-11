@@ -52,6 +52,7 @@
             <div class="field is-flex px-2 search-form-footer">
               <div class="control is-flex">
                 <label>Domaine de recherche</label>
+                <!--Modifier pour remplacer le Toggle -->
                 <Toggle
                   id="ToggleSwitch"
                   on-label="Plein texte"

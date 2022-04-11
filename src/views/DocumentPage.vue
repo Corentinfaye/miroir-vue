@@ -73,6 +73,7 @@ import Document from "@/components/Document.vue";
 import DocumentMetadata from "../components/DocumentMetadata.vue";
 import { getMetadataFromApi } from "@/api/document";
 
+
 import {
   computed,
   onMounted,
@@ -357,6 +358,7 @@ export default {
   width: 100% !important;
   padding: 20px 50px !important;
 }
+/*
 .toc-area .toc-area-content nav > ol.tree {
   columns: 4;
   gap: 40px;
@@ -388,6 +390,42 @@ export default {
 .tree ul {
   border: none !important;
 }
+*/
+ol.tree {
+  padding:0 0 0 2ex;
+  margin:0;
+  list-style:none;
+  font-size:12px;
+  font-family:Arial, sans-serif;
+  line-height:105%;
+}
+ol.tree ul {
+  list-style-type:none;
+  padding:0 !important;
+  margin:2px 0 2px 0 !important;
+}
+ol.tree li {
+  margin:2px 0 2px 0;
+  background-repeat: no-repeat;
+  background-position:0px 1px;
+  list-style-image:none !important;
+}
+ol.tree li {
+  padding-left: 12px !important;
+}
+
+ol.tree li.less ul {
+  display:block;
+}
+ol.tree li.more ul {
+  display:none;
+}
+ol.tree a.here {
+  background-color:#FFFFFF;
+  padding:0 1ex;
+}
+
+/**/
 .toc-content a:hover {
   background-color: transparent !important;
   border-radius: unset !important;
