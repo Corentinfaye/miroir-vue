@@ -399,7 +399,7 @@ ol.tree {
   font-family:Arial, sans-serif;
   line-height:105%;
 }
-ol.tree ul {
+ol.tree ol {
   list-style-type:none;
   padding:0 !important;
   margin:2px 0 2px 0 !important;
@@ -414,7 +414,7 @@ ol.tree li {
   padding-left: 12px !important;
 }
 
-ol.tree li.less ul {
+ol.tree li.less ol {
   display:block;
 }
 ol.tree li.more ul {
