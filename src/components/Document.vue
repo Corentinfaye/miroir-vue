@@ -8,6 +8,8 @@
 import { inject } from "vue";
 //import { defineAsyncComponent } from "vue/dist/vue.esm-bundler.js";
 import { getDocumentFromDTSApi } from "@/api/document";
+import '@/assets/js/Tree.js';
+
 export default {
   name: "Document",
 
@@ -64,10 +66,6 @@ export default {
 };
 </script>
 
-<style src="../assets/css/html.css" id="document-html-css">
-
-
-
-</style>
+<style src="../assets/css/html.css" id="document-html-css"></style>
 <style src="../assets/css/postprod.css"></style>
 <style src="../assets/css/miroir.css"></style>

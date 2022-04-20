@@ -100,6 +100,14 @@
     margin-bottom: 0.5pc;
 }
 
+.p.label{
+        color: #363636;
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+
 hr{
     text-align: center;
     margin: 2em auto 2.5em auto;
@@ -146,6 +154,12 @@ article > header > h1, h2 {
     font-weight: bold;
     line-height: inherit;
   }
+  h4.edition{
+    color: inherit;
+    font-weight: bold;
+    line-height: inherit;
+    margin: 38px 0 10px 0;
+  }
 .msIdentifier {
     text-align: center;
     color: #999;
@@ -179,10 +193,10 @@ span
 
 }
 
-.head.manuscrit{
+.head.imprime{
     color:black;
     font-weight: bold;
-
+    font-size: 2em;
 }
 li.witness .msIdentifier{
  font-size: inherit;
@@ -259,7 +273,12 @@ h5.titleMsPart{
     font-weight: bold;
 }
 
+h5{
+    font-size: 140%;
+}
+
 .highlight{
     background: yellow;
     font-weight: inherit;
   }
+/**/

@@ -179,6 +179,7 @@ export default {
       console.log(htmlnamespace)
       console.log(listmetadata)
       metadata.author = listmetadata["dts:extensions"][dcnamespace + ":creator"];
+      console.log(metadata.author)
       if (Array.isArray(metadata.author)){
         metadata.author.sort();
       }
@@ -212,9 +213,12 @@ export default {
       metadata.date = dublincore["dct:date"];
       metadata.page = dublincore["dct:extend"];
       metadata.coverage = dublincore["dct:coverage"];
-      metadata.rights = dublincore["dct:rights"][0]["@id"];
+      if(dublincore["dct:rights"]){
+        metadata.rights = dublincore["dct:rights"][0]["@id"];
+        }
       metadata.title = listmetadata["dts:extensions"][htmlnamespace + ":h1"];
       metadata.publisher = dublincore["dct:publisher"][0]["@value"];
+      metadata.contributor = dublincore["dct:contributor"]
 
 
       console.log("metadata.iiifManifestUrl", metadata.iiifManifestUrl);
@@ -677,21 +681,20 @@ ol.tree a.here {
   color: #971716;
   border-bottom: none;
   padding: 1em 0 0 0;
-  margin: 35px 0 43px 0px;
+  margin: 0px 0 43px 0px;
   text-align: center;
   font-variant: small-caps;
 }
 
 #article section.div h3.head {
   color: #222222;
-  margin: 35px 0 28px 0;
+  margin: 0px 0 28px 0;
   border-bottom: 0px dotted;
   text-align: center;
   padding: 1em 0 0 1ex;
   font-weight: bold;
   text-transform: none;
 }
-
 
 .toc-area-header a {
   color: inherit;

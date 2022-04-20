@@ -42,12 +42,25 @@
               <ul>
                 <li class="block" style="text-justify: none">
                   <template v-if="metadata.author"><span style="font-variant: all-small-caps">{{metadata.author}}</span
-                  >, </template> <template v-if="metadata.title">« <span v-html="metadata.title"></span> », </template> 
+                  >, </template> <template v-if="metadata.title">« <span v-html="metadata.title"></span> », </template>
+                <template v-if="metadata.contributor">
+                  <template v-if="Array.isArray(metadata.contributor) ">
+                    <span>texte édité par</span>
+                    <template v-for="contributor in metadata.contributor" :key="contributor">
+                      <span v-if="contributor != metadata.contributor.slice(-1)">{{ contributor }}, </span>
+                      <span v-else>{{ contributor }}</span>
+                    </template>
+                    <span>, </span>
+                  </template>
+                  <template v-else>
+                    <span>texte édité par {{ metadata.contributor }},</span>
+                  </template>
+                </template>
                   <template v-if="metadata.publisher">{{metadata.publisher}}, </template><template v-if="metadata.date">{{metadata.date}}</template>.
                 </li>
 
                 <li>
-                  <span
+                  <span v-if="metadata.rights"
                     >Licence : <a v-bind:href="metadata.rights" target="_blank">{{metadata.rights}}</a></span
                   >
                 </li>

@@ -164,6 +164,9 @@
             >
               <thead>
                 <tr>
+                  <th>
+                    <div><span>Catégorie</span></div>
+                  </th>
                   <th
                     @click="inputSort = '-metadata.author'"
                     v-if="inputSort === 'metadata.author'"
@@ -204,6 +207,7 @@
               <tbody>
                 <template v-for="document in search.result.value" :key="document.id">
                   <tr class="row-infos" :class="documentCssClass(document)">
+                    <td>{{ document.fields.metadata.genre }}</td>
                     <td>
                       <router-link
                         :to="{ name: 'DocumentPage', params: { docId: document.id } }"
@@ -273,6 +277,7 @@ import { computed, inject, ref, watch } from "vue";
 import "vue-slider-component/theme/antd.css";
 import NavCollection from "@/components/NavCollection.vue";
 import Toggle from "@vueform/toggle";
+import Pagination from "@/components/Pagination";
 
 const VUE_APP_IIIF_IMAGES_URL = `${process.env.VUE_APP_IIIF_IMAGES_URL}`;
 
@@ -280,7 +285,8 @@ export default {
   name: "Home",
   components: {
     NavCollection,
-    Toggle
+    Toggle,
+    Pagination
   },
   setup() {
     const search = inject("search");
