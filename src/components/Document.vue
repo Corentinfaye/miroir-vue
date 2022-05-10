@@ -1,7 +1,5 @@
 <template>
-  <Suspence>
     <div v-html="tmpDom.innerHTML" />
-  </Suspence>
 </template>
 
 <script>
@@ -24,12 +22,11 @@ export default {
 
 
   // fetch the initial template
-      let data;
-      data = await getDocumentFromDTSApi(props.id);
-      console.log("Coucou")
+      let data = await getDocumentFromDTSApi(props.id);
       // build a temporary dom just to ease the navigation inside the document
       let tmpDom = document.createElement("div");
       tmpDom.innerHTML = data;
+      console.log(tmpDom.innerHTML)
       if(teamsearch.value != "") {
         if (teamsearch.value.includes("+")){
           for(let word of teamsearch.value.split('+')){
@@ -56,7 +53,7 @@ export default {
       tocAsideDest.appendChild(toc.cloneNode(true));
 
       // return what will make the async component
-      console.log(tmpDom.innerHTML.length)
+
       
     return {
       tmpDom,

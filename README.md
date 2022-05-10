@@ -1,4 +1,4 @@
-# encpos-vue
+# miroir-vue
 
 ## Project setup
 ```
