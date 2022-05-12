@@ -1,5 +1,8 @@
 # miroir-vue
 
+Client Vue pour consulter les notices et éditions du projet [Miroir des classiques](https://github.com/chartes/miroir), via le endpoint DTS de l’ENC.
+
+
 ## Project setup
 ```
 npm install
