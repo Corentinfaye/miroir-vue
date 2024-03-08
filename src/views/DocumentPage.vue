@@ -168,7 +168,6 @@ export default {
 
     const getMetadata = async (docId) => {
       const listmetadata = await getMetadataFromApi(docId);
-      console.log("Test");
       console.log(listmetadata);
       var dcnamespace = Object.keys(listmetadata["@context"]).find((k) =>
         listmetadata["@context"][k].includes("dc/elements")
@@ -260,7 +259,7 @@ export default {
 
     const setMirador = function () {
       fetch(metadata.iiifManifestUrl, {
-        method: "HEAD",
+        method: "GET",
       })
         .then((r) => {
           manifestIsAvailable.value = r.ok;
