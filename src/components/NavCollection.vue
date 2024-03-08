@@ -11,20 +11,33 @@
     <div class="list-body">
       <div class="menu-list-scrollable thin-scroll">
         <i v-if="prevCollection.length > 0" class="fas fa-reply" @click="getBackCollection()"></i>
-        <ul class="menu-list" v-if="state.metadata">
+        <ul
+          v-if="state.metadata"
+          :class="prevCollection.length === 0 ? 'first_list' : ''"
+          class="menu-list"
+        >
           <li v-for="doc in state.metadata" :key="doc">
             <ul v-if="doc[2] === 'Collection'">
               <div>
-                <div class="doc-title" @click="inputCollection(doc[0])"><span v-html="doc[1]"></span></div>
+                <div
+                  class="doc-title-collection"
+                  @click="inputCollection(doc[0])"
+                >
+                  <span v-html="doc[1]"/>
+                </div>
               </div>
             </ul>
             <ul v-else>
               <b v-if="doc[0] === textid">
-                <div class="doc-title"><span v-html="doc[1]"></span></div>
+                <div class="doc-title">
+                  <span v-html="doc[1]"/>
+                </div>
               </b>
               <router-link :to="{ name: 'DocumentPage', params: { docId: doc[0] } }" v-else>
                 <div>
-                  <div class="doc-title"><span v-html="doc[1]"></span></div>
+                  <div class="doc-title">
+                    <span v-html="doc[1]"/>
+                  </div>
                 </div>
               </router-link>
             </ul>
@@ -85,17 +98,38 @@ export default {
         for (var doc of data["member"]) {
             try {
               var title = doc["dts:extensions"][htmlnamespace + ":h1"];
+              title = title.trim()
               tempData[i] = [doc["@id"], title, doc["@type"]];
-              metadataListIndex.push(title) 
+              metadataListIndex.push(title)
             } catch {
-              tempData[i] = [doc["@id"], doc["title"], doc["@type"]];
-              metadataListIndex.push(doc["title"]) 
-            }
+
+              if (doc["title"] === "Le miroir des classiques : classiques_latins"){
+                let tempTitle = "Traductions des classiques latins";
+                tempData[i] = [doc["@id"], tempTitle, doc["@type"]];
+                metadataListIndex.unshift(tempTitle);
+              } else if (doc["title"] === "Le miroir des classiques : manuscrits_juridiques"){
+                let tempTitle = "Traductions du Corpus juris civilis";
+                tempData[i] = [doc["@id"], tempTitle, doc["@type"]];
+                metadataListIndex.unshift(tempTitle);
+              } else if (doc["title"] === "Le miroir des classiques : edition") {
+                let tempTitle = "Le miroir des classiques : éditions";
+                tempData[i] = [doc["@id"], tempTitle, doc["@type"]];
+                metadataListIndex.push(tempTitle);
+              } else {
+              metadataListIndex.push(doc["title"]);
+              }
+
+            } //console.log("metadataListIndex : ", metadataListIndex)
             i = i + 1
         }
-      } 
-      metadataListIndex.sort();
+      }
+      if (tempData[1][2] !== 'Collection'){
+        metadataListIndex.sort();
+      }
+      //metadataListIndex.sort();
+      //console.log("metadataListIndex sorted: ", metadataListIndex)
       for(var meta in tempData){
+        //console.log("tempData : ", tempData)
         metadata[metadataListIndex.indexOf(tempData[meta][1])] = tempData[meta];
       }
       state.metadata = metadata;
@@ -300,6 +334,10 @@ nav button > span {
   padding: 10px 20px 10px 0;
   max-height: 50vh;
   overflow-y: auto;
+  > .first_list :nth-child(3){
+    border-left: solid;
+    border-color: #b9192f !important;
+  }
 }
 
 *.thin-scroll {
@@ -334,9 +372,17 @@ nav button > span {
 .menu-list li ul {
   padding-left: 0;
 }
-.menu-list > li {
+.menu-list:not(.first_list) > li {
   display: inline-block;
   margin-bottom: 20px;
+  break-inside: avoid;
+}
+.menu-list.first_list > li {
+  display: inline-block;
+  margin: 0px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
   break-inside: avoid;
 }
 .menu-list li > ul {
@@ -410,8 +456,8 @@ ul {
     width: auto;
   }
   .liste-doc-area {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .menu-list {
     columns: 1;
