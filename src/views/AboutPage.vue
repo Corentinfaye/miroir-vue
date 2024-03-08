@@ -956,7 +956,7 @@
       <div id ="miroirclassiques2016">
         <h2>Le Miroir des classiques 2 [2016]</h2>
          <div class="intro">
-        <p class="texte">L’Equipement d’excellence <a href="http://www.biblissima-condorcet.fr/">Biblissima</a> (financé par le programme des Investissements d’avenir) a permis d’ouvrir une nouvelle phase du <em>Miroir des classiques</em>.
+        <p class="texte">L’Equipement d’excellence <a href="https://biblissima.fr/">Biblissima</a> (financé par le programme des Investissements d’avenir<a id="miroir2_appel1" class="appel_note" href="#miroir2_note1"> 1</a>) a permis d’ouvrir une nouvelle phase du <em>Miroir des classiques</em>.
  Plutôt que de poursuivre l’enrichissement du corpus général, il a été 
 décidé de décrire de façon très détaillée les traductions gallo-romanes 
 du <em>Corpus juris civilis</em>. Gustav Gröber en avait commencé l’inventaire (<em>Grundriss der romanischen Philologie</em>,
@@ -965,8 +965,8 @@ méconnues. Jacques Monfrin, qui les avait traitées très sommairement
 dans l’<em>Inventaire critique</em>, y soulignait pourtant que la plus ancienne traduction d’un texte classique était sans doute celle des <em>Institutes</em> de Justinien.</p>
         <p class="texte">Depuis, la recherche n’a que peu progressé. 
 Malgré quelques articles et travaux universitaires, aucun panorama 
-général n’était à ce jour disponible et l’utile répertoire <em>Translations médiévales</em><a onmouseout="HideBulle()" onmouseover="AffBulle('Translations médiévales. Six siècles de traductions en français (Xe-XVe siècles), Etude et répertoire, dir. Claudio Galderisi, Turnhout, 2011, t. II, p. 634-640.')" id="appelnote1" class="appel_note" href="#footnote1">1</a>
- ne liste pas le tiers des traductions qui nous sont parvenues. C’est 
+général n’était à ce jour disponible et l’utile répertoire <em>Translations médiévales</em><a onmouseout="HideBulle()" onmouseover="AffBulle('Translations médiévales. Six siècles de traductions en français (Xe-XVe siècles), Etude et répertoire, dir. Claudio Galderisi, Turnhout, 2011, t. II, p. 634-640.')" id="miroir2_appel2" class="appel_note" href="#miroir2_note2"> 2</a>
+ ne liste pas le tiers des traductions qui nous sont parvenues. C’est
 peu dire que le domaine était en friche. Parmi les quelques 
 contributions à la connaissance de ces traductions, mentionnons :</p>
         <ul>
@@ -1006,7 +1006,26 @@ projet est également redevable à Mathilde Henriquet et à Pascal
 Campeotto (Ecole des chartes) ainsi qu’au pool Biblissima.</p>
     </div>
     <hr class="notes">
-    <p class="notes"><a class="footnote" id="footnote1" href="#appelnote1">1</a><em>Translations médiévales. Six siècles de traductions en français (X<sup>e</sup>-XV<sup>e</sup> siècles), Etude et répertoire</em>, dir. Claudio Galderisi, Turnhout, 2011, t. II, p. 634-640.</p>
+    <p class="notes">
+      <a
+        class="footnote"
+        id="miroir2_note1"
+        href="#miroir2_appel1"
+      >
+        1
+      </a>
+          Ce travail a bénéficié́ d'une aide de l’État gérée par l'Agence Nationale de la Recherche au titre du programme d’Investissements d’avenir portant la référence ANR-21-ESRE-0005 (Biblissima+).
+    </p>
+    <p>
+      <a
+        class="footnote"
+        id="miroir2_note2"
+        href="#miroir2_appel2"
+      >
+        2
+      </a>
+      <em>Translations médiévales. Six siècles de traductions en français (X<sup>e</sup>-XV<sup>e</sup> siècles), Etude et répertoire</em>, dir. Claudio Galderisi, Turnhout, 2011, t. II, p. 634-640.
+    </p>
       </div>
       <h1 id="definitioncorpus">Définition du Corpus</h1>
       <div id="corpustextessources">

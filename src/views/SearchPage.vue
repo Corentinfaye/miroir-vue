@@ -443,12 +443,12 @@ export default {
 <style scoped>
 .liste-doc-area {
   background-color: inherit;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-bottom: 28px;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  margin-bottom: 25px;
 }
 .tile.page-header {
-  margin-bottom: 46px;
+  margin-bottom: 50px;
 }
 abbr {
   text-decoration: none !important;
@@ -610,9 +610,9 @@ tr td.chevron-up a::before {
 }
 .search-form-and-carousel {
   gap: 20px;
-  padding-bottom: 50px !important;
+  padding-bottom: 25px !important;
   border-bottom: solid 1px #b8b8b8;
-  margin-bottom: 24px !important;
+  margin-bottom: 25px !important;
 }
 .search-form {
   background-color: #f0f0f0 !important;
@@ -628,7 +628,7 @@ tr td.chevron-up a::before {
 }
 .search-form > *:not(:first-child) {
   background-color: #e4e4e4;
-  margin-bottom: 0;
+  margin-bottom: 24px;
 }
 .search-form > *.search-form-footer {
   padding: 24px !important;
@@ -709,6 +709,7 @@ tr td.chevron-up a::before {
   border-bottom-right-radius: 6px;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
 }
 .search-form-footer .control label {
   margin-right: 10px;
