@@ -15,6 +15,7 @@ const routes = [
   },
   {
     path: '/documentation',
+    redirect: '/',
     name: 'DocumentationPage',
     component:  () => import(/* webpackChunkName: "search" */ '../views/DocumentationPage.vue')
   },
