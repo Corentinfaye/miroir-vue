@@ -128,7 +128,6 @@ export default {
   async setup() {
     const manifestIsAvailable = ref(false);
 
-    // Mirador view sticky behavior
     let miradorViewBoundingTop = ref(0);
     const miradorViewCssStyle = computed(() => {
       return { marginTop: miradorViewBoundingTop.value + "px" };

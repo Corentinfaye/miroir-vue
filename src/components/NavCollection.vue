@@ -67,7 +67,7 @@ export default {
     const { id } = toRefs(props);
 
     function getInitialState() {
-     const initialCollection = `${process.env.VUE_APP_APP_ROOT_COLLECTION_ID}`;
+     const initialCollection = `${import.meta.env.VITE_APP_ROOT_COLLECTION_ID}`;
      const initalisePrevCollection = [];
      return {
        collection: layout.actualCollection.value || initialCollection,
