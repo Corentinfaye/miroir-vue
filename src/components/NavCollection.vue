@@ -49,127 +49,121 @@
 </template>
 
 <script>
-import { ref, reactive, toRefs, watch, computed, inject } from "vue";
-import { getMetadataFromApi } from "@/api/document";
-
+import { ref, reactive, toRefs, watch, computed, inject } from 'vue'
+import { getMetadataFromApi } from '@/api/document'
 
 export default {
-  name: "NavCollection",
+  name: 'NavCollection',
 
-  props: ["id", "textid"],
+  props: ['id', 'textid'],
 
-  async setup(props) {
-    const layout = inject("variable-layout");
+  async setup (props) {
+    const layout = inject('variable-layout')
 
-    let state = reactive({
-      isOpened: false,
-    });
-    const { id } = toRefs(props);
+    const state = reactive({
+      isOpened: false
+    })
+    const { id } = toRefs(props)
 
-    function getInitialState() {
-     const initialCollection = `${import.meta.env.VITE_APP_ROOT_COLLECTION_ID}`;
-     const initalisePrevCollection = [];
-     return {
-       collection: layout.actualCollection.value || initialCollection,
-       prevCollection: layout.prevCollection.value || initalisePrevCollection
-     }
+    function getInitialState () {
+      const initialCollection = `${import.meta.env.VITE_APP_ROOT_COLLECTION_ID}`
+      const initalisePrevCollection = []
+      return {
+        collection: layout.actualCollection.value || initialCollection,
+        prevCollection: layout.prevCollection.value || initalisePrevCollection
+      }
     }
 
-    const doc = ref(id.value.toString());
+    const doc = ref(id.value.toString())
 
-
-    const initialState = getInitialState();
-    let actualCollection = ref(initialState.collection);
-    let prevCollection = ref(initialState.prevCollection);
-
+    const initialState = getInitialState()
+    const actualCollection = ref(initialState.collection)
+    const prevCollection = ref(initialState.prevCollection)
 
     const getCollections = async () => {
-      let metadata = {};
-      let tempData = {};
-      let metadataListIndex = [];
-      const data = await getMetadataFromApi(actualCollection.value);
+      const metadata = {}
+      const tempData = {}
+      const metadataListIndex = []
+      const data = await getMetadataFromApi(actualCollection.value)
 
-      var htmlnamespace = Object.keys(data["@context"]).find((k) =>
-        data["@context"][k].includes("html")
-      );
+      const htmlnamespace = Object.keys(data['@context']).find((k) =>
+        data['@context'][k].includes('html')
+      )
 
-      let i = 1;
-      if (data && data["member"]) {
-        for (var doc of data["member"]) {
-            try {
-              var title = doc["dts:extensions"][htmlnamespace + ":h1"];
-              title = title.trim()
-              tempData[i] = [doc["@id"], title, doc["@type"]];
-              metadataListIndex.push(title)
-            } catch {
-
-              if (doc["title"] === "Le miroir des classiques : classiques_latins"){
-                let tempTitle = "Traductions des classiques latins";
-                tempData[i] = [doc["@id"], tempTitle, doc["@type"]];
-                metadataListIndex.unshift(tempTitle);
-              } else if (doc["title"] === "Le miroir des classiques : manuscrits_juridiques"){
-                let tempTitle = "Traductions du Corpus juris civilis";
-                tempData[i] = [doc["@id"], tempTitle, doc["@type"]];
-                metadataListIndex.unshift(tempTitle);
-              } else if (doc["title"] === "Le miroir des classiques : edition") {
-                let tempTitle = "Le miroir des classiques : éditions";
-                tempData[i] = [doc["@id"], tempTitle, doc["@type"]];
-                metadataListIndex.push(tempTitle);
-              } else {
-              metadataListIndex.push(doc["title"]);
-              }
-
-            } //console.log("metadataListIndex : ", metadataListIndex)
-            i = i + 1
+      let i = 1
+      if (data && data.member) {
+        for (const doc of data.member) {
+          try {
+            let title = doc['dts:extensions'][htmlnamespace + ':h1']
+            title = title.trim()
+            tempData[i] = [doc['@id'], title, doc['@type']]
+            metadataListIndex.push(title)
+          } catch {
+            if (doc.title === 'Le miroir des classiques : classiques_latins') {
+              const tempTitle = 'Traductions des classiques latins'
+              tempData[i] = [doc['@id'], tempTitle, doc['@type']]
+              metadataListIndex.unshift(tempTitle)
+            } else if (doc.title === 'Le miroir des classiques : manuscrits_juridiques') {
+              const tempTitle = 'Traductions du Corpus juris civilis'
+              tempData[i] = [doc['@id'], tempTitle, doc['@type']]
+              metadataListIndex.unshift(tempTitle)
+            } else if (doc.title === 'Le miroir des classiques : edition') {
+              const tempTitle = 'Le miroir des classiques : éditions'
+              tempData[i] = [doc['@id'], tempTitle, doc['@type']]
+              metadataListIndex.push(tempTitle)
+            } else {
+              metadataListIndex.push(doc.title)
+            }
+          } // console.log("metadataListIndex : ", metadataListIndex)
+          i = i + 1
         }
       }
-      if (tempData[1][2] !== 'Collection'){
-        metadataListIndex.sort();
+      if (tempData[1][2] !== 'Collection') {
+        metadataListIndex.sort()
       }
-      //metadataListIndex.sort();
-      //console.log("metadataListIndex sorted: ", metadataListIndex)
-      for(var meta in tempData){
-        //console.log("tempData : ", tempData)
-        metadata[metadataListIndex.indexOf(tempData[meta][1])] = tempData[meta];
+      // metadataListIndex.sort();
+      // console.log("metadataListIndex sorted: ", metadataListIndex)
+      for (const meta in tempData) {
+        // console.log("tempData : ", tempData)
+        metadata[metadataListIndex.indexOf(tempData[meta][1])] = tempData[meta]
       }
-      state.metadata = metadata;
-    };
+      state.metadata = metadata
+    }
 
-    const inputCollection = function (newCollection){
-      prevCollection.value.push(actualCollection.value);
-      layout.prevCollection.value = prevCollection.value;
-      actualCollection.value = newCollection;
-      layout.actualCollection.value = newCollection;
-      getCollections();
-      return actualCollection, prevCollection;
-    };
+    const inputCollection = function (newCollection) {
+      prevCollection.value.push(actualCollection.value)
+      layout.prevCollection.value = prevCollection.value
+      actualCollection.value = newCollection
+      layout.actualCollection.value = newCollection
+      getCollections()
+      return { actualCollection, prevCollection }
+    }
 
-    const getBackCollection = function (){
-      actualCollection.value = prevCollection.value[0];
+    const getBackCollection = function () {
+      actualCollection.value = prevCollection.value[0]
       layout.actualCollection.value = actualCollection.value
-      prevCollection.value.shift();
-      layout.prevCollection.value = prevCollection.value;
-      getCollections();
-      return actualCollection, prevCollection;
-    };
+      prevCollection.value.shift()
+      layout.prevCollection.value = prevCollection.value
+      getCollections()
+      return { actualCollection, prevCollection }
+    }
 
-    watch(actualCollection ,getCollections);
+    watch(actualCollection, getCollections)
 
     const listCssClass = computed(() => {
-      return state.isOpened ? "is-opened" : "";
-    });
+      return state.isOpened ? 'is-opened' : ''
+    })
 
     const toggleContent = function (event) {
-      event.preventDefault();
-      state.isOpened = !state.isOpened;
-    };
+      event.preventDefault()
+      state.isOpened = !state.isOpened
+    }
 
-    
-    await Promise.all([getCollections()]);
+    await Promise.all([getCollections()])
 
     const gotoTop = function () {
-      scroll(0, 0);
-    };
+      scroll(0, 0)
+    }
 
     return {
       state,
@@ -181,9 +175,9 @@ export default {
       prevCollection,
       inputCollection,
       getBackCollection
-    };
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

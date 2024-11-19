@@ -126,7 +126,6 @@
                       name: 'DocumentPage',
                       params: { docId: document.id },
                     }"
-                    tag="tr"
                     style="text-decoration: none; color: inherit"
                   >
                     <div class="columns mb-6">
@@ -273,62 +272,61 @@
 
 <script>
 // @ is an alias to /src
-import { computed, inject, ref, watch } from "vue";
-import "vue-slider-component/theme/antd.css";
-import NavCollection from "@/components/NavCollection.vue";
-import Toggle from "@vueform/toggle";
-import Pagination from "@/components/Pagination";
+import { computed, inject, ref, watch } from 'vue'
+import 'vue-slider-component/theme/antd.css'
+import NavCollection from '@/components/NavCollection.vue'
+import Toggle from '@vueform/toggle'
+import Pagination from '@/components/Pagination'
 
-const VITE_IIIF_IMAGES_URL = `${import.meta.env.VITE_IIIF_IMAGES_URL}`;
+const VITE_IIIF_IMAGES_URL = `${import.meta.env.VITE_IIIF_IMAGES_URL}`
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     NavCollection,
     Toggle,
     Pagination
   },
-  setup() {
-    const search = inject("search");
-    const aggSearch = inject("agg-search");
-    const layout = inject("variable-layout");
+  setup () {
+    const search = inject('search')
+    const aggSearch = inject('agg-search')
+    const layout = inject('variable-layout')
 
-    let isSearchMinimized = ref(false);
+    const isSearchMinimized = ref(false)
 
-    async function executeSearches() {
-      layout.rawSearchedTerm.value = inputTerm.value;
+    async function executeSearches () {
+      layout.rawSearchedTerm.value = inputTerm.value
 
       const t =
-        inputTerm.value && inputTerm.value.length > 0 ? inputTerm.value : "***";
+        inputTerm.value && inputTerm.value.length > 0 ? inputTerm.value : '***'
       if (isFulltextSearch.value) {
-        search.setTerm(`content:${t}`);
+        search.setTerm(`content:${t}`)
       }
-      await Promise.all([search.execute(), aggSearch.execute()]);
+      await Promise.all([search.execute(), aggSearch.execute()])
     }
 
     const minimizeSearchForm = function () {
-      isSearchMinimized.value = true;
-    };
+      isSearchMinimized.value = true
+    }
 
     const expandSearchForm = function () {
-      isSearchMinimized.value = false;
-    };
+      isSearchMinimized.value = false
+    }
 
     const searchMinimizedCssClass = computed(() => {
-      return isSearchMinimized.value ? "search-minimized" : "";
-    });
+      return isSearchMinimized.value ? 'search-minimized' : ''
+    })
 
-    const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear()
 
-    function getInitialState() {
+    function getInitialState () {
       // initial values
-      const initialTerm = "";
-      //const initialSort = "-metadata.promotion_year";
-      const initialIsFulltextSearch = true;
-      const initialIsResultTableMode = true;
+      const initialTerm = ''
+      // const initialSort = "-metadata.promotion_year";
+      const initialIsFulltextSearch = true
+      const initialIsResultTableMode = true
 
       // restore content
-
 
       // try to restore else get the initial values
       return {
@@ -336,66 +334,66 @@ export default {
         isFulltextSearch:
           search.isFulltextSearch.value || initialIsFulltextSearch,
         isResultTableMode: search.isResultTableMode || initialIsResultTableMode,
-        sort: search.sorts.value,
-      };
+        sort: search.sorts.value
+      }
     }
 
-    const initialState = getInitialState();
+    const initialState = getInitialState()
 
-    const inputTerm = ref(initialState.term);
-    const onrollActive = ref([]);
-    const isFulltextSearch = ref(initialState.isFulltextSearch);
-    const isResultTableMode = ref(initialState.isResultTableMode);
-    const inputSort = ref(initialState.sort);
-    layout.actualCollection.value = `${import.meta.env.VITE_APP_ROOT_COLLECTION_ID}`;
-    layout.prevCollection.value = [];
+    const inputTerm = ref(initialState.term)
+    const onrollActive = ref([])
+    const isFulltextSearch = ref(initialState.isFulltextSearch)
+    const isResultTableMode = ref(initialState.isResultTableMode)
+    const inputSort = ref(initialState.sort)
+    layout.actualCollection.value = `${import.meta.env.VITE_APP_ROOT_COLLECTION_ID}`
+    layout.prevCollection.value = []
     // Promotion Range : input v-model and validation
 
     const deleteTerm = function () {
-      inputTerm.value = "";
-    };
+      inputTerm.value = ''
+    }
 
-    const isEmptyOrWildcards = new RegExp("^[*]*$");
+    const isEmptyOrWildcards = /^[*]*$/
 
-    search.setNoHighlight(isEmptyOrWildcards.test(inputTerm.value));
-    search.setTerm(inputTerm.value);
-    search.setSorts(inputSort.value);
-    search.setIsFulltextSearch(isFulltextSearch);
+    search.setNoHighlight(isEmptyOrWildcards.test(inputTerm.value))
+    search.setTerm(inputTerm.value)
+    search.setSorts(inputSort.value)
+    search.setIsFulltextSearch(isFulltextSearch)
 
     watch(inputTerm, () => {
-      search.setNoHighlight(isEmptyOrWildcards.test(inputTerm.value));
-      search.setTerm(inputTerm.value);
-    });
+      search.setNoHighlight(isEmptyOrWildcards.test(inputTerm.value))
+      search.setTerm(inputTerm.value)
+    })
 
-    watch(isFulltextSearch, executeSearches);
+    watch(isFulltextSearch, executeSearches)
 
     watch(inputSort, () => {
-      search.setSorts(inputSort.value);
-      search.setPageNum(1);
-      search.execute();
-    });
+      search.setSorts(inputSort.value)
+      search.setPageNum(1)
+      search.execute()
+    })
 
     // set up the agg search and bind it to the search inputs changes
-    aggSearch.setTerm(search.term.value);
-    aggSearch.setWithIds(true);
-    Object.keys(search.ranges).map((k) => {
-      aggSearch.setRange(k, search.ranges[k]);
-    });
+    aggSearch.setTerm(search.term.value)
+    aggSearch.setWithIds(true)
+    Object.keys(search.ranges).forEach((k) => {
+      aggSearch.setRange(k, search.ranges[k])
+    })
 
     watch(search.term, () => {
-      aggSearch.setTerm(search.term.value);
-    });
+      aggSearch.setTerm(search.term.value)
+    })
     watch(search.sorts, () => {
-      aggSearch.setSorts(search.sorts.value);
-    });
+      aggSearch.setSorts(search.sorts.value)
+    })
     watch(search.ranges, () => {
-      Object.keys(search.ranges).map((k) => {
-        aggSearch.setRange(k, search.ranges[k]);
-      });
-    });
+      Object.keys(search.ranges).forEach((k) => {
+        aggSearch.setRange(k, search.ranges[k])
+      })
+    })
 
     // run the initial searches
-    executeSearches();
+    executeSearches()
 
     return {
       layout,
@@ -412,18 +410,18 @@ export default {
       inputSort,
       currentYear,
       onrollActive,
-      VITE_IIIF_IMAGES_URL,
-    };
+      VITE_IIIF_IMAGES_URL
+    }
   },
   methods: {
     rollActive: function (event, id) {
-      event.preventDefault();
+      event.preventDefault()
       if (this.onrollActive.includes(id) === false) {
-        this.onrollActive.push(id);
+        this.onrollActive.push(id)
       } else {
-        const index = this.onrollActive.indexOf(id);
+        const index = this.onrollActive.indexOf(id)
         if (index > -1) {
-          this.onrollActive.splice(index, 1);
+          this.onrollActive.splice(index, 1)
         }
       }
     },
@@ -432,11 +430,11 @@ export default {
         this.isFulltextSearch &&
         this.isResultTableMode &&
         document.highlight !== null
-        ? "is-selected"
-        : "";
-    },
-  },
-};
+        ? 'is-selected'
+        : ''
+    }
+  }
+}
 </script>
 
 <style src="@vueform/toggle/themes/default.css"></style>

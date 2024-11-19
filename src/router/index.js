@@ -6,25 +6,25 @@ const routes = [
   {
     path: '/',
     name: 'SearchPage',
-    component:  () => import('../views/SearchPage.vue')
+    component: () => import('../views/SearchPage.vue')
   },
   {
     path: '/about',
     name: 'AboutPage',
-    component:  () => import( '../views/AboutPage.vue')
+    component: () => import('../views/AboutPage.vue')
   },
   {
     path: '/documentation',
     redirect: '/',
     name: 'DocumentationPage',
-    component:  () => import( '../views/DocumentationPage.vue')
+    component: () => import('../views/DocumentationPage.vue')
   },
   {
     path: '/document/:docId',
     name: 'DocumentPage',
-    component:  () => import( '../views/DocumentPage.vue'),
+    component: () => import('../views/DocumentPage.vue'),
     props: true
-  },
+  }
 ]
 
 const router = createRouter({

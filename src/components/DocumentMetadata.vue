@@ -161,89 +161,87 @@
 </template>
 
 <script>
-import { computed, reactive, ref, toRefs, watch } from "vue";
-import md5 from "md5";
-import * as $rdf from "rdflib";
+import { computed, reactive, ref, toRefs, watch } from 'vue'
+import md5 from 'md5'
+import * as $rdf from 'rdflib'
 
 export default {
-  name: "DocumentMetadata",
+  name: 'DocumentMetadata',
 
   components: {},
 
   props: { metadata: { required: true, default: () => {}, type: Object } },
 
-  setup(props) {
-    let state = reactive({
-      isOpened: false,
-    });
-    const { metadata } = toRefs(props);
-    let authorThumbnailUrl = ref(null);
+  setup (props) {
+    const state = reactive({
+      isOpened: false
+    })
+    const { metadata } = toRefs(props)
+    const authorThumbnailUrl = ref(null)
 
-    console.log("state.metadata", metadata);
+    console.log('state.metadata', metadata)
 
     const fetchAuthorThumbnailUrl = async (options = {}) => {
       if (metadata.value.wikidata) {
-        let wikidata_id = metadata.value.wikidata.split("/");
-        wikidata_id = wikidata_id[wikidata_id.length - 1];
+        let wikidata_id = metadata.value.wikidata.split('/')
+        wikidata_id = wikidata_id[wikidata_id.length - 1]
 
-        console.log("fetchAuthorThumbnailUrl");
+        console.log('fetchAuthorThumbnailUrl')
 
         const response = await fetch(
           `https://www.wikidata.org/w/api.php?action=wbgetclaims&property=P18&entity=${wikidata_id}&format=json&origin=*`,
-          { method: "GET", ...options }
-        );
-        const document = await response.json();
+          { method: 'GET', ...options }
+        )
+        const document = await response.json()
 
         if (document.claims.P18) {
-          let wikidata_link = document.claims.P18[0]["mainsnak"]["datavalue"][
-            "value"
-          ].replaceAll(" ", "_");
+          let wikidata_link = document.claims.P18[0].mainsnak.datavalue.value.replaceAll(' ', '_')
 
-          const _sum = md5(wikidata_link);
-          wikidata_link = `https://upload.wikimedia.org/wikipedia/commons/${_sum[0]}/${_sum[0]}${_sum[1]}/${wikidata_link}`;
-          authorThumbnailUrl.value = wikidata_link;
+          const _sum = md5(wikidata_link)
+          wikidata_link = `https://upload.wikimedia.org/wikipedia/commons/${_sum[0]}/${_sum[0]}${_sum[1]}/${wikidata_link}`
+          authorThumbnailUrl.value = wikidata_link
 
-          console.log("author url", authorThumbnailUrl);
+          console.log('author url', authorThumbnailUrl)
         } else {
-          authorThumbnailUrl.value = null;
+          authorThumbnailUrl.value = null
         }
       } else {
-        authorThumbnailUrl.value = null;
+        authorThumbnailUrl.value = null
       }
-    };
+    }
 
     const fetchBiblioData = async () => {
       if (metadata.value.data_bnf) {
-        const httpsUrl = metadata.value.data_bnf.replace("http:", "https:");
-        //console.log("extra metadata:", httpsUrl);
-        console.log(decodeURIComponent(`${httpsUrl}.json`));
+        const httpsUrl = metadata.value.data_bnf.replace('http:', 'https:')
+        // console.log("extra metadata:", httpsUrl);
+        console.log(decodeURIComponent(`${httpsUrl}.json`))
         const response = await fetch(`${httpsUrl}.json`, {
-          method: "GET",
-          redirect: "follow",
-          mode: "cors",
-        });
-        //const document = await response.text();
-        console.log(response.uri.href);
-        console.log("fetch biblio data", response.json());
+          method: 'GET',
+          redirect: 'follow',
+          mode: 'cors'
+        })
+        // const document = await response.text();
+        console.log(response.uri.href)
+        console.log('fetch biblio data', response.json())
       }
-    };
+    }
 
     const metaDataCssClass = computed(() => {
-      return state.isOpened ? "is-opened" : "";
-    });
+      return state.isOpened ? 'is-opened' : ''
+    })
 
     const toggleContent = function (event) {
-      event.preventDefault();
-      state.isOpened = !state.isOpened;
-    };
+      event.preventDefault()
+      state.isOpened = !state.isOpened
+    }
 
-      const fetchRDF = async () => {
-      //let idref_Test = 'https://www.idref.fr/026847345'
+    const fetchRDF = async () => {
+      // let idref_Test = 'https://www.idref.fr/026847345'
       if (metadata.value.idref) {
-        console.log("metadata.value.idref : ", metadata.value.idref);
-        const store = $rdf.graph();
-        const me = store.sym(metadata.value.idref);
-        console.log("me : ", me);
+        console.log('metadata.value.idref : ', metadata.value.idref)
+        const store = $rdf.graph()
+        const me = store.sym(metadata.value.idref)
+        console.log('me : ', me)
       }
     }
 
@@ -252,20 +250,20 @@ export default {
     watch(
       metadata,
       () => {
-        fetchAuthorThumbnailUrl();
-        fetchBiblioData();
-        fetchRDF();
+        fetchAuthorThumbnailUrl()
+        fetchBiblioData()
+        fetchRDF()
       },
       { deep: true, immediate: true }
-    );
+    )
 
     return {
       metaDataCssClass,
       toggleContent,
-      authorThumbnailUrl,
-    };
-  },
-};
+      authorThumbnailUrl
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -871,43 +871,43 @@
 </template>
 
 <script>
-import ApiCallDropdown from "@/components/documentation/ApiCallDropdown.vue";
+import ApiCallDropdown from '@/components/documentation/ApiCallDropdown.vue'
 
 export default {
-  name: "DocumentationPage",
+  name: 'DocumentationPage',
   components: { ApiCallDropdown },
-  data() {
+  data () {
     return {
       API_URL: `${import.meta.env.VITE_ELASTICSEARCH_URL}`,
       DTS_URL: `${import.meta.env.VITE_API_URL}`,
       IIIF_SERVER_URL: `${import.meta.env.VITE_IIIF_SERVER_URL}`,
       IIIF_URL: `${import.meta.env.VITE_IIIF_URL}`,
       IIIF_IMAGES_URL: `${import.meta.env.VITE_IIIF_IMAGES_URL}`,
-      isMenuOpened: false,
-    };
+      isMenuOpened: false
+    }
   },
   computed: {
-    menuCsscClass() {
-      return this.isMenuOpened ? "opened" : "";
-    },
+    menuCsscClass () {
+      return this.isMenuOpened ? 'opened' : ''
+    }
   },
   methods: {
-    toggleMenu($event) {
-      $event.preventDefault();
-      $event.stopImmediatePropagation();
-      this.isMenuOpened = !this.isMenuOpened;
+    toggleMenu ($event) {
+      $event.preventDefault()
+      $event.stopImmediatePropagation()
+      this.isMenuOpened = !this.isMenuOpened
     },
-    closeMenu() {
-      this.isMenuOpened = false;
-    },
+    closeMenu () {
+      this.isMenuOpened = false
+    }
   },
-  mounted() {
-    document.body.addEventListener("click", this.closeMenu);
+  mounted () {
+    document.body.addEventListener('click', this.closeMenu)
   },
-  beforeUnmount() {
-    document.body.removeEventListener("click", this.closeMenu);
-  },
-};
+  beforeUnmount () {
+    document.body.removeEventListener('click', this.closeMenu)
+  }
+}
 </script>
 
 <style scoped>
