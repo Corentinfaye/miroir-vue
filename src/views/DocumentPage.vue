@@ -69,10 +69,9 @@
 </template>
 
 <script>
-import Document from "@/components/Document.vue";
-import DocumentMetadata from "../components/DocumentMetadata.vue";
-import { getMetadataFromApi } from "@/api/document";
-
+import Document from '@/components/Document.vue'
+import DocumentMetadata from '../components/DocumentMetadata.vue'
+import { getMetadataFromApi } from '@/api/document'
 
 import {
   computed,
@@ -82,65 +81,64 @@ import {
   reactive,
   provide,
   ref,
-  inject,
-} from "vue/dist/vue.esm-bundler.js";
-import { onBeforeRouteUpdate, useRoute } from "vue-router";
+  inject
+} from 'vue/dist/vue.esm-bundler.js'
+import { onBeforeRouteUpdate, useRoute } from 'vue-router'
 
-import NavCollection from "@/components/NavCollection.vue";
-import useMirador from "@/composables/use-mirador";
+import NavCollection from '@/components/NavCollection.vue'
+import useMirador from '@/composables/use-mirador'
 
 const sources = [
-  { name: "data_bnf", ext: "data.bnf.fr" },
-  { name: "dbpedia", ext: "dbpedia.org" },
-  { name: "idref", ext: "idref.fr" },
-  { name: "catalogue_bnf", ext: "catalogue.bnf.fr" },
-  { name: "wikidata", ext: "wikidata" },
-  { name: "wikipedia", ext: "wikipedia" },
-  { name: "thenca", ext: "thenca" },
-  { name: "hal", ext: "hal" },
-  { name: "benc", ext: "koha" },
-  {},
-];
+  { name: 'data_bnf', ext: 'data.bnf.fr' },
+  { name: 'dbpedia', ext: 'dbpedia.org' },
+  { name: 'idref', ext: 'idref.fr' },
+  { name: 'catalogue_bnf', ext: 'catalogue.bnf.fr' },
+  { name: 'wikidata', ext: 'wikidata' },
+  { name: 'wikipedia', ext: 'wikipedia' },
+  { name: 'thenca', ext: 'thenca' },
+  { name: 'hal', ext: 'hal' },
+  { name: 'benc', ext: 'koha' },
+  {}
+]
 
-function findSource(id) {
-  let i = 0;
-  let source = null;
+function findSource (id) {
+  let i = 0
+  let source = null
 
   do {
-    source = id.includes(sources[i].ext) ? sources[i] : null;
-    i++;
-  } while (i < sources.length && source === null);
+    source = id.includes(sources[i].ext) ? sources[i] : null
+    i++
+  } while (i < sources.length && source === null)
 
   if (source) {
-    return source.name;
+    return source.name
   }
 
-  return null;
+  return null
 }
 
 export default {
-  name: "DocumentPage",
+  name: 'DocumentPage',
   components: {
     Document,
     DocumentMetadata,
     NavCollection
   },
-  async setup() {
-    const manifestIsAvailable = ref(false);
+  async setup () {
+    const manifestIsAvailable = ref(false)
 
-    // Mirador view sticky behavior
-    let miradorViewBoundingTop = ref(0);
+    const miradorViewBoundingTop = ref(0)
     const miradorViewCssStyle = computed(() => {
-      return { marginTop: miradorViewBoundingTop.value + "px" };
-    });
+      return { marginTop: miradorViewBoundingTop.value + 'px' }
+    })
 
     const updateMiradorTopPosition = function () {
-      const textView = document.getElementById("text-view");
+      const textView = document.getElementById('text-view')
       if (textView) {
-        const top = textView.getBoundingClientRect().top;
-        miradorViewBoundingTop.value = top < 0 ? -Math.floor(top) : 0;
+        const top = textView.getBoundingClientRect().top
+        miradorViewBoundingTop.value = top < 0 ? -Math.floor(top) : 0
       }
-    };
+    }
 
     const metadata = reactive({
       sudoc: null,
@@ -157,146 +155,143 @@ export default {
       idref: null,
       catalogue_bnf: null,
       wikidata: null,
-      wikipedia: null,
-    });
+      wikipedia: null
+    })
 
-    const miradorInstance = useMirador("vue-mirador-container", null, 0);
+    const miradorInstance = useMirador('vue-mirador-container', null, 0)
     // provide an uninitialized instance of Mirador
-    provide("mirador", miradorInstance);
+    provide('mirador', miradorInstance)
 
-    const layout = inject("variable-layout");
+    const layout = inject('variable-layout')
 
     const getMetadata = async (docId) => {
-      const listmetadata = await getMetadataFromApi(docId);
-      console.log(listmetadata);
-      var dcnamespace = Object.keys(listmetadata["@context"]).find((k) =>
-        listmetadata["@context"][k].includes("dc/elements")
-      );
-      var htmlnamespace = Object.keys(listmetadata["@context"]).find((k) =>
-        listmetadata["@context"][k].includes("html")
-      );
+      const listmetadata = await getMetadataFromApi(docId)
+      console.log(listmetadata)
+      const dcnamespace = Object.keys(listmetadata['@context']).find((k) =>
+        listmetadata['@context'][k].includes('dc/elements')
+      )
+      const htmlnamespace = Object.keys(listmetadata['@context']).find((k) =>
+        listmetadata['@context'][k].includes('html')
+      )
       console.log(htmlnamespace)
       console.log(listmetadata)
-      metadata.author = listmetadata["dts:extensions"][dcnamespace + ":creator"];
+      metadata.author = listmetadata['dts:extensions'][dcnamespace + ':creator']
       console.log(metadata.author)
-      if (Array.isArray(metadata.author)){
-        metadata.author.sort();
+      if (Array.isArray(metadata.author)) {
+        metadata.author.sort()
       }
-      if (Array.isArray(listmetadata["dts:download"])){
-        for (let meta of listmetadata["dts:download"]){
-          if (meta.includes(".PDF")){
+      if (Array.isArray(listmetadata['dts:download'])) {
+        for (const meta of listmetadata['dts:download']) {
+          if (meta.includes('.PDF')) {
             metadata.downloadPDF = meta
           }
-          if (meta.includes("document")){
+          if (meta.includes('document')) {
             metadata.downloadXML = meta
           }
         }
       } else {
-        metadata.downloadXML = listmetadata["dts:download"]
+        metadata.downloadXML = listmetadata['dts:download']
         metadata.downloadPDF = null
       }
-      metadata.download = listmetadata["dts:download"];
-      metadata.contributor = listmetadata[dcnamespace + ":contributor"]
+      metadata.download = listmetadata['dts:download']
+      metadata.contributor = listmetadata[dcnamespace + ':contributor']
 
-
-      const dublincore = listmetadata["dts:dublincore"];
-      console.log("---------");
-      console.log("dublincore", dublincore);
+      const dublincore = listmetadata['dts:dublincore']
+      console.log('---------')
+      console.log('dublincore', dublincore)
       try {
-        metadata.iiifManifestUrl = dublincore["dct:source"][0]["@id"];
-        layout.imageIsAvailable.value = true;
+        metadata.iiifManifestUrl = dublincore['dct:source'][0]['@id']
+        layout.imageIsAvailable.value = true
       } catch {
-        metadata.iiifManifestUrl = "";
-        layout.imageIsAvailable.value = false;
+        metadata.iiifManifestUrl = ''
+        layout.imageIsAvailable.value = false
       }
-      metadata.date = dublincore["dct:date"];
-      metadata.page = dublincore["dct:extend"];
-      metadata.coverage = dublincore["dct:coverage"];
-      if(dublincore["dct:rights"]){
-        metadata.rights = dublincore["dct:rights"][0]["@id"];
-        }
-      metadata.title = listmetadata["dts:extensions"][htmlnamespace + ":h1"];
-      metadata.publisher = dublincore["dct:publisher"][0]["@value"];
-      metadata.contributor = dublincore["dct:contributor"]
+      metadata.date = dublincore['dct:date']
+      metadata.page = dublincore['dct:extend']
+      metadata.coverage = dublincore['dct:coverage']
+      if (dublincore['dct:rights']) {
+        metadata.rights = dublincore['dct:rights'][0]['@id']
+      }
+      metadata.title = listmetadata['dts:extensions'][htmlnamespace + ':h1']
+      metadata.publisher = dublincore['dct:publisher'][0]['@value']
+      metadata.contributor = dublincore['dct:contributor']
 
-
-      console.log("metadata.iiifManifestUrl", metadata.iiifManifestUrl);
-      console.log("metadata", metadata);
+      console.log('metadata.iiifManifestUrl', metadata.iiifManifestUrl)
+      console.log('metadata', metadata)
 
       if (dublincore) {
         // reset the sources
-        for (let s of sources) {
-          metadata[s.name] = null;
+        for (const s of sources) {
+          metadata[s.name] = null
         }
         // TODO : expliquer ce que je fais
-        if (dublincore["dct:isVersionOf"]) {
-          for (const member of dublincore["dct:isVersionOf"]) {
-            if (member["@id"]) {
-              const source = findSource(member["@id"]);
+        if (dublincore['dct:isVersionOf']) {
+          for (const member of dublincore['dct:isVersionOf']) {
+            if (member['@id']) {
+              const source = findSource(member['@id'])
               if (source) {
-                metadata[source] = member["@id"];
-                console.log("source found:", source, member["@id"]);
+                metadata[source] = member['@id']
+                console.log('source found:', source, member['@id'])
               }
             }
           }
         }
 
         // creators
-        if (Array.isArray(dublincore["dct:creator"])) {
-          for (let aut of dublincore["dct:creator"]) {
-            if (aut["@id"]) {
+        if (Array.isArray(dublincore['dct:creator'])) {
+          for (const aut of dublincore['dct:creator']) {
+            if (aut['@id']) {
               // find the source name from its extension
-              const source = findSource(aut["@id"]);
+              const source = findSource(aut['@id'])
               if (source) {
-                metadata[source] = aut["@id"];
-                console.log("source found:", source, aut["@id"]);
+                metadata[source] = aut['@id']
+                console.log('source found:', source, aut['@id'])
               }
             }
           }
         }
       }
-    };
+    }
 
     const setMirador = function () {
       fetch(metadata.iiifManifestUrl, {
-        method: "GET",
+        method: 'GET'
       })
         .then((r) => {
-          manifestIsAvailable.value = r.ok;
-          miradorInstance.setManifestUrl(metadata.iiifManifestUrl);
-          miradorInstance.initialize();
+          manifestIsAvailable.value = r.ok
+          miradorInstance.setManifestUrl(metadata.iiifManifestUrl)
+          miradorInstance.initialize()
         })
         .catch(() => {
-          manifestIsAvailable.value = false;
-        });
-    };
+          manifestIsAvailable.value = false
+        })
+    }
 
     watch(
       () => metadata.iiifManifestUrl,
       async () => {
-        setMirador();
+        setMirador()
       }
-    );
+    )
 
     onBeforeRouteUpdate(async (to) => {
-      getMetadata(to.params.docId);
-    });
+      getMetadata(to.params.docId)
+    })
 
     onMounted(() => {
-      const appView = document.getElementById("app");
-      appView.addEventListener("scroll", updateMiradorTopPosition);
-      window.addEventListener('scroll', updateMiradorTopPosition);
-    });
+      const appView = document.getElementById('app')
+      appView.addEventListener('scroll', updateMiradorTopPosition)
+      window.addEventListener('scroll', updateMiradorTopPosition)
+    })
 
     onUnmounted(() => {
-      const appView = document.getElementById("app");
-      appView.removeEventListener("scroll", updateMiradorTopPosition);
-      window.removeEventListener('scroll', updateMiradorTopPosition);
-    });
+      const appView = document.getElementById('app')
+      appView.removeEventListener('scroll', updateMiradorTopPosition)
+      window.removeEventListener('scroll', updateMiradorTopPosition)
+    })
 
-
-    const route = useRoute();
-    await getMetadata(route.params.docId);
+    const route = useRoute()
+    await getMetadata(route.params.docId)
 
     return {
       tocCssClass: layout.tocCssClass,
@@ -309,10 +304,10 @@ export default {
       miradorViewCssStyle,
       metadata,
       manifestIsAvailable,
-      layout,
-    };
-  },
-};
+      layout
+    }
+  }
+}
 </script>
 
 <style>

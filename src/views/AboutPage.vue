@@ -168,7 +168,7 @@
         <h2>Jacques Monfrin [promotion 1947] et l'Inventaire critique des traductions d'auteurs anciens du
                          XIII<sup>e</sup> au XV<sup>e</sup> siècle.</h2>
           <div class="intro">
-              <p class="texte"> En 1954, R. R. Bolgar avait publié un tableau 
+              <p class="texte"> En 1954, R. R. Bolgar avait publié un tableau
       des différentes traductions des auteurs classiques en anglais,
                         français, allemand, italien, espagnol et antérieures à
       1600. Ce travail n'est véritablement utile qu'à partir de
@@ -180,41 +180,41 @@
               </ul>
               <p class="texte">Jacques Monfrin<a onmouseout="HideBulle()" onmouseover="AffBulle('Voir sur les travaux et la carrière de Jacques Monfrin, professeur de Philologie romane à l'École de 1958 à 1989, Françoise Vielliard et Emmanuel Poulle, Jacques Monfrin (1924-1998), dans Bibliothèque de l'École des chartes, t. 157, 1999, p. 317-325. On trouvera une bibliographie, en principe exhaustive, de ses travaux, aux p. 981-997 du volume de réimpression d'un certain nombre de ses articles, Jacques Monfrin, Études de philologie romane, Genève, 2001 (Publications romanes et françaises, 220).')" id="appelnote4" href="#footnote4" class="appel_note">4</a> présenta en 1955 à
                         l'Académie des inscriptions et belles-lettres un <em>Inventaire critique des traductions d'auteurs anciens du
-                          XIIIe au XVe siècle</em>, qui a obtenu le Prix du 
+                          XIIIe au XVe siècle</em>, qui a obtenu le Prix du
       budget. Le séjour de Jacques Monfrin à l'École française
-                        de Rome ainsi que son passage au département des 
+                        de Rome ainsi que son passage au département des
       manuscrits de la Bibliothèque nationale lui avaient permis de
-                        rassembler les matériaux qui fondent cet inventaire. 
+                        rassembler les matériaux qui fondent cet inventaire.
       Ce travail de débutant, resté dactylographié, est aussi un
-                        travail de pionnier. Il nous a semblé utile de 
+                        travail de pionnier. Il nous a semblé utile de
       redonner ici, à la fois pour lui rendre hommage et pour qu'on
-                        puisse mesurer les prolongements, voire les 
+                        puisse mesurer les prolongements, voire les
       infléchissements, que nous avons donnés aux voies qu'il a ouvertes,
-                        le texte complet de son introduction, en lui ajoutant 
+                        le texte complet de son introduction, en lui ajoutant
       simplement quelques notes bibliographiques :</p>
               <blockquote style="font-style:italic;">
-                  <p class="texte">« Le principal objet de ce travail est de 
+                  <p class="texte">« Le principal objet de ce travail est de
       dresser la liste des œuvres anciennes qui ont été traduites en
-                              langue française du XIIIe au XVe siècle. Nous 
+                              langue française du XIIIe au XVe siècle. Nous
       avons pris le mot ancien dans son sens le plus étroit, en
-                              nous limitant aux œuvres de l'Antiquité 
+                              nous limitant aux œuvres de l'Antiquité
       classique ; nous n'avons retenu les auteurs de basse époque que
-                              dans la mesure où leurs écrits se rattachent à 
+                              dans la mesure où leurs écrits se rattachent à
       la civilisation antique : c'est ainsi que l'on trouvera un
-                              article Justinien et un article Végèce, alors 
+                              article Justinien et un article Végèce, alors
       que nous avons laissé de côté saint Augustin et tous les
-                              écrivains chrétiens. Seul le cas de Boèce 
+                              écrivains chrétiens. Seul le cas de Boèce
       pouvait donner lieu à quelque hésitation ; mais les traductions
                               de la <em>Consolatio Philosophiæ</em> sont bien connues ; la récente notice de <em>l'Histoire
                                 littéraire</em><a onmouseout="HideBulle()" onmouseover="AffBulle('Antoine Thomas, Traductions… , op. cit.')" id="appelnote5" href="#footnote5" class="appel_note">5</a>
-      analyse celles qui sont antérieures au milieu du XIVe siècle ; de 
+      analyse celles qui sont antérieures au milieu du XIVe siècle ; de
       celles qui
-                              viennent après cette date, nous avons rencontré 
+                              viennent après cette date, nous avons rencontré
       une foule de manuscrits dont nous remettons l'étude à plus
                               tard.</p>
-                  <p class="texte">D'autre part, nous nous sommes limité aux 
+                  <p class="texte">D'autre part, nous nous sommes limité aux
       œuvres dont l'authenticité était, en tout ou en partie, assurée.
-                              Le Moyen Âge a mis sous le nom de grands 
+                              Le Moyen Âge a mis sous le nom de grands
       écrivains de l'Antiquité une foule de composition qui n'ont rien
                               de commun avec leurs œuvres certaines, mais dont
       la diffusion a été tout aussi grande : on ne trouvera pas
@@ -225,21 +225,21 @@
                               l'apocryphe qui nous a empêché de consacrer un article aux médecins : parmi eux quelques fragments
                               remontent peut-être à l'Antiquité, mais on ne peut espérer voir clair dans cette littérature abondante
                               sans entreprendre un dépouillement méthodique des manuscrits médicaux, aussi bien latin que français.</p>
-                  <p class="texte">Tous les écrits authentiques des écrivains 
+                  <p class="texte">Tous les écrits authentiques des écrivains
       anciens qui ont été traduits en français au Moyen Âge ne l'ont
-                              pas été directement sur les originaux. Pendant 
+                              pas été directement sur les originaux. Pendant
       la période que nous considérons, toutes les œuvres grecques
-                              n'ont été connues des traducteurs français que 
+                              n'ont été connues des traducteurs français que
       dans des versions latines ; ce fait a des conséquences très
-                              importantes du point de vue des procédés de 
+                              importantes du point de vue des procédés de
       traduction et de la langue des traducteurs : les œuvres
-                              grecques originales sont, du point de vue du 
+                              grecques originales sont, du point de vue du
       style, tout à fait défigurées. En les traduisant en latin,
-                              les savants du XIIe et du XIIIe siècle leur ont 
+                              les savants du XIIe et du XIIIe siècle leur ont
       déjà donné une physionomie médiévale si bien qu'au XIVe et
-                              au XVe siècle, les traducteurs français 
+                              au XVe siècle, les traducteurs français
       trouveront leur besogne d'adaptation à moitié faite. Si l'on veut
-                              étudier comment la prose française a été 
+                              étudier comment la prose française a été
       façonnée par les traducteurs, on devrait, comme on l'a déjà fait
                               remarquer, étudier séparément les traductions du
       grec, indirectes, et les traductions du latin, faites
@@ -248,21 +248,21 @@
                               idées ; on ne saurait par exemple séparer les traductions de César par Jean Duchesne, ou de Quinte Curce
                               par Vasque de Lucène, les traductions de la <em>Cyropédie</em> de Xénophon par le même Vasque de
                               Lucène ou celle du <em>Hiéron</em> par Charles Soillot.</p>
-                  <p class="texte">L'idée que les écrivains du Moyen Âge se 
+                  <p class="texte">L'idée que les écrivains du Moyen Âge se
       sont fait de la tâche de traducteur est assez différente de celle
-                              qui a prévalu plus tard. Le souci historique et 
+                              qui a prévalu plus tard. Le souci historique et
       philologique de laisser ou de retrouver l'œuvre d'un
-                              auteur sous la forme exacte que celui-ci avait 
+                              auteur sous la forme exacte que celui-ci avait
       voulu lui donner était souvent remplacé par l'idée que tout
                               écrit est perfectible et que, du moment qu'on le
       transcrivait, ou qu'on le traduisait, il n'y avait aucune
                               raison pour ne pas le modifier ou l'améliorer en
       combinant parfois le texte avec celui d'un autre ouvrage
-                              : de là des modifications sans nombre apportées 
+                              : de là des modifications sans nombre apportées
       aux textes originaux. En dehors de ces manifestations d'un
-                              état d'esprit que, le plus souvent, les 
+                              état d'esprit que, le plus souvent, les
       prologues des traducteurs éclairent parfaitement, on a toujours,
-                              pour des raisons diverses, réalisé, à côté des 
+                              pour des raisons diverses, réalisé, à côté des
       traductions, des adaptations, en faisant passer un ouvrage
                               d'une langue dans une autre.</p>
                   <p class="texte">Le départ entre les compilations, les adaptations, les traductions est forcément arbitraire. Nous avons
@@ -279,9 +279,9 @@
                               enquête. Nous l'avons arbitrairement arrêtée à 1500. On aurait pu, ou l'arrêter au milieu du XV<sup>e</sup> siècle,
                               après Laurent de Premierfait, par exemple, ou la poursuivre plus avant dans le XVI<sup>e</sup>
       ; on a beaucoup
-                              traduit, en France, pendant le règne de Louis 
+                              traduit, en France, pendant le règne de Louis
       XII et les premières années de celui de François Ie. Il y a
-                              eu, à la cour de ces souverains, tout un groupe 
+                              eu, à la cour de ces souverains, tout un groupe
       de traducteurs, Octovien de Saint Gelays qui a traduit
                                 l'<em>Énéide</em> (1500), Claude de Seyssel qui a mis en français Xénophon, Diodore, Appien,
                               Justin, Thucydide ; Simon Bourgoing, qui a traduit des <em>Vies</em> de Plutarque, Étienne le Blanc
@@ -294,22 +294,22 @@
                               années 1500-1520, il faudrait commencer l'enquête par un examen systématique des collections de livres
                               imprimés. Un parti qui se justifie difficilement du point de vue de l'histoire littéraire est en quelque
                               sorte commandé par les exigences de la recherche.</p>
-                  <p class="texte">Nous avons commencé par la lecture de tous 
+                  <p class="texte">Nous avons commencé par la lecture de tous
       les catalogues de manuscrits que nous avons pu atteindre ; nous
-                              avons largement fait appel aux catalogues de 
+                              avons largement fait appel aux catalogues de
       vente et aux catalogues de collections privées. Cette méthode
-                              un peu lente nous aura permis, nous l'espérons, 
+                              un peu lente nous aura permis, nous l'espérons,
       de ne rien omettre d'essentiel. Nous n'avons pas trouvé
                               beaucoup de textes qui n'aient pas été signalés :
       la traduction de la <em>Vie</em> de César de
                               Suétone, le manuscrit daté de la traduction en prose de Térence. Mais nous avons pu allonger
                               considérablement les listes de manuscrits qui avaient été dressées pour chaque traduction ; dans deux ou
                               trois cas seulement, nous n'avons rien pu ajouter aux travaux de nos devanciers.</p>
-                  <p class="texte">Nous avons dressé un répertoire comprenant 
+                  <p class="texte">Nous avons dressé un répertoire comprenant
       pour chaque texte une brève notice où nous indiquons le nom du
-                              traducteur, la date et les circonstances de la 
+                              traducteur, la date et les circonstances de la
       traduction ; nous nous sommes efforcé aussi de caractériser
-                              la méthode de traduction, en indiquant s'il 
+                              la méthode de traduction, en indiquant s'il
       s'agissait d'une paraphrase, d'une adaptation, s'il y avait
                               des erreurs, des additions ou des suppressions.</p>
                   <p class="texte">Vient ensuite l'incipit des textes puis la liste des manuscrits. Ces listes sont disposées selon l'ordre
@@ -320,14 +320,14 @@
                               n'avons indiqué les possesseurs successifs que lorsque les manuscrits ont souvent changé de mains, et
                               qu'il y a des chances qu'ils aient été cités, dans des travaux d'érudition, avec une indication de
                               collection qui n'est pas plus valable aujourd'hui.</p>
-                  <p class="texte">La liste des éditions anciennes, qui vient 
+                  <p class="texte">La liste des éditions anciennes, qui vient
       ensuite, aurait besoin d'être revue ; elle est souvent
-                              incomplète et de seconde main. Les indications 
+                              incomplète et de seconde main. Les indications
       bibliographiques qui terminent les notices sont réduites à
                               l'essentiel : un renvoi au <em>Manuel bibliographique</em> de M. Bossuat<a onmouseout="HideBulle()" onmouseover="AffBulle('Robert Bossuat, Manuel bibliographique de la littérature du Moyen Âge, Paris, 1951 à compléter Manuel bibliographique de la littérature du Moyen Âge (Supplément 1949-1953) avec le concours de Jacques Monfrin, Paris, 1955 ; Manuel bibliographique de la littérature du Moyen Âge. Second supplément (1954-1960), Paris, 1960 ; Françoise Vielliard, Jacques Monfrin, Manuel bibliographique de la littérature du Moyen Âge de Robert Bossuat. Troisième supplément (1960-1980). II. L'ancien français (Chapitres IV à IX). Le moyen français, Paris, 1991.')" id="appelnote7" href="#footnote7" class="appel_note">7</a> permet d'alléger beaucoup cette partie.</p>
-                  <p class="texte">Parmi les traductions ainsi inventoriées, 
+                  <p class="texte">Parmi les traductions ainsi inventoriées,
       certaines ont fait l'objet de travaux plus ou moins approfondis,
-                              d'autres ont été brièvement signalées. Nous 
+                              d'autres ont été brièvement signalées. Nous
       aurions voulu consacrer une notice à chacun des textes qui
                               n'ont pas encore été étudiés. L'ampleur du sujet
       nous a mis dans l'impossibilité de mettre en œuvre toutes
@@ -345,55 +345,55 @@
       concerne les manuscrits conservés à l'étranger. De plus
                               tous les problèmes n'ont pas été envisagés. Nous
       nous sommes surtout attaché à éclaircir les questions
-                              d'attribution et de datation, à déblayer le 
+                              d'attribution et de datation, à déblayer le
       terrain, sans nous attarder, pour ceux qui voudraient étudier
-                              plus à fond la tradition manuscrite, les 
+                              plus à fond la tradition manuscrite, les
       procédés de traduction, etc.</p>
                   <p class="texte">Il est un point sur lequel nous devons insister. Le texte des auteurs latins que lisaient les traducteurs
                               n'est jamais tout à fait celui que nous lisons dans les éditions critiques modernes ; celles-ci sont
                               établies, autant que possible, sur les manuscrits les plus anciens, et c'est à peine si les philologues
                               classiques énumèrent dans leurs études sur la tradition du texte les manuscrits postérieurs aux XI<sup>e</sup>-XII<sup>e</sup>
                               siècles. Or c'est sur ces manuscrits tardifs, ceux que l'on mentionne en vrac sous l'étiquette de
-                                <em>recentiores</em> ou <em>deteriores</em>, 
+                                <em>recentiores</em> ou <em>deteriores</em>,
       que nos traducteurs ont travaillé. Et
-                              ce qui n'a pas d'intérêt pour les éditeurs est 
+                              ce qui n'a pas d'intérêt pour les éditeurs est
       pour nous d'importance capitale : ce sont les modifications
-                              qu'ont subi les textes au cours des derniers 
+                              qu'ont subi les textes au cours des derniers
       siècles du Moyen Âge. L'Italie a mis en circulation un nombre
-                              considérable de manuscrits ; en France, on a 
+                              considérable de manuscrits ; en France, on a
       beaucoup travaillé aussi sur les auteurs antiques de 1350 à
-                              1500. Mais si l'on s'est attaché à décrire les 
+                              1500. Mais si l'on s'est attaché à décrire les
       manuscrits des humanistes italiens, on n'a jamais songé à
                               regarder ceux des humanistes français. Ici comme
       là, on a remanié les leçons, on en a redistribué le
-                              texte, on a composé des titres, des rubriques, 
+                              texte, on a composé des titres, des rubriques,
       des sommaires ; on a inscrit en marge des gloses et des
                               remarques. </p>
-                  <p class="texte">Les traducteurs ont profité de ce travail 
+                  <p class="texte">Les traducteurs ont profité de ce travail
       critique. Les hors-d'œuvre qui accompagnent le Térence ont
-                              certainement une source latine, qui est à 
+                              certainement une source latine, qui est à
       retrouver. Nous avons pu voir, dans un cas particulier, celui de
-                              Végèce, que lorsqu'une traduction s'écartait du 
+                              Végèce, que lorsqu'une traduction s'écartait du
       texte adopté par l'éditeur moderne, ce n'est pas par suite
-                              d'une fantaisie du traducteur : certains 
+                              d'une fantaisie du traducteur : certains
       manuscrits latins présentent déjà des modifications qu'un examen
-                              trop sommaire mettrait volontiers à charge de 
+                              trop sommaire mettrait volontiers à charge de
       Jean de Meung ou de Jean de Vignay. Giuseppe Billanovich a
                               montré quel parti on pouvait tirer<a onmouseout="HideBulle()" onmouseover="AffBulle('Giuseppe Billanovitch, Petrarch and the textual tradition of Livy, dans Journal of the Warburg and Courtauld Institutes, t. 14, 1951, p. 137-208.')" id="appelnote14" href="#footnote14" class="appel_note">14</a> de l'examen des manuscrits tardifs pour éclairer la
                               genèse des traductions italiennes de Tite-Live. Pour Bersuire, le problème est plus simple, car il
                               travaillait sur la vulgate établie par les soins de Pétrarque ; mais on pourrait aisément aboutir à plus
                               de précision que n'en comporte une indication donnée en passant.</p>
-                  <p class="texte">Les commentaires développés ont pu eux 
+                  <p class="texte">Les commentaires développés ont pu eux
       aussi être utilisés. Lorsque le même Bersuire inscrit en marge de
-                              la traduction de Tite Live des rapprochements 
+                              la traduction de Tite Live des rapprochements
       avec d'autres historiens latins, fait-il preuve de curiosité
-                              d'esprit et de véritable érudition ou 
+                              d'esprit et de véritable érudition ou
       recopie-t-il les gloses d'un annotateur antérieur ? La traduction
-                              des <em>Héroïdes</em> d'Ovide donne ces épîtres 
+                              des <em>Héroïdes</em> d'Ovide donne ces épîtres
       dans un ordre très éloigné de celui des éditions.
-                              Nous avons conjecturé que cet ordre avait été 
+                              Nous avons conjecturé que cet ordre avait été
       adopté pour permettre, tant bien que mal, l'insertion de ces
-                              morceaux dans un récit de la guerre de Troie. 
+                              morceaux dans un récit de la guerre de Troie.
       Mais la preuve nous manque ; on peut trouver demain un
                               manuscrit latin où les <em>Héroïdes</em> sont disposés comme dans le recueil des <em>Epistres des
                                 Dames de Grece</em>. Que doit l'énorme compilation de Simon de Hesdin aux commentaires antérieurs de
@@ -408,18 +408,18 @@
                               : c'est ce que l'on constatera en passant en revue les traductions dans l'ordre chronologique.</p>
                   <p class="texte">La plus ancienne est sans doute celle des <em>Institutes</em>
       de Justinien. Il parait qu'elle a été
-                              exécutée en Normandie, vers 1220-1230, dans une 
+                              exécutée en Normandie, vers 1220-1230, dans une
       région et à l'époque où les écoles de droit étaient
-                              particulièrement actives. Nous ne savons pas si 
+                              particulièrement actives. Nous ne savons pas si
       elle a été commandée par un haut personnage ou si nous la
-                              devons à l'initiative de quelque clerc ; mais 
+                              devons à l'initiative de quelque clerc ; mais
       nous la voyons du XIII<sup>e</sup> au XV<sup>e</sup> siècle, copiée dans
       des
-                              manuscrits assez simples, aux mains de clercs, 
+                              manuscrits assez simples, aux mains de clercs,
       d'officiers royaux : c'est un ouvrage technique, simplement
-                              traduit, un instrument de travail ; sa présence 
+                              traduit, un instrument de travail ; sa présence
       dans la bibliothèque de Charles V et dans celle de Jacques
-                              de Nemours montre qu'on y attachait encore du 
+                              de Nemours montre qu'on y attachait encore du
       prix un siècle et demi après sa confection. On pourrait sans
                               doute faire les mêmes remarques pour le <em>Digeste</em> et pour le <em>Code</em>.</p>
                   <p class="texte"> Les <em>Faits des Romains</em> sont presque aussi anciens : une catégorie de traductions
@@ -433,19 +433,19 @@
       de Végèce (vers 1270-1284).
                               Le premier texte, ardu, technique, ne semble pas
       avoir eu beaucoup de succès : un châtelain des environs
-                              d'Eu en possède un exemplaire ; Charles V le 
+                              d'Eu en possède un exemplaire ; Charles V le
       fera copier, et c'est son exemplaire que nous avons conservé,
-                              mais on n'a trouvé la trace d'aucun autre. 
+                              mais on n'a trouvé la trace d'aucun autre.
       Végèce au contraire est immédiatement recopié. Les seigneurs
-                              français sentent peut-être que le temps est 
+                              français sentent peut-être que le temps est
       passé des grands coups d'épée et des charges désordonnées : on
                               peut leur prêter quelque désir de s'instruire de
       l'art militaire ; le texte de Végèce est clair,
-                              élémentaire et convient parfaitement à leurs 
+                              élémentaire et convient parfaitement à leurs
       besoins. Peut-être un peu avant Jean d'Eu, peut-être un peu
                               après, les princes anglais, Edouard I ou Edouard
       II, se font de leur côté traduire Végèce, mais l'œuvre
-                              qu'ils ont suscitée n'est jamais sortie d'un 
+                              qu'ils ont suscitée n'est jamais sortie d'un
       cercle étroit et nous n'en connaissons qu'une copie. Au début
                               du XIV<sup>e</sup> siècle, peut-être à la demande du roi de France, Jean de Vignay, moins de trente ans après Jean de
                               Meung, publie à son tour une traduction nouvelle de l'art militaire. Il n'est pas indifférent que nous
@@ -462,11 +462,11 @@
                               traduire n'a pu venir qu'à un homme très cultivé, tel que l'on ne l'imagine guère en France, dans les
                               premières années du XIV<sup>e</sup> siècle. Mais
       celui qui commanda cette traduction était un Italien, chambellan du
-                              royaume de Naples, et depuis longtemps déjà, en 
+                              royaume de Naples, et depuis longtemps déjà, en
       1308-1310, cette région était un foyer d'humanisme, où une
-                              telle œuvre pouvait éveiller quelque écho. Si 
+                              telle œuvre pouvait éveiller quelque écho. Si
       bien que très vite recopié en Italie, très vite traduit en
-                              italien, ce beau travail ne survivra en France 
+                              italien, ce beau travail ne survivra en France
       que grâce aux copies faites pour Charles V et suscitera à
                               ce moment, dans un milieu plus favorable, un peu
       d'attention.</p>
@@ -481,9 +481,9 @@
                               texte latin et les traductions énumérées plus haut. L'<em>Art d'amour</em> de maître Elie, celui de
                               Jacques d'Amiens et celui de Guiart, aussi bien que la <em>Clef d'amour</em>
       rejoignent toute une
-                              série de dits, de traités d'amour mis en 
+                              série de dits, de traités d'amour mis en
       circulation par les jongleurs et les trouvères ; ils n'ont pas le
-                              caractère savant de la plupart des œuvres dont 
+                              caractère savant de la plupart des œuvres dont
       nous nous occupons. Il en va de même pour la traduction des
                                 <em>Remedia amoris</em>, qui est d'ailleurs un peu plus tardive.</p>
                   <p class="texte">La version en prose de l'<em>Ars amatoria</em> que l'on date des environs des 1320 a un caractère
@@ -516,52 +516,52 @@
                               de traductions d'Aristote. Oresme, sur son ordre, a traduit le <em>Quadripartit</em> de Ptolémée
                               (dont on avait déjà une traduction dont l'origine est inconnue), et surtout les grands ouvrages
                               aristotéliciens : <em>Éthiques</em>, <em>Politiques</em>, <em>Économiques</em>,
-                                <em>De caelo et mundo</em>. Traductions 
+                                <em>De caelo et mundo</em>. Traductions
       commentées, véritables instruments de travail destinés à
-                              faciliter l'accès aux œuvres d'Aristote, voulus 
+                              faciliter l'accès aux œuvres d'Aristote, voulus
       par un prince persuadé que leur lecture exercerait une
-                              heureuse action sur la vie du royaume. Sans 
+                              heureuse action sur la vie du royaume. Sans
       avoir eu le succès du Tite Live, et par nature beaucoup moins
-                              accessibles, ces œuvres ont été bien diffusées. 
+                              accessibles, ces œuvres ont été bien diffusées.
       La traduction des <em>Problemata</em> Aristotelis,
-                              confiée par le roi à son médecin Evrard de 
+                              confiée par le roi à son médecin Evrard de
       Conti, largement commentée, était trop spéciale pour toucher un
-                              large public ; l'aspect assez simple des 
+                              large public ; l'aspect assez simple des
       quelques manuscrits dans lesquels on peu encore la lire montre
-                              bien qu'elle ne s'adressait pas aux grands 
+                              bien qu'elle ne s'adressait pas aux grands
       seigneurs collectionneurs de beaux livres. </p>
                   <p class="texte">Au temps de Charles V remonte encore, sans doute, une bonne traduction, celle des <em>Antiquités
                                 judaïques</em> et de la <em>Guerre des Juifs</em>,
       mais on ne sait ni qui l'a commandée, ni
                               qui l'a faite. Le sage roi avait encore d'autres
       projets ; il avait confié à maître Simon de Hesdin le
-                              soin de traduire Valère Maxime. L'œuvre de ce 
+                              soin de traduire Valère Maxime. L'œuvre de ce
       collectionneur d'anecdotes était bien faite pour plaire aux
-                              gens du Moyen Âge ; mais il fallait parfois la 
+                              gens du Moyen Âge ; mais il fallait parfois la
       leur expliquer : aussi Simon de Hesdin ajouta-t-il à son
                               modèle des commentaires sur des récits nouveaux.
       Mais la mort l'interrompit au milieu de son œuvre et le
-                              volume resta à la bibliothèque du Louvre. 
+                              volume resta à la bibliothèque du Louvre.
       Nicolas de Gonesse le reprit vingt-cinq ans après. Charles V
-                              n'était plus mais son frère, Jean de Berry, 
+                              n'était plus mais son frère, Jean de Berry,
       patronna l'entreprise qui eut plus de succès. Ce trésor des
                                 <em>exempla</em> antiques se prêtait à l'illustration : on le copia et on le décora jusqu'à
                               la fin du Moyen Âge.</p>
-                  <p class="texte">Le mouvement humaniste qui a marqué la vie 
+                  <p class="texte">Le mouvement humaniste qui a marqué la vie
       intellectuelle parisienne au temps de Charles VI a eu une
                               petite influence sur l'histoire des traductions ;
       c'est un membre du petit cénacle formé par les frères
-                              Col, Nicolas de Clamanges et d'autres, Laurent 
+                              Col, Nicolas de Clamanges et d'autres, Laurent
       de Premierfait, qui a traduit les traités philosophiques de
                               Cicéron, <em>De amicitia</em> et <em>De senectute</em>.
       Laurent de Premierfait a eu une
-                              initiative importante, même s'il a mal réalisé 
+                              initiative importante, même s'il a mal réalisé
       son dessein : il s'est occupé de revoir le texte latin, de
-                              le corriger avant de traduire, et il a joint ce 
+                              le corriger avant de traduire, et il a joint ce
       texte à sa traduction. Ce sont bien là des soucis de
-                              traducteur humaniste. La traduction, par 
+                              traducteur humaniste. La traduction, par
       ailleurs, est prolixe et maladroite et le texte de Cicéron prend
-                              sous la plume de Laurent une curieuse allure 
+                              sous la plume de Laurent une curieuse allure
       scolastique.</p>
                   <p class="texte">L'intense activité intellectuelle qui a marqué les règnes de Charles V et de Charles VI se ralentit à
                               l'époque suivante : il y a peu de travaux nouveaux et ils sont d'importance secondaire. Jean de Rouvroy
@@ -576,11 +576,11 @@
                   <p class="texte">Le grand centre de traductions est d'ailleurs non plus l'Île-de-France mais la Flandre française et la
                               cour des ducs de Bourgogne<a onmouseout="HideBulle()" onmouseover="AffBulle('Jacques Monfrin a exploité ces remarques dans une conférence prononcée devant la Société des antiquaires de France en 1967; voir un résumé Le goût des lettres antiques à la cour des ducs de Bourgogne , dans Bulletin de la Société nationale des antiquaires de France, 1967, p. 285-287.')" id="appelnote16" href="#footnote16" class="appel_note">16</a>.
       On y traduit avec un égal
-                              succès deux catégories d'ouvrages : des textes 
+                              succès deux catégories d'ouvrages : des textes
       historiques et des textes relatifs au bon gouvernement.
-                              Dans la première catégorie, nous rangerons le 
+                              Dans la première catégorie, nous rangerons le
       Quinte Curce de Vasque qui est d'autant plus intéressant que
-                              le traducteur a fait des recherches assez 
+                              le traducteur a fait des recherches assez
       adroites pour suppléer aux lacunes de son modèle ; les
                                 <em>Commentaires</em> de César, traduits par Jean Duchesne, malheureusement dans un état d'esprit
                               assez voisin de celui du compilateur des <em>Faits des Romains</em>. Jean Mansel et Henri Romain
@@ -604,13 +604,13 @@
                               évident, par deux synonymes dont l'un complète ou nuance l'autre, ce qui donne à leur prose une allure
                               prolixe toujours déconcertante ; jamais ou presque le style n'est rendu. Si les traductions du XV<sup>e</sup>
       siècle
-                              paraissent meilleures, ce n'est pas tant parce 
+                              paraissent meilleures, ce n'est pas tant parce
       que les traducteurs ont amélioré leurs méthodes que parce
                               qu'ils ont en général une meilleure connaissance
       de l'Antiquité et laissent passer moins d'anachronismes.
                               Quant à leur connaissance de la langue, elle est
       souvent moins sûre qu'on ne l'attendrait d'hommes de
-                              culture latine ; dès qu'une difficulté 
+                              culture latine ; dès qu'une difficulté
       grammaticale se présente, ils sont désarmés. »</p>
               </blockquote>
               <p class="texte"> Jacques Monfrin a continué toute sa vie de travailler les dossiers ouverts lors de l'élaboration de son
@@ -630,22 +630,22 @@
                               1985</em>. Vol. III. Contributi del Centro studi sulla letteratura medio-francese, vol. quinto. Milan,
                           1986, p. 161-197.</li>
               </ul>
-              <p class="texte">Jacques Monfrin a utilisé les données qu'il 
+              <p class="texte">Jacques Monfrin a utilisé les données qu'il
       avait rassemblées pour son répertoire dans trois articles de
                         synthèse qu'il a consacrés aux traductions en 1963, en
       1964 en 1972. Ces articles, dont il a chaque fois
-                        souligné le caractère provisoire, sont devenus des 
+                        souligné le caractère provisoire, sont devenus des
       références obligées pour ceux qui après lui tentent de
-                          suivre « la découverte progressive de la pensée 
+                          suivre « la découverte progressive de la pensée
       antique par le Moyen Âge finissant, le cheminement hasardeux
                               des manuscrits et des premières éditions »<a onmouseout="HideBulle()" onmouseover="AffBulle('Séance publique du 27 mars 1982. Réception de M. Jacques Monfrin. Discours de M. Pierre Ruelle et de M. Jacques Monfrin, dans Bulletin de l'Académie royale de langue et de littérature françaises, t. 60, n° 1, Bruxelles, 1982, p. 9-37, à la p. 14 [discours de Pierre Ruelle].')" id="appelnote18" href="#footnote18" class="appel_note">18</a>:</p>
               <ul>
                   <li> Jacques Monfrin, « Humanisme et traductions au Moyen Âge », dans <em>Journal des
                               Savants</em>, 1963, p. 161-190. Réimpr. dans <em>Études de philologie romane</em>,
       p. 757-785
-                          [propose une vue d'ensemble sur les traductions 
+                          [propose une vue d'ensemble sur les traductions
       dans l'ensemble des pays romans (France Italie, Catalogne et
-                          Castille) à l'exclusion du domaine occitan, selon 
+                          Castille) à l'exclusion du domaine occitan, selon
       une présentation chronologique qui reprend celle de
                           l'introduction à l'<em>Inventaire</em>]. </li>
                   <li> Jacques Monfrin, « Les traducteurs et leur public au Moyen Âge », dans <em>Journal des
@@ -720,15 +720,15 @@
               </ul>
               <p class="texte">Le <em>Dictionnaire des traducteurs et de la littérature traduite</em>
       publié par Paul Chavy en 1986
-                        inclut bien sûr les traductions des classiques. Les 
+                        inclut bien sûr les traductions des classiques. Les
       limites de l'entreprise sont clairement indiquées dans la
-                        préface: « L'information que le lecteur y trouvera 
+                        préface: « L'information que le lecteur y trouvera
       restera souvent schématique, voire élémentaire…
-                          Nous ne nous flattons pas d'avoir évité d'emblée 
+                          Nous ne nous flattons pas d'avoir évité d'emblée
       les erreurs et les omissions ; c'est à force de révisions
-                          qu'un travail de ce genre est susceptible d'être 
+                          qu'un travail de ce genre est susceptible d'être
       amendé… » ou « Devant l'incertitude de la terminologie,
-                          nous n'avons pas voulu élever de barrières entre 
+                          nous n'avons pas voulu élever de barrières entre
       entre “traductions”, “paraphrases”, “adaptations”, voire “imitations” et
       “sources” ». Le livre peut donc utilement servir de contrôle et le <em>Miroir des
                           classiques</em> y renverra systématiquement.</p>
@@ -737,14 +737,14 @@
                               la littérature traduite en ancien et en moyen français (842-1600)</em>, 2 vol. Paris, 1986.</li>
               </ul>
           </div>
-          
+
           <hr class="notes"><p class="notes"><a class="footnote" id="footnote4" href="#appelnote4">4</a> Voir sur les travaux et la carrière de Jacques Monfrin, professeur de Philologie
                           romane à l'École de 1958 à 1989, Françoise Vielliard et Emmanuel Poulle, « Jacques Monfrin
                               (1924-1998) », dans <em>Bibliothèque de l'École des chartes</em>,
       t. 157, 1999, p. 317-325. On
                           trouvera une bibliographie, en principe exhaustive,
       de ses travaux, aux p. 981-997 du volume de réimpression
-                          d'un certain nombre de ses articles, Jacques 
+                          d'un certain nombre de ses articles, Jacques
       Monfrin, <em>Études de philologie romane</em>,
                               Genève, 2001 (<em>Publications romanes et françaises</em>, 220).</p>
           <p class="notes"><a class="footnote" id="footnote5" href="#appelnote5">5</a> Antoine Thomas, « Traductions… », <em>op.
@@ -775,17 +775,17 @@
                                 partie utilisée dans <em>Humanisme et traduction…</em>, voir <em>Études de philologie
                                 romane</em> p. 774 note 45 et extraits du prologue du <em>De amicitia</em>
       p. 774-775. Les
-                                travaux de Richard Famiglietti, Carla 
+                                travaux de Richard Famiglietti, Carla
       Bozzolo, Marie-Hélène Tesnière et Claudia Villa ont depuis établi
-                                la biographie et l'activité humaniste de 
+                                la biographie et l'activité humaniste de
       Laurent de Permierfait. Jacques Monfrin avait présenté au
-                                colloque organisé en 1986 par l'Institut de 
+                                colloque organisé en 1986 par l'Institut de
       recherche et d'histoire des textes sur les traductions
                                     (<em>Traductions et traducteurs au Moyen Âge</em>.
       Actes du colloque international du CNRS
-                                organisé à Paris, Institut de recherche et 
+                                organisé à Paris, Institut de recherche et
       d'histoire des textes, les 26-28 mai 1986. Textes réunis par
-                                Geneviève Contamine, Paris, 1989), une 
+                                Geneviève Contamine, Paris, 1989), une
       communication sur les traductions de Cicéron par Laurent de
                                 Premierfait mais il ne l'a pas publiée.</p>
           <p class="notes"><a class="footnote" id="footnote9" href="#appelnote9">9</a> Cette notice a été publiée: Jacques Monfrin, « Notice sur une
@@ -802,7 +802,7 @@
                                 Samaran, « Pierre Bersuire Prieur de Saint-Éloi de Paris (1290-1362) », dans
                                     <em>Histoire littéraire de la France</em>,
       t. 39, Paris, 1962, p. 301-314[en particulier
-                                    « La traduction française de Tite-Live », 
+                                    « La traduction française de Tite-Live »,
       p. 348-414 et « Appendice. Manuscrits et éditions », p. 434-450].</p>
           <p class="notes"><a class="footnote" id="footnote13" href="#appelnote13">13</a> Cette étude a été rendue obsolète par les travaux de Giuseppe di Stefano sur Simon de Hesdin et
                                 Nicolas de Gonesse.</p>
@@ -835,7 +835,7 @@
         <h2>Le Miroir des classiques 1 [2007]</h2>
           <div class="intro">
           <p class="texte">La tradition chartiste de thèses consacrées aux
-  traductions médiévales des classiques qui s'inscrit dans le quatrième 
+  traductions médiévales des classiques qui s'inscrit dans le quatrième
   axe de recherche de l'école est représentée par :</p>
           <ul>
               <li>Nathalie Borel, « La version en trois livres de la <em>Fleur des histoires</em>.
@@ -862,18 +862,18 @@
                             <em>Guerre des Gaules</em> par Jean du Quesne (1473-1474). Deuxième partie : édition de la
                             <em>Cronicque habregie</em> de Jean du Quesne (1478-1479) », résumé dans <em>École
                           nationale des chartes. Positions des thèses</em>…2006,
-  p. 161-165. Voir aussi du même auteur, « La comparaison entre les 
+  p. 161-165. Voir aussi du même auteur, « La comparaison entre les
   institutions romaines et les institutions bourguignonnes dans la
                           traduction de la <em>Guerre des Gaules</em> de Jean du Quesne (1473-1474) », dans
                           <em>Réception et représentation de l'Antiquité</em> Actes du colloque du centre d'études médiévales
                       de Lille III (28, 29 et 30 septembre 2005), à paraître dans <em>Bien dire et bien aprandre</em>, t. 25,
                       2005.</li>
           </ul>
-          <p class="texte">On rappellera d'autre part que, depuis les 
+          <p class="texte">On rappellera d'autre part que, depuis les
   années 1970, l'intérêt pour les traductions médiévales, qui ne se
-                    limitent d'ailleurs pas aux traductions des 
+                    limitent d'ailleurs pas aux traductions des
   classiques, a bénéficié de l'émergence du moyen français comme objet
-                    d'étude propre, tant du point de vue linguistique que 
+                    d'étude propre, tant du point de vue linguistique que
   du point de vue littéraire. Les colloques consacrés aux
                     traductions médiévales se sont donc multipliés : on en
   jugera par la liste des colloques tenus en Europe dans
@@ -892,22 +892,22 @@
                     </li>
               <li><em>Les traducteurs au travail. Leurs manuscrits et leurs méthodes</em>,
   Actes du Colloque
-                      international organisé par le “Ettore Majorana 
+                      international organisé par le “Ettore Majorana
   Centre for Scientific Culture” (Erice, 30 septembre-6 octobre
-                      1999), édités par Jacqueline Hamesse, Turnhout, 
+                      1999), édités par Jacqueline Hamesse, Turnhout,
   2001.</li>
               <li><em>Actes du colloque « Translatio » médiévale, Mulhouse, 11-12 mai 2000,</em> Textes rassemblés et
                       publiés par Claudio Galderisi et Gilbert Salmon, 2000 (<em>Perspectives médiévales, supplément
                           au numéro 26).</em>
               </li>
-              <li>Cycle thématique de conférences de l'IRHT 2000-2001 Les 
-  traductions au Moyen Âge et à la renaissance. Une des journées du cycle 
+              <li>Cycle thématique de conférences de l'IRHT 2000-2001 Les
+  traductions au Moyen Âge et à la renaissance. Une des journées du cycle
   était consacrée
-                      aux traductions latines d'œuvres vernaculaires au 
+                      aux traductions latines d'œuvres vernaculaires au
   Moyen Âge. En est né un projet de recherche (TradLat) dont
-                      on trouvera les grandes lignes développées par 
+                      on trouvera les grandes lignes développées par
   Laurent Brun, Frédéric Duval, Françoise Féry-Hue et
-                          Christine Gadrat « Vers un inventaire 
+                          Christine Gadrat « Vers un inventaire
   informatisé des traductions latines d’œuvres vernaculaires  », dans <em>Scriptorium</em>, t. 49, 2005, p. 90 à 108 [abondante
                           bibliographie en notes; principes d'organisation de la base TradLat p. 102-108].</li>
               <li><em>Pratiques de traduction au Moyen Âge.</em> Actes du colloque de l'Université de Copenhague, 25 et
@@ -935,20 +935,20 @@
           </ul>
           <p class="texte">Dans la même veine s'inscrivent les conférences
   sur la théorie et la pratique de la traduction médiévale
-                    organisées sous l'impulsion de Roger Ellis et qui 
+                    organisées sous l'impulsion de Roger Ellis et qui
   donnent lieu à la publication « The Medieval Translator.
-                    Traduire au Moyen Âge », série publiée par les 
+                    Traduire au Moyen Âge », série publiée par les
   éditions Brépols : le dernier volume (t. 9) a été publié en 2006.</p>
           <p class="texte">Enfin il faut signaler une entreprise plus large dans ses ambitions que le <em>Miroir des classiques</em>
-                    puisqu'elle concerne toutes les traductions dans 
+                    puisqu'elle concerne toutes les traductions dans
   toutes les langues de l'Europe médiévale, et dont les principes
                     viennent d'être définis : <em>Translater au Moyen Âge. Cinq siècles de traductions en français (XIe-XVe
                       siècles). Étude et Répertoire</em>. Une publication en deux volumes, sous la direction de Claudio
                     Galderisi, est prévue chez Brépols pour 2010. [<em>Translations médiévales. Six siècles de traductions en français (X<sup>e</sup>-XV<sup>e</sup> siècles), Etude et répertoire</em>, dir. Claudio Galderisi, Turnhout, 2011.]</p>
-          <p class="texte">Le <em>Miroir des classiques</em> est le fruit 
-  du travail de trois générations de chartistes. Le projet a bénéficié de 
+          <p class="texte">Le <em>Miroir des classiques</em> est le fruit
+  du travail de trois générations de chartistes. Le projet a bénéficié de
   l'aide de Gautier Poupeau, qui a assuré l'élaboration informatique et de
-                    Guillaume Lagrave, qui a encodé les notices. Qu'ils 
+                    Guillaume Lagrave, qui a encodé les notices. Qu'ils
   soient tous deux remerciés de leur disponibilité et de leur
                     efficacité.</p>
         </div>
@@ -957,52 +957,52 @@
         <h2>Le Miroir des classiques 2 [2016]</h2>
          <div class="intro">
         <p class="texte">L’Equipement d’excellence <a href="https://biblissima.fr/">Biblissima</a> (financé par le programme des Investissements d’avenir<a id="miroir2_appel1" class="appel_note" href="#miroir2_note1"> 1</a>) a permis d’ouvrir une nouvelle phase du <em>Miroir des classiques</em>.
- Plutôt que de poursuivre l’enrichissement du corpus général, il a été 
-décidé de décrire de façon très détaillée les traductions gallo-romanes 
+ Plutôt que de poursuivre l’enrichissement du corpus général, il a été
+décidé de décrire de façon très détaillée les traductions gallo-romanes
 du <em>Corpus juris civilis</em>. Gustav Gröber en avait commencé l’inventaire (<em>Grundriss der romanischen Philologie</em>,
- t. 2/1, Strasbourg, 1902, c. 1033-1036), mais elles restaient 
-méconnues. Jacques Monfrin, qui les avait traitées très sommairement 
+ t. 2/1, Strasbourg, 1902, c. 1033-1036), mais elles restaient
+méconnues. Jacques Monfrin, qui les avait traitées très sommairement
 dans l’<em>Inventaire critique</em>, y soulignait pourtant que la plus ancienne traduction d’un texte classique était sans doute celle des <em>Institutes</em> de Justinien.</p>
-        <p class="texte">Depuis, la recherche n’a que peu progressé. 
-Malgré quelques articles et travaux universitaires, aucun panorama 
+        <p class="texte">Depuis, la recherche n’a que peu progressé.
+Malgré quelques articles et travaux universitaires, aucun panorama
 général n’était à ce jour disponible et l’utile répertoire <em>Translations médiévales</em><a onmouseout="HideBulle()" onmouseover="AffBulle('Translations médiévales. Six siècles de traductions en français (Xe-XVe siècles), Etude et répertoire, dir. Claudio Galderisi, Turnhout, 2011, t. II, p. 634-640.')" id="miroir2_appel2" class="appel_note" href="#miroir2_note2"> 2</a>
  ne liste pas le tiers des traductions qui nous sont parvenues. C’est
-peu dire que le domaine était en friche. Parmi les quelques 
+peu dire que le domaine était en friche. Parmi les quelques
 contributions à la connaissance de ces traductions, mentionnons :</p>
         <ul>
             <li>Robert Feenstra, « La glose d’Accurse dans les Pays-Bas », dans <em>Atti del Convegno internazionale di studi Accursiani, Bologna, 1963</em>, éd. Guido Rossi, Milan, t. III, 1968, p. 1083-1106, aux p. 1089-1091.</li>
             <li>Alfons Houben, <em>Répertoire des textes juridiques en français antérieurs à 1250</em>, Louvain, Université catholique, Faculté des lettres et de philosophie, licence de philologie romane, 1982, III-245 p.</li>
             <li>Hans van de Wouw, « Quelques remarques sur les versions françaises médiévales des textes de droit romain », dans <em>El Dret Comú i Catalunya: actes del IIIer Simposi Internacional, Barcelona, 5-7 de novembre de 1992</em>, éd. Aquilino José Iglesia Ferreirós, Barcelone, 1993, p. 139-150.</li>
             <li>Claire-Hélène Lavigne, <em>La traduction juridique au Moyen Âge: moyen d'appropriation et de réinvention culturelle des Institutiones de Justinien 1<sup>er</sup></em>, thèse Université de Montréal 2002, 594 p.</li>
-            <li>Hélène Biu, « La <em>Somme Acé</em>. Prolégomènes à une 
+            <li>Hélène Biu, « La <em>Somme Acé</em>. Prolégomènes à une
 étude de la traduction française de la Summa Azonis d’après le manuscrit
  Bibl. Vat., Reg. lat. 1063 », dans <em>Bibliothèque de l’Ecole des chartes</em>, t. 167/2, 2010, p. 417-464.</li>
             <li>Hélène Biu, « Dire le droit en français : la traduction française de la <em>Summa Azonis</em> », dans <em>Sciences et langues au Moyen Âge</em>, éd. Joëlle Ducos, Heidelberg, 2012, p. 377-390.</li>
             <li>Lorenzo Mainini, « Le versioni d’oïl del <em>Corpus iuris civilis</em>. Il caso della Digeste vielle : manoscritti e prime analisi », dans <em>Studj Romanzi</em>, t. 9, 2013, p. 93-154.</li>
-            <li>Hélène Biu, « La langue d’oïl est-elle apte à dire le 
-droit ? Réflexions sur l'élaboration du lexique juridique français », 
+            <li>Hélène Biu, « La langue d’oïl est-elle apte à dire le
+droit ? Réflexions sur l'élaboration du lexique juridique français »,
 dans <em>Latinum cedens: le français et le latin langues de spécialité au Moyen Âge</em>, éd. Stéphane Marcotte et Christine Silvi, Paris, 2014, p. 187-240.</li>
         </ul>
-        <p class="texte">A ces travaux, il convient d’ajouter une liste 
-de manuscrits inédite, confectionnée à l’Ecole des chartes par Gérard 
-Giordanengo et enrichie par Patrick Arabeyre et Hélène Biu, qui a servi 
+        <p class="texte">A ces travaux, il convient d’ajouter une liste
+de manuscrits inédite, confectionnée à l’Ecole des chartes par Gérard
+Giordanengo et enrichie par Patrick Arabeyre et Hélène Biu, qui a servi
 de base au présent répertoire.</p>
         <p class="texte">Les enjeux d’un répertoire des traductions françaises du <em>Corpus juris civilis</em> ne sont pas négligeables : la masse textuelle (le <em>Digeste</em>
- ne représente-t-il pas en volume une fois et demie la Vulgate ?), la 
+ ne représente-t-il pas en volume une fois et demie la Vulgate ?), la
 date des traductions (à situer pour beaucoup vers le milieu du XIII<sup>e</sup>
  siècle), de même que leur nombre laissaient présager d’emblée l’intérêt
- de ces textes pour l’histoire de la traduction, l’histoire du droit, 
-l’histoire des idées politiques, l’histoire de la réception de 
-l’Antiquité romaine au Moyen Âge, mais aussi l’histoire de la langue 
+ de ces textes pour l’histoire de la traduction, l’histoire du droit,
+l’histoire des idées politiques, l’histoire de la réception de
+l’Antiquité romaine au Moyen Âge, mais aussi l’histoire de la langue
 française.</p>
-        <p class="texte">Sauf mention contraire, toutes les notices ont 
+        <p class="texte">Sauf mention contraire, toutes les notices ont
 été rédigées par Frédéric Duval. Hélène Rochette-Castel a participé à la
- transcription de rubriques de manuscrits, à la conception des fichiers 
-XML ; Hélène Gautier a préparé la publication numérique en révisant le 
-schéma, en élaborant les fichiers XSLT et en supervisant l’encodage des 
-données. Le balisage en XML-TEI des traductions juridiques a été 
-effectué par Hélène Gautier et Lucie Viénot. Au plan technique, le 
-projet est également redevable à Mathilde Henriquet et à Pascal 
+ transcription de rubriques de manuscrits, à la conception des fichiers
+XML ; Hélène Gautier a préparé la publication numérique en révisant le
+schéma, en élaborant les fichiers XSLT et en supervisant l’encodage des
+données. Le balisage en XML-TEI des traductions juridiques a été
+effectué par Hélène Gautier et Lucie Viénot. Au plan technique, le
+projet est également redevable à Mathilde Henriquet et à Pascal
 Campeotto (Ecole des chartes) ainsi qu’au pool Biblissima.</p>
     </div>
     <hr class="notes">
@@ -1035,13 +1035,13 @@ Campeotto (Ecole des chartes) ainsi qu’au pool Biblissima.</p>
                continental ou insulaire, en occitan et en francoprovençal au Moyen Âge. Il est donc important, s'agissant de
                traductions, de définir le corpus des textes sources et celui des textes cibles.</p>
         <h3>Classique ?</h3>
-        <p class="texte">Joachim Leeker, dans une synthèse appuyée sur 
-des citations d’œuvres médiévales et une abondante bibliographie, a 
+        <p class="texte">Joachim Leeker, dans une synthèse appuyée sur
+des citations d’œuvres médiévales et une abondante bibliographie, a
 tenté d’expliquer la vénération médiévale pour l’Antiquité en six volets
- : réinterprétations chrétiennes de certains aspects de la philosophie 
-et de la mythologie ; périodisations de l’histoire du Salut ; 
-l’Antiquité dans le cadre de la tradition ; reflets littéraires d’une 
-légitimation politique ; l’idée de l’Empire et les légendes d’une 
+ : réinterprétations chrétiennes de certains aspects de la philosophie
+et de la mythologie ; périodisations de l’histoire du Salut ;
+l’Antiquité dans le cadre de la tradition ; reflets littéraires d’une
+légitimation politique ; l’idée de l’Empire et les légendes d’une
 origine troyenne ; l’Antiquité comme réservoir de comportements modèles ;
  l’Antiquité comme matière littéraire.</p>
         <ul>
@@ -1052,30 +1052,30 @@ origine troyenne ; l’Antiquité comme réservoir de comportements modèles ;
                         Tours, à Besançon et à Tours, du 24 au 29 mars 2003, 2 vol., Besançon, 2005, tome I. <em>Du XIIe au XVe
                            siècle</em>, sous la direction de Pierre Nobel, p. 77-98.</li>
         </ul>
-        <p class="texte">Frédéric Duval a de son côté fait le point 
+        <p class="texte">Frédéric Duval a de son côté fait le point
 lexicographique sur la question : examen des lexèmes (latin
-                     classique, latin médiéval, ancien et moyen 
+                     classique, latin médiéval, ancien et moyen
 français) référant à ce que l'époque contemporaine nomme « Antiquité » ;
  catégorisation des « anciens » convoqués dans les textes médiévaux (ils
  proviennent
-                     principalement de l'Écriture sainte et de 
+                     principalement de l'Écriture sainte et de
 l'héritage gréco-romain) ; lexèmes et syntagmes susceptibles de
                      correspondre au concept moderne d'Antiquité.</p>
         <ul>
-            <li>Frédéric Duval, « Petite enquête lexicologique sur l’Antiquité », dans Chrystèle Blondeau et Marie Jacob, 
+            <li>Frédéric Duval, « Petite enquête lexicologique sur l’Antiquité », dans Chrystèle Blondeau et Marie Jacob,
                            <em>L'Antiquité entre Moyen Âge et Renaissance. L'Antiquité dans les livres produits au Nord des
                            Alpes entre 1350 et 1520</em>, Nanterre, 2011, p. 19-44. </li>
         </ul>
-        <p class="texte">En la situant dans le cadre plus large d'une 
+        <p class="texte">En la situant dans le cadre plus large d'une
 vénération des anciens, la notion de « classique » peut être
-                     opérationnelle pour le Moyen Âge si on la fonde 
+                     opérationnelle pour le Moyen Âge si on la fonde
 principalement sur une opposition d'ordre religieux entre
                      auteur ou texte païen et auteur ou texte chrétien, à
  l'exemple de la distinction faite par saint Jérôme dans
                      sa lettre à Julia Eustochium : </p>
         <blockquote style="font-style:italic;">
             <p class="texte">« Quae enim communicatio luci ad tenebras ?
- qui consensus Christo et Belial ? quid facit cum psalterio Horatius ? 
+ qui consensus Christo et Belial ? quid facit cum psalterio Horatius ?
 cum evangeliis Maro ? cum apostolo Cicero ? […] simul bibere non debemus
  calicem Christi et
                            calicem daemoniorum »<a onmouseout="HideBulle()" onmouseover="AffBulle('Saint Jérôme. Lettres, t. I, éd. et trad. J. Labourt, Paris, 1949, Epistula ad Eustochium XXII, 29 p. 144 (Collection des universités de France).')" id="appelnote1" class="appel_note" href="#footnote1">1</a>
@@ -1090,11 +1090,11 @@ cum evangeliis Maro ? cum apostolo Cicero ? […] simul bibere non debemus
                      de Beauvais hiérarchise les <em>auctoritates</em> sur trois niveaux. Les docteurs de l'église
                      occupent la plus haute place, suivis des autres docteurs, « <em>prudentes quidem et catholici</em> ». Viennent ensuite les auteurs païens :</p>
         <blockquote style="font-style:italic;">
-            <p class="texte">« Tertium autem et infimum tenent gradum 
+            <p class="texte">« Tertium autem et infimum tenent gradum
 philosophi doctoresque gentilium. Nam, etsi catholice fidei
-                           veritatem ignoraverunt, mira tamen et 
+                           veritatem ignoraverunt, mira tamen et
 preclara quedam dixerunt de Creatore et creaturis, de virtutibus
-                           quoque et viciis, que et fide catholica et 
+                           quoque et viciis, que et fide catholica et
 ratione humana manifeste probantur esse vera »<a onmouseout="HideBulle()" onmouseover="AffBulle('Serge Lusignan, Préface au Speculum maius de Vincent de Beauvais : réfraction et diffraction, Montréal, Paris, 1979 (Cahiers d'études médiévales, 5), p. 126-127.')" id="appelnote3" class="appel_note" href="#footnote3">3</a>
             </p>
         </blockquote>
@@ -1112,19 +1112,19 @@ ratione humana manifeste probantur esse vera »<a onmouseout="HideBulle()" onmou
             <li>Birger Munk Olsen, « Ideologie e pratiche del reimpiego nell’Alto Medioevo », dans <em>Settimane di studio del centro italiano di studi sull’Alto Medioevo</em>, t. 46, 1999, 227-252.</li>
         </ul>
         <h3>Borne chronologique</h3>
-        <p class="texte">Utiliser la notion  de « classique » oblige 
+        <p class="texte">Utiliser la notion  de « classique » oblige
 néanmoins à établir une limite chronologique. 529 est la date de
-                     fermeture de l'Académie de Platon par Justinien et 
+                     fermeture de l'Académie de Platon par Justinien et
 celle de la fondation de la communauté du Mont-Cassin par
-                     saint Benoît. Boèce, qui avait l'intention de 
+                     saint Benoît. Boèce, qui avait l'intention de
 traduire les œuvres complètes de Platon et d'Aristote pour les
-                     rendre accessibles à l'Occident latin, est mort en 
+                     rendre accessibles à l'Occident latin, est mort en
 524. Ces dates (524-529) marquent symboliquement la fin
-                     d'une tradition et le début d'une autre. Émerge 
+                     d'une tradition et le début d'une autre. Émerge
 alors, avec la conscience du passage à des temps nouveaux, la
-                     nécessité d'une synthèse des  connaissances : 
+                     nécessité d'une synthèse des  connaissances :
 l’élaboration du <em>Corpus juris civilis</em> (528-534)
-                     peut être interprétée comme le parallèle juridique 
+                     peut être interprétée comme le parallèle juridique
 du projet non abouti de synthèse philosophique par Boèce.
                      Sont donc définis dans le <em>Miroir des classiques</em> comme « classiques » les auteurs et les textes
                      païens antérieurs à la seconde moitié du VI<sup>e</sup> siècle : nous avons ainsi exclu, comme Jacques Monfrin, la
@@ -1157,11 +1157,11 @@ du projet non abouti de synthèse philosophique par Boèce.
                      l'Antiquité. L'<em>accesssus</em> de Bernard d'Utrecht présente Théodule comme un auteur chrétien de
                      l'Antiquité :</p>
         <blockquote style="font-style:italic;">
-            <p class="texte">« Vita igitur Theoduli hac est. Parentibus 
+            <p class="texte">« Vita igitur Theoduli hac est. Parentibus
 non infimis et christianis editus puer in Italia, adultus in
-                           Grecia studuit. Eruditus igitur in utraque 
+                           Grecia studuit. Eruditus igitur in utraque
 lingua cum esset Athenis, gentiles cum fidelibus altercantes
-                           audivit, quorum colligens rationes reversus 
+                           audivit, quorum colligens rationes reversus
 in allegoricam contulit eglogam, quam morte preventus non
                             emendavit »<a onmouseout="HideBulle()" onmouseover="AffBulle('Accessus ad Auctores. Bernard d'Utrecht. Conrad d'Hirsau. Dialogus super auctores, édition entièrement revue et augmentée par R. B. G. Huygens, Leiden, 1970, p. 59-60. Voir sur la composition du texte, R. P. H. Green, The Genesis of a Medieval Textbook: the Models and Sources of the Egloga Theoduli, dans Viator, t. 13, 1982, p. 49-106.')" id="appelnote7" class="appel_note" href="#footnote7">7</a>
             </p>
@@ -1179,9 +1179,9 @@ in allegoricam contulit eglogam, quam morte preventus non
  Actes
                         du colloque international organisé par l'équipe «
  Poétique des genres et spiritualité » de l'université de
-                        Franche-Comté et le Centre d'études supérieures 
+                        Franche-Comté et le Centre d'études supérieures
 de la Renaissance de l'université François Rabelais de
-                        Tours, à Besançon et à Tours, du 24 au 29mars 
+                        Tours, à Besançon et à Tours, du 24 au 29mars
 2003, 2 vol., Besançon, 2005, tome I. <em>Du XIIe au XVe
                            siècle</em>, sous la direction de Pierre Nobel, p. 231-257. </li>
         </ul>
@@ -1200,7 +1200,7 @@ de la Renaissance de l'université François Rabelais de
     <p class="notes"><a class="footnote" id="footnote4" href="#appelnote4">4</a> Sur
                         Boèce, voir un point récent dans <em>Boèce ou la chaine des savoirs</em>.
  Actes du colloque
-                        international de la fondation Singer-Polignac 
+                        international de la fondation Singer-Polignac
 (Paris, 8-12 juin 1999) édités pr Alain Galonnier, Louvain,
                         2003, particuliérement Umberto Todini,  « Boezio
  più pagano di Lucrezio ? », p.
@@ -1210,16 +1210,16 @@ de la Renaissance de l'université François Rabelais de
                            Michel Zink, Paris, 2002, p. 298-300.</p>
     <p class="notes"><a class="footnote" id="footnote6" href="#appelnote6">6</a>
  L'Egloga Theoduli a été traduite en français par Jean Le Fèvre. Voir
-                           Geneviève Hasenohr,  « Tradition du texte et 
-tradition de l’image. À propos d’un programme d’illustration du 
+                           Geneviève Hasenohr,  « Tradition du texte et
+tradition de l’image. À propos d’un programme d’illustration du
 Theodelet », dans <em>Miscellanea codicologica F. Masai dicat
                               1979</em>, ediderunt Pierre Cockshaw, Monique-Cécile Garand et Pierre Jodogne, 1979, p.
                         451-467.</p>
     <p class="notes"><a class="footnote" id="footnote7" href="#appelnote7">7</a><em>Accessus ad Auctores. Bernard d'Utrecht. Conrad d'Hirsau. Dialogus super auctores</em>,
                         édition entièrement revue et augmentée par R. B.
  G. Huygens, Leiden, 1970, p. 59-60. Voir sur la
-                        composition du texte, R. P. H. Green, « The 
-Genesis of a Medieval Textbook : the Models and Sources of the Egloga 
+                        composition du texte, R. P. H. Green, « The
+Genesis of a Medieval Textbook : the Models and Sources of the Egloga
 Theoduli », dans <em>Viator</em>, t. 13, 1982, p. 49-106.</p>
       </div>
       <div id="defintioncorpustraduction">
@@ -1241,8 +1241,8 @@ Theoduli », dans <em>Viator</em>, t. 13, 1982, p. 49-106.</p>
                      française pour laquelle la bibliographie a été mise à jour : <em>D'Homère à Erasme. La transmission des
                         classiques grecs et latins</em>, Paris, 1984.</li>
         </ul>
-        <p class="texte">La transmission des classiques est connue par 
-la magistrale synthèse de Birger Monk Olsen et par ses travaux 
+        <p class="texte">La transmission des classiques est connue par
+la magistrale synthèse de Birger Monk Olsen et par ses travaux
 successifs qui la mettent à jour :</p>
         <ul>
             <li>Birger Munk Olsen, <em>L'étude des classiques latins aux XIe et au XIIe siècles</em>, 4 vol., Paris,
@@ -1263,9 +1263,9 @@ successifs qui la mettent à jour :</p>
         <ul>
             <li><em>The classical tradition in the Middle Ages and the Renaissance</em>.
  Proceedings of the First
-                     European Science Foundation Workshop on the 
+                     European Science Foundation Workshop on the
 Reception of Classical Texts (Firenze Certosa del Galluzo, 26-27
-                     june 1992) edited by Claudio Leonardi and Birger 
+                     june 1992) edited by Claudio Leonardi and Birger
 Munk Olsen, 1995 (<em>Biblioteca del Medioevo
                      latino</em>, 15) [Pierre Petitmengin, Birger Munk Olsen, « Bibliographie de la réception de la littérature
                      classique du IXe au XVe siècle », p. 199-274].</li>
@@ -1305,31 +1305,31 @@ Munk Olsen, 1995 (<em>Biblioteca del Medioevo
                   médiéval, mais dans ce domaine aussi la documentation repose sur une entreprise en cours :</p>
         <ul>
             <li>
-                     Union académique internationale, 
+                     Union académique internationale,
                      <em>Catalogus translationum et commentariorum, Medieval and Renaissance Latin translations and
                         commentaries</em>. Annotated Lists and Guide. Editor in chief Paul Oskar Kristeller, Washington, t. I, 1960 à t. X, 2014.
                   </li>
         </ul>
-        <p class="texte">Enfin il faut signaler la revue Anabases, qui 
-se consacre, dans une optique transdisciplinaire et comparatiste, à la 
+        <p class="texte">Enfin il faut signaler la revue Anabases, qui
+se consacre, dans une optique transdisciplinaire et comparatiste, à la
 réception et à la tradition de l’Antiquité à travers les âges :</p>
         <ul>
             <li><em>Anabases</em>. Tradition et réception de l'Antiquité, t. I, Université de Toulouse-Le Mirail, 2005-
                   </li>
         </ul>
-        <p class="texte">L'histoire de la réception des textes antiques 
+        <p class="texte">L'histoire de la réception des textes antiques
 et de leur place dans la culture vernaculaire médiévale nous
-                  semble être un volet important de la diffusion des 
+                  semble être un volet important de la diffusion des
 classiques au Moyen Âge. Bien évidemment, pour évaluer la
-                  part des traductions dans la connaissance de 
+                  part des traductions dans la connaissance de
 l'Antiquité classique, il faut partir des textes disponibles au
-                  Moyen Âge : cependant  le choix des textes traduits 
+                  Moyen Âge : cependant  le choix des textes traduits
 parmi les possibles aide à définir les curiosités. Dans le
-                  corpus des textes traduits pendant tout le Moyen Âge, 
+                  corpus des textes traduits pendant tout le Moyen Âge,
 on ne s'étonnera donc pas de constater que ce sont les
-                  textes historiques et l'enseignement moral qui 
-occupent la place prépondérante et non pas les textes « littéraires », 
-aussi bien en ce qui concerne la variété des œuvres que le nombre des 
+                  textes historiques et l'enseignement moral qui
+occupent la place prépondérante et non pas les textes « littéraires »,
+aussi bien en ce qui concerne la variété des œuvres que le nombre des
 témoins conservés.</p>
           </div>
       </div>
@@ -1346,45 +1346,45 @@ témoins conservés.</p>
                            <em>Volgarizzare e tradurre</em>, Torino, 1991 (<em>Saggi breve</em>, 17).</li>
         </ul>
         <blockquote style="font-style:italic;">
-            <p class="texte">« Gianfranco Folena nous a appris, il y a 
+            <p class="texte">« Gianfranco Folena nous a appris, il y a
 presque dix ans, dans un article capital, toute la prudence
-                           avec laquelle il faut manier les mots, 
+                           avec laquelle il faut manier les mots,
 volgarizzare, tradurre : ses réflexions s'appliquent aux
-                           équivalents français translater, traduire… 
+                           équivalents français translater, traduire…
 Beaucoup [de traducteurs médiévaux], pour dire les choses en
-                           gros, utilisent le texte antique en ne 
+                           gros, utilisent le texte antique en ne
 s'attachant qu'au contenu, pour ce qu'il apporte d'information,
-                           sans se préoccuper de la forme, ni même de 
+                           sans se préoccuper de la forme, ni même de
 l'ordonnance et de l'esprit. D'autres, y recherchant et y
-                           découvrant une signification cachée, le 
+                           découvrant une signification cachée, le
 transposent sur un autre plan, en dégagent, par exemple, un
                            enseignement moral.  »<a onmouseout="HideBulle()" onmouseover="AffBulle('Jacques Monfrin, Les translations vernaculaires de Virgile au Moyen Âge, dans Lectures médiévales de Virgile. Actes du colloque organisé par l'École française de Rome (Rome, 25-28 octobre 1982), Rome, 1985 (Collection de l'École française de Rome, 80), p. 189-249. Réimpr. dans Études de philologie romane, p. 859-917, p. 859.')" id="appelnote8" class="appel_note" href="#footnote8">8</a>
             </p>
         </blockquote>
-        <p class="texte">Il est quelquefois difficile de trancher entre 
+        <p class="texte">Il est quelquefois difficile de trancher entre
 traductions, adaptations et remaniements. Il y a en réalité
-                     deux questions : d’une d'une part quel est le 
+                     deux questions : d’une d'une part quel est le
 rapport qu'entretient le texte antique avec sa ou ses traductions
-                      vernaculaires ; d’autre part quel est le rapport 
+                      vernaculaires ; d’autre part quel est le rapport
 entre une traduction vernaculaire avec ses remaniements
                       éventuels ?</p>
-        <p class="texte">Sur le rapport entre texte antique et 
+        <p class="texte">Sur le rapport entre texte antique et
 traduction nous adoptons une définition restrictive de la traduction.
-                     Si on veut donner un tableau représentatif de la 
+                     Si on veut donner un tableau représentatif de la
 place des classiques en français, on ne pourra évidemment
-                     pas passer sous silence les œuvres de Lucain, de 
+                     pas passer sous silence les œuvres de Lucain, de
 Salluste ou de Stace, sous prétexte qu'on n'en conserve pas
                      de traduction « littérale » et complète, mais on ne
  trouvera ces textes que sous forme de rappels dans le
                         <em>Miroir des classiques</em>. Nous avons en effet retenu dans un premier temps comme traductions
                      celles qui sont présentées comme telles, qui respectent un certain degré de littéralité et qui sont
                      d'ailleurs souvent précédées d'un prologue qui justifie la démarche du traducteur.</p>
-        <p class="texte">Sur le rapport entre une traduction 
-vernaculaire avec ses remaniements éventuels, nous pensons que toutes 
+        <p class="texte">Sur le rapport entre une traduction
+vernaculaire avec ses remaniements éventuels, nous pensons que toutes
 les
-                     péripéties textuelles doivent être prises en 
-compte, même si elles éloignent un peu plus du texte source : ainsi la 
-traduction des décades I, III et IV de Tite-Live faite par Pierre 
+                     péripéties textuelles doivent être prises en
+compte, même si elles éloignent un peu plus du texte source : ainsi la
+traduction des décades I, III et IV de Tite-Live faite par Pierre
 Bersuire à la demande de Jean le
                      Bon a été retouchée au début du XV<sup>e</sup> siècle par le pré-humaniste Laurent de Premierfait ; plus tard le
                      bourguignon Jean Mansel l'a intégrée en grande partie dans la compilation historique intitulée la <em>Fleur
@@ -1410,9 +1410,9 @@ Bersuire à la demande de Jean le
                      plus précisément possible du point de vue de leur contenu, alors que l'inventaire de Jacques Monfrin leur
                      consacrait généralement une ligne) et les éditions anciennes (pour lesquelles on ne recherche pas de
                      particularités d'exemplaire). Le <em>terminus ad quem</em> que nous avons fixé pour les témoins
-                     (fin du XVI<sup>e</sup> siècle) est plus large que 
+                     (fin du XVI<sup>e</sup> siècle) est plus large que
 celui des textes cibles (1500) : il permet de prendre en compte le
-                     passage du manuscrit à l'imprimé et d'éclairer les 
+                     passage du manuscrit à l'imprimé et d'éclairer les
 rapports entre l'appropriation vernaculaire des classiques
                      et la « Renaissance » française du XVI<sup>e</sup> siècle. De même nous signalons, dans la mesure du possible, les
                      possesseurs des manuscrits jusqu'à la fin du XVI<sup>e</sup> siècle.</p>
@@ -1422,7 +1422,7 @@ rapports entre l'appropriation vernaculaire des classiques
         </ul>
         <p class="texte">Et sur le répertoire des incunables imprimés en
  français en cours de rédaction par Dominique Coq qui l'a très
-                     généreusement mis à notre disposition. Ce 
+                     généreusement mis à notre disposition. Ce
 répertoire ne portant pas encore de titre définitif, nous le citons
                      de la manière suivante</p>
         <ul>
@@ -1440,11 +1440,11 @@ répertoire ne portant pas encore de titre définitif, nous le citons
         <p class="texte">Il faudrait théoriquement aussi recenser toutes les citations qui sont faites d'auteurs de l'Antiquité dans
                      les textes français, Jacques Monfrin l'avait déjà souligné :</p>
         <blockquote style="font-style:italic;">
-            <p class="texte">« Une chose est d'établir la liste des 
+            <p class="texte">« Une chose est d'établir la liste des
 textes traduits, une autre de savoir quand et comment telle
                            traduction s'est répandue… La méthode la plus
  sûre serait d'étudier comment et à quel degré les œuvres
-                           qui nous intéressent ont été utilisées dans 
+                           qui nous intéressent ont été utilisées dans
 les œuvres  postérieures.  »<a onmouseout="HideBulle()" onmouseover="AffBulle('Jacques Monfrin, Les traducteures et leur public au Moyen Âge, dans Journal des savants, 1964, p. 5-20 publié aussi dans L'humanisme médiéval dans les littérature romanes du XIIe au XIVe siècle. Colloque…Strasbourg…1962, Paris, 1964 (Actes et colloques, 4), p. 247-264. Réimpr. dans Études de philologie romane, p. 787-801.')" id="appelnote9" class="appel_note" href="#footnote9">9</a>
             </p>
         </blockquote>
@@ -1462,7 +1462,7 @@ les œuvres  postérieures.  »<a onmouseout="HideBulle()" onmouseover="AffBulle
                            XIIe au XIVe siècle</em>. Colloque…Strasbourg…1962, Paris, 1964 (Actes et colloques, 4), p. 247-264.
                         Réimpr. dans <em>Études de philologie romane</em>, p. 787-801.</p>
       </div>
-         
+
         </section>
       </div>
     </div>
@@ -1471,42 +1471,41 @@ les œuvres  postérieures.  »<a onmouseout="HideBulle()" onmouseover="AffBulle
 
 <script>
 
-
 export default {
-  name: "DocumentationPage",
+  name: 'DocumentationPage',
 
-  data() {
+  data () {
     return {
-      API_URL: `${process.env.VUE_APP_ELASTICSEARCH_URL}`,
-      DTS_URL: `${process.env.VUE_APP_API_URL}`,
-      IIIF_SERVER_URL: `${process.env.VUE_APP_IIIF_SERVER_URL}`,
-      IIIF_URL: `${process.env.VUE_APP_IIIF_URL}`,
-      IIIF_IMAGES_URL: `${process.env.VUE_APP_IIIF_IMAGES_URL}`,
-      isMenuOpened: false,
-    };
+      API_URL: `${import.meta.env.VITE_ELASTICSEARCH_URL}`,
+      DTS_URL: `${import.meta.env.VITE_API_URL}`,
+      IIIF_SERVER_URL: `${import.meta.env.VITE_IIIF_SERVER_URL}`,
+      IIIF_URL: `${import.meta.env.VITE_IIIF_URL}`,
+      IIIF_IMAGES_URL: `${import.meta.env.VITE_IIIF_IMAGES_URL}`,
+      isMenuOpened: false
+    }
   },
   computed: {
-    menuCsscClass() {
-      return this.isMenuOpened ? "opened" : "";
-    },
+    menuCsscClass () {
+      return this.isMenuOpened ? 'opened' : ''
+    }
   },
   methods: {
-    toggleMenu($event) {
-      $event.preventDefault();
-      $event.stopImmediatePropagation();
-      this.isMenuOpened = !this.isMenuOpened;
+    toggleMenu ($event) {
+      $event.preventDefault()
+      $event.stopImmediatePropagation()
+      this.isMenuOpened = !this.isMenuOpened
     },
-    closeMenu() {
-      this.isMenuOpened = false;
-    },
+    closeMenu () {
+      this.isMenuOpened = false
+    }
   },
-  mounted() {
-    document.body.addEventListener("click", this.closeMenu);
+  mounted () {
+    document.body.addEventListener('click', this.closeMenu)
   },
-  beforeUnmount() {
-    document.body.removeEventListener("click", this.closeMenu);
-  },
-};
+  beforeUnmount () {
+    document.body.removeEventListener('click', this.closeMenu)
+  }
+}
 </script>
 
 <style scoped>
